@@ -83,7 +83,7 @@ def parse() -> pd.DataFrame:
     if not HTML.exists():
         raise FileNotFoundError(
             f"{HTML} not found. Fetch the IGSC homepage to that path first "
-            f"(the notebook does this automatically in §4.3.2)."
+            f"(the notebook does this automatically in §4.5)."
         )
     html = HTML.read_text(encoding="utf-8")
     pattern = re.compile(

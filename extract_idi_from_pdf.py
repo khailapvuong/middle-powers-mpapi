@@ -7,7 +7,7 @@ and contains the country scores in Table 1.
 
 This script reads the pdftotext-extracted .txt and writes a clean CSV with columns
 (economy_name, iso3, idi_score, idi_2023, year, region, income_group). The notebook's
-loader (§4.5 of M-PAPI.ipynb) reads this CSV when the auth-gated official URL fails.
+loader (§4.7 of M-PAPI.ipynb) reads this CSV when the auth-gated official URL fails.
 
 Prerequisite: run `pdftotext -layout data/raw/itu_idi_2024_report.pdf data/raw/itu_idi_2024_report.txt`
 first. The notebook also calls this script directly when the report PDF is freshly downloaded.
