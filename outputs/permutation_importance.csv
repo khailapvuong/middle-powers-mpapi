@@ -1,0 +1,16 @@
+indicator,axis,mean_rho,std_rho,importance,ci_low,ci_high
+C2_training_compute,capacity_depth,0.9319,0.0362,0.0681,0.8505,0.9868
+C1_notable_models,capacity_depth,0.9401,0.0348,0.0599,0.8549,0.9868
+G1_ai_strategy,governance_orientation,0.9405,0.0384,0.0595,0.8637,0.9956
+G2_global_cybersec_index,governance_orientation,0.9406,0.0338,0.0594,0.8505,0.9868
+G3_vdem_libdem,governance_orientation,0.9524,0.0245,0.0476,0.8945,0.9912
+I1_idi_2024,infrastructure_posture,0.9688,0.0225,0.0312,0.9164,0.9956
+C5_aisi_presence,capacity_depth,0.9719,0.0137,0.0281,0.9429,0.9956
+I2_broadband,infrastructure_posture,0.9735,0.0121,0.0265,0.9516,0.9956
+G6_australia_group,governance_orientation,0.9782,0.0087,0.0218,0.9604,0.9956
+C3_ai_publications,capacity_depth,0.9847,0.0048,0.0153,0.978,0.9956
+G5_igsc_membership,governance_orientation,0.9849,0.0071,0.0151,0.9692,1.0
+G4_lab_mou_count,governance_orientation,0.985,0.0077,0.015,0.9692,0.9956
+I3_secure_servers,infrastructure_posture,0.987,0.009,0.013,0.9604,1.0
+C4_ai_patents,capacity_depth,0.9899,0.0052,0.0101,0.9824,1.0
+I5_ndgain_readiness,infrastructure_posture,0.9922,0.0079,0.0078,0.9692,1.0

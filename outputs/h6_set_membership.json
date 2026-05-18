@@ -1,0 +1,43 @@
+{
+  "n_draws": 10000,
+  "top5_baseline": [
+    "EUU",
+    "FRA",
+    "GBR",
+    "JPN",
+    "KOR"
+  ],
+  "bot3_baseline": [
+    "IND",
+    "ISR",
+    "TWN"
+  ],
+  "exact_set_match": {
+    "threshold": 0.95,
+    "top5_share": 0.4601,
+    "top5_verdict": "FAIL",
+    "bot3_share": 0.4344,
+    "bot3_verdict": "FAIL"
+  },
+  "within_1_swap": {
+    "threshold": 0.9,
+    "top5_share": 0.9378,
+    "top5_verdict": "PASS",
+    "bot3_share": 0.8316,
+    "bot3_verdict": "FAIL"
+  },
+  "per_country_in_tier_frequency": {
+    "top5_members": {
+      "EUU": 0.805,
+      "FRA": 0.8383,
+      "GBR": 0.9903,
+      "JPN": 0.8255,
+      "KOR": 0.9316
+    },
+    "bot3_members": {
+      "IND": 0.8202,
+      "ISR": 0.6219,
+      "TWN": 0.8179
+    }
+  }
+}

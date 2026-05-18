@@ -1,0 +1,5 @@
+perturbation,rho,n,threshold,verdict,ci_lower_95,ci_upper_95,ci_width,verdict_at_lb
+Weighting: equal vs PCA-derived,0.9692307692307692,14,0.7,PASS,0.903,0.9905,0.0874,PASS
+Weighting: equal vs literature,0.9956043956043956,14,0.7,PASS,0.9857,0.9986,0.0129,PASS
+Normalization: z-score vs min-max,0.9956043956043956,14,0.7,PASS,0.9857,0.9986,0.0129,PASS
+Classifier (C3 only): AI-broad vs ML-narrow,0.9604395604395608,14,0.85,PASS,0.8765,0.9877,0.1112,PASS

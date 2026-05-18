@@ -1,0 +1,5 @@
+{
+  "url": "https://api.openalex.org/works?filter=concepts.id:C154945302,from_publication_date:2024-01-01,to_publication_date:2024-12-31&group_by=authorships.countries&per-page=200",
+  "retrieved_date": "2026-05-18",
+  "size": 18977
+}

@@ -1,0 +1,4 @@
+axis,n_countries,n_indicators,pc1_observed_evr,pc1_null_p95,pc1_p_value,pc1_significant,pc2_observed_evr,pc2_null_p95,pc2_p_value,pc2_significant
+capacity_depth,7,5,0.564,0.5833,0.0755,False,0.2282,0.3587,0.8898,False
+governance_orientation,14,6,0.425,0.4081,0.0249,True,0.2793,0.2879,0.0883,False
+infrastructure_posture,13,4,0.5638,0.5232,0.014,True,0.2555,0.3427,0.8255,False

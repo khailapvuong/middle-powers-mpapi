@@ -1,0 +1,16 @@
+country_name,iso3,ai_patents_per_100k,year
+South Korea,KOR,17.27,2023
+Luxembourg,LUX,15.31,2023
+China,CHN,6.08,2023
+United States,USA,5.2,2023
+Japan,JPN,4.58,2023
+Germany,DEU,1.22,2023
+Singapore,SGP,0.98,2023
+Finland,FIN,0.97,2023
+Sweden,SWE,0.74,2023
+United Kingdom,GBR,0.52,2023
+Denmark,DNK,0.47,2023
+France,FRA,0.43,2023
+Netherlands,NLD,0.4,2023
+Australia,AUS,0.38,2023
+Greece,GRC,0.27,2023

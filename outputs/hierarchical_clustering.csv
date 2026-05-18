@@ -1,0 +1,15 @@
+iso3,name,hier_ward,hier_complete,hier_average,kmeans
+GBR,United Kingdom,1,1,2,1
+CAN,Canada,1,1,2,1
+FRA,France,1,1,2,1
+DEU,Germany,1,1,2,1
+JPN,Japan,1,1,2,1
+IND,India,3,3,3,2
+ISR,Israel,2,2,1,0
+SGP,Singapore,1,1,2,1
+KOR,South Korea,1,1,2,1
+SWE,Sweden,2,1,1,0
+SAU,Saudi Arabia,2,2,1,0
+ARE,United Arab Emirates,2,2,1,0
+EUU,European Union,1,1,2,1
+TWN,Taiwan,2,2,1,0

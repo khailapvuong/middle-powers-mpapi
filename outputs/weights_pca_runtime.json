@@ -1,0 +1,23 @@
+{
+  "capacity_depth": {
+    "C1_notable_models": 0.28774990406444256,
+    "C2_training_compute": 0.2273155680227556,
+    "C3_ai_publications": 0.19067320990893336,
+    "C4_ai_patents": 0.04637440187514643,
+    "C5_aisi_presence": 0.247886916128722
+  },
+  "governance_orientation": {
+    "G1_ai_strategy": 0.257016121547318,
+    "G2_global_cybersec_index": 5.6573496254841414e-05,
+    "G3_vdem_libdem": 0.13079102811429874,
+    "G4_lab_mou_count": 0.18580170734479112,
+    "G5_igsc_membership": 0.250486470579975,
+    "G6_australia_group": 0.1758480989173623
+  },
+  "infrastructure_posture": {
+    "I1_idi_2024": 0.12375168686224737,
+    "I2_broadband": 0.2485317688803423,
+    "I3_secure_servers": 0.22975475584923283,
+    "I5_ndgain_readiness": 0.3979617884081775
+  }
+}
