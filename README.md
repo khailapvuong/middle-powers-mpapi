@@ -41,6 +41,10 @@ Literature-weighted composite ranking (full table and per-scheme variants in §1
 |    6 | Singapore   |     1.809 |   13 | India        |     0.106 |
 |    7 | Canada      |     1.472 |   14 | Taiwan       |     0.057 |
 
+![Two-axis typology plot showing 14 middle powers positioned by Capacity Depth (x-axis) and Infrastructure Posture (y-axis), with archetype colour coding (Tier-1 / Asymmetric / Tier-3) and AISI Network membership marker shape](figures/fig15_2_typology.png)
+
+> *Figure 15.2 of the notebook — country positions on Capacity Depth × Infrastructure Posture. Colour encodes the §14 k-means archetype (Tier-1 preparedness · Asymmetric–Capacity-leveraged · Asymmetric–Infrastructure-leveraged · Tier-3 vulnerability); marker shape encodes AISI Network membership. Taiwan's infrastructure coordinate is column-mean-imputed (the four infrastructure indicators are unobserved for Taiwan; see §14 observability caveat).*
+
 ### Tier stability across weighting schemes
 
 - The **top-5 set** {UK, South Korea, France, EU, Japan} is identical across all three weighting schemes (equal, PCA-derived, literature-elicited).
@@ -66,6 +70,22 @@ Per `outputs/h6_set_membership.json` (computed in §16.11):
 ## Methodology overview
 
 The methodology follows the OECD/JRC *Handbook on Constructing Composite Indicators* (2008). The 10-step process is mapped to notebook sections in §3.
+
+```mermaid
+flowchart LR
+  Paper["Working paper §1–§2<br/>3 axes · 14 middle powers<br/>3 attack vectors"]
+  Config["§3.2 configuration<br/>15 indicators · 3 weighting schemes"]
+  Acq["§4 data acquisition<br/>11 programmatic · 1 inlined · 3 analyst-coded"]
+  Pipeline["§5–§11 pipeline<br/>clean → impute → normalise<br/>→ weight → composite"]
+  Sens["§12 sensitivity<br/>Monte Carlo · LOO<br/>alt-norm · classifier"]
+  Overlay["§13 vulnerability overlay<br/>cyber · CBRN · influence"]
+  Verdicts["§16.11<br/>H1–H6 verdicts"]
+  Paper --> Config --> Acq --> Pipeline
+  Pipeline --> Sens
+  Pipeline --> Overlay
+  Sens --> Verdicts
+  Overlay --> Verdicts
+```
 
 ### Three axes (working paper §1)
 
@@ -148,6 +168,10 @@ Six hypotheses are pre-registered with numeric pass criteria in §1.4 and resolv
 | **H6** | Top-5 and bot-3 tier membership stable under weight perturbation. | **PARTIALLY SUPPORTED** | Seven of the eight baseline-tier countries appear in their baseline tier in ≥ 80% of 10,000 Monte Carlo draws; Israel is the exception at 62% (cycles with Saudi Arabia). |
 
 Aggregate: three fully supported, three partially supported with specific named caveats. The composite-index framework is empirically defensible; the partial-support verdicts surface methodological caveats (C5 × G1 collinearity, governance multidimensionality, single-slot tier cycling) rather than a wholesale framework failure.
+
+![Robustness forest plot showing four perturbations of the headline literature ranking — equal-vs-PCA, equal-vs-literature, z-score-vs-min-max, and AI-broad-vs-ML-narrow classifier — each as a Spearman rho point estimate with Fisher-z 95 percent confidence interval; pass thresholds (0.70 for the first three, 0.85 for the classifier) marked as dashed lines](figures/fig12_5_robustness_forest.png)
+
+> *Figure 12.5 of the notebook — H4 evidence in visual form. Each row is one robustness perturbation; the horizontal bar is the Spearman ρ point estimate flanked by its Fisher-z 95% CI. The dashed red lines mark the pass threshold for that perturbation (0.70 for the three weighting / normalisation tests; 0.85 for the bibliographic-classifier test). A perturbation passes iff the CI's lower bound sits to the right of its threshold — all four pass.*
 
 ## Notebook structure
 
