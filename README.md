@@ -102,9 +102,9 @@ Per-vector cross-axis weights are the authors' translation of the paper's ยง2.2โ
 
 ## Data sources
 
-Every indicator value cites a named source with retrieval date and URL. **13 of the 15 indicators are fully sourced from Tier-1 institutional providers with no analyst-coding step.**
+Every indicator value cites a named source with retrieval date and URL. **12 of the 15 indicators are fully sourced from Tier-1 institutional providers with no analyst-coding step** (11 programmatic + 1 inlined against the cited URL); the remaining 3 carry an analyst-coding step.
 
-### Programmatic sources (12 indicators)
+### Programmatic sources (11 indicators)
 
 Loaded automatically from the cached `data/raw/` snapshot with live re-fetch fallback (retrieval dates recorded in per-file `*.meta.json` sidecars):
 
