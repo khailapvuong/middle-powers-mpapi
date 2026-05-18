@@ -1,17 +1,31 @@
 # Middle-Power AI Proliferation Preparedness Index (M-PAPI)
 
-Companion notebook to *AI-Proliferation and Middle Powers: Preparation and Response Mechanisms* (Teague, Ali, Sfeir, Fort — working paper). The notebook empirically operationalises the working paper's three-axes framework — **Capacity Depth**, **Governance Orientation**, **Infrastructure Posture** — across the 14 middle powers named in the paper, and reports per-country preparedness rankings against the three attack vectors discussed in §2 (cyber, CBRN, influence operations).
+> Companion notebook to *AI-Proliferation and Middle Powers: Preparation and Response Mechanisms* (Teague, Ali, Sfeir, Fort — working paper, 2026).
 
-The methodology follows the OECD/JRC *Handbook on Constructing Composite Indicators* (2008). Every indicator value cites a named source with retrieval date and URL. **13 of the 15 indicators are fully sourced from Tier-1 institutional providers with no analyst-coding step**: Epoch AI (C1, C2), OpenAlex (C3), Stanford AI Index 2025 (C4, via `extract_patents_from_pdf.py`), ITU GCI via World Bank Data360 (G2), V-Dem (G3), IGSC (G5, via `extract_igsc_from_html.py`), ITU IDI (I1, via `extract_idi_from_pdf.py`), World Bank WDI (I2, I3), and ND-GAIN (I5). The Australia Group public roster feeds G6 (binary 0/1 membership) and is inlined in the `EXTRACTIONS` registry against the cited URL because the upstream page (`australiagroup.net/en/participants.html`) redirects to a DFAT-hosted page that is unreliable for programmatic fetch from many environments; membership rarely changes (India was the most recent addition, January 2018). The remaining **3 indicators (G1, G4, C5) carry an analyst-coding step**: G1 (national AI strategy comprehensiveness) translates the OECD.AI Policy Observatory dashboards into a 0–3 rubric; G4 (bilateral lab MoU count) enumerates UK gov.uk publications and Anthropic / OpenAI / Google DeepMind partnership press releases — no consolidated public registry exists; C5 (AISI presence) is binary-authoritative from the NIST AISI Network fact sheet, with a 0/1/2 ordinal extension applied to non-Network states by the authors. G1 and G4 are flagged `requires_verification: True` in §4.9; C5's coding note is in the same registry. Their literature-scheme weights (G1 20%, G4 10%, C5 25% within their respective axes) are documented in §3.2, and §12.2 leave-one-indicator-out sensitivity shows the top-5 set is unchanged when any of the three is dropped (under G1 drop, Germany rises from rank 8 to rank 6, displacing Canada 6→7 and Singapore 7→8; see §17.5 for the full reshuffle). Full bibliography in §19 of the notebook.
+The notebook empirically operationalises the working paper's three-axes framework — **Capacity Depth**, **Governance Orientation**, **Infrastructure Posture** — across the 14 middle powers named in the paper, and reports per-country preparedness rankings against the three attack vectors discussed in §2 (cyber, CBRN, influence operations).
 
-## How to run
+## Table of contents
+
+- [Quick start](#quick-start)
+- [Headline result](#headline-result)
+- [Methodology overview](#methodology-overview)
+- [Data sources](#data-sources)
+- [Hypothesis-testing results](#hypothesis-testing-results)
+- [Notebook structure](#notebook-structure)
+- [Reproducibility](#reproducibility)
+- [File layout](#file-layout)
+- [What the index does and does not claim](#what-the-index-does-and-does-not-claim)
+- [How to cite](#how-to-cite)
+- [License](#license)
+
+## Quick start
 
 ```bash
 pip install -r requirements.txt
 jupyter nbconvert --to notebook --execute --inplace M-PAPI.ipynb
 ```
 
-Random seeds are fixed (`SEED = 20260506` in §3.1, passed explicitly to the §12.1 Monte Carlo, the §14 k-means typology, the §14.3 MDS embedding, and the §16.10 sparse-PCA decomposition); reruns produce byte-identical outputs and figures. The first run fetches sources from the public web and caches them under `data/raw/`; subsequent runs read from cache. **The current snapshot in `data/raw/` is bundled with the notebook**, so the analysis is fully reproducible offline. Per-file retrieval dates are recorded in the `*.meta.json` sidecars in `data/raw/` and are updated on each successful live re-fetch; the manually-extracted indicator values in §4.9's `EXTRACTIONS` registry carry their own `retrieved_date` field for the date of the analyst-coding pass.
+The first run fetches sources from the public web and caches them under `data/raw/`. The current snapshot in `data/raw/` is bundled with the repo, so the analysis is fully reproducible offline. Subsequent runs read from cache and attempt live re-fetch with cache fallback.
 
 ## Headline result
 
@@ -27,45 +41,203 @@ Literature-weighted composite ranking (full table and per-scheme variants in §1
 |    6 | Singapore   |     1.809 |   13 | India        |     0.106 |
 |    7 | Canada      |     1.472 |   14 | Taiwan       |     0.057 |
 
-The top-5 set {UK, South Korea, France, EU, Japan} is identical across all three weighting schemes; the bottom-3 set {Israel, India, Taiwan} is identical under the equal and literature schemes, with Saudi Arabia sitting one rank above Israel at 11th. Under the PCA scheme Israel rises from rank 12 to rank 10 (displacing UAE 10→11 and Saudi Arabia 11→12), so PCA's bottom-3 is {Saudi Arabia, India, Taiwan}. Every perturbation in `outputs/robustness_summary_with_ci.csv` reports Spearman ρ ≥ 0.96, with Fisher-z 95% CI lower bounds spanning [+0.876, +0.986]; the lowest lower bound (the classifier-sensitivity check at +0.876) clears its 0.85 threshold, and the three weighting/normalisation perturbations all clear the 0.70 threshold with lower bound ≥ 0.90. **Tier stability is partial.** Of the baseline top-5 {UK, South Korea, France, EU, Japan} and bottom-3 {Israel, India, Taiwan}, seven of the eight baseline-tier countries appear in their baseline tier in ≥ 80% of the 10,000 Monte Carlo draws; Israel is the single exception at 62% (it swaps with Saudi Arabia in 38% of draws). Within-1-swap tolerance — at most one country differs from the baseline tier — is preserved in 94% of top-5 draws and 83% of bot-3 draws (per `outputs/h6_set_membership.json`, computed in §16.11). The *exact* tier set is recovered in only ~46% of top-5 draws and ~43% of bot-3 draws because the 5th and 12th slots cycle. Within-tier ordering fluctuates. The EU has the widest in-tier IQR (≈ 3, p10–p90 = 1–7) because the EU row is partly synthetic (see §16.9); Korea's Monte Carlo median rank is 2 (IQR ≈ 2) and Korea also ranks 2 under both the equal and literature weighting schemes (rank 4 under PCA). The literature-scheme ordering inside the {France, EU, Japan} block (positions 3–5) is weight-sensitive: France at 1.980, EU at 1.824, Japan at 1.823 — the EU/Japan gap is 0.001 and Monte Carlo gives all three a median rank of 4. Middle ranks (positions 7–10) are also weight-sensitive — refer to Monte Carlo rank distributions in §15.4 and the per-country IQR in `outputs/sensitivity_ranks.csv`.
+### Tier stability across weighting schemes
+
+- The **top-5 set** {UK, South Korea, France, EU, Japan} is identical across all three weighting schemes (equal, PCA-derived, literature-elicited).
+- The **bottom-3 set** {Israel, India, Taiwan} is identical under the equal and literature schemes, with Saudi Arabia at rank 11. Under the PCA scheme, Israel rises from rank 12 to rank 10, so PCA's bottom-3 is {Saudi Arabia, India, Taiwan}.
+- **Robustness** (`outputs/robustness_summary_with_ci.csv`): every perturbation reports Spearman ρ ≥ 0.96. Fisher-z 95% CI lower bounds span [+0.876, +0.986] — the classifier-sensitivity check (lowest at +0.876) clears its 0.85 threshold; the three weighting/normalisation perturbations all clear the 0.70 threshold with lower bounds ≥ 0.90.
+
+### Tier stability is partial — single-slot cycling
+
+Per `outputs/h6_set_membership.json` (computed in §16.11):
+
+- **Seven of the eight baseline-tier countries** appear in their baseline tier in ≥ 80% of the 10,000 Monte Carlo draws.
+- **Israel is the single exception** at 62% — it swaps with Saudi Arabia in 38% of draws.
+- **Within-1-swap tolerance** (at most one country differs from the baseline tier): 94% of top-5 draws, 83% of bot-3 draws.
+- **Exact set-match**: only ~46% of top-5 draws and ~43% of bot-3 draws because the 5th and 12th slots cycle.
+
+### Within-tier ordering caveats
+
+- The **EU has the widest in-tier IQR** (≈ 3, p10–p90 = 1–7) because the EU row is partly synthetic (no upstream source publishes an EU-level aggregate; the row is constructed from member-state sums / means per §5.2; see §16.9 cross-validation).
+- **Korea's Monte Carlo median rank is 2** (IQR ≈ 2); Korea ranks 2 under both the equal and literature schemes (rank 4 under PCA).
+- The **{France, EU, Japan} block at positions 3–5** is weight-sensitive: France 1.980, EU 1.824, Japan 1.823 — the EU/Japan gap is 0.001 and Monte Carlo gives all three a median rank of 4.
+- **Middle ranks (positions 7–10) are weight-sensitive** — cite with the Monte Carlo IQR range from `outputs/sensitivity_ranks.csv`, not as point ranks.
+
+## Methodology overview
+
+The methodology follows the OECD/JRC *Handbook on Constructing Composite Indicators* (2008). The 10-step process is mapped to notebook sections in §3.
+
+### Three axes (working paper §1)
+
+| Axis | Definition (per paper §1) | Indicators |
+|---|---|---|
+| **Capacity Depth** | Domestic technical talent, AISI-equivalent institutions, AI R&D output | C1 Notable models · C2 Training compute · C3 AI publications · C4 AI patents · C5 AISI presence |
+| **Governance Orientation** | AI governance maturity, alliance posture, bilateral lab agreements | G1 National AI strategy · G2 ITU GCI · G3 V-Dem LDI · G4 Lab MoU count · G5 IGSC member firms · G6 Australia Group |
+| **Infrastructure Posture** | Domestic compute, ICT infrastructure, platform/cloud presence | I1 ITU IDI · I2 Broadband · I3 Secure servers · I5 ND-GAIN Readiness |
+
+### Three attack vectors (working paper §2)
+
+Per-vector cross-axis weights are the authors' translation of the paper's §2.2–§2.4 qualitative arguments (full rationale in §13 of the notebook):
+
+| Vector | Paper § | Capacity | Governance | Infrastructure |
+|---|---|---|---|---|
+| Cyber | §2.2 | 0.40 | 0.25 | 0.35 |
+| CBRN | §2.3 | 0.50 | 0.40 | 0.10 |
+| Influence operations | §2.4 | 0.20 | 0.35 | 0.45 |
+
+### Composite construction (§9–§11)
+
+- **Normalisation** — z-score across the 14 jurisdictions (min-max as sensitivity in §12.3).
+- **Within-axis aggregation** — linear weighted sum.
+- **Across-axis aggregation** — geometric mean (penalises imbalance — no axis fully compensates for another, consistent with paper §4).
+- **Three weighting schemes reported side-by-side** — equal · PCA-derived · literature-elicited (synthesis of GMF Pivotal Powers + Chatham House Sovereign AI + Tortoise Global AI Index).
+
+### Sensitivity & robustness (§12)
+
+- **Monte Carlo (§12.1)** — 10,000 Dirichlet(α=1) draws perturbing both within-axis and across-axis weights.
+- **Leave-one-indicator-out (§12.2)** — rank impact bound for each indicator.
+- **Alternative normalisation (§12.3)** — min-max vs z-score Spearman ρ.
+- **Classifier sensitivity (§16.7.1)** — AI-broad vs ML-narrow OpenAlex concepts for C3.
+- **Fisher-z 95% CIs** on all four robustness Spearman ρ values (Appendix A.2).
+
+## Data sources
+
+Every indicator value cites a named source with retrieval date and URL. **13 of the 15 indicators are fully sourced from Tier-1 institutional providers with no analyst-coding step.**
+
+### Programmatic sources (12 indicators)
+
+Loaded automatically from the cached `data/raw/` snapshot with live re-fetch fallback (retrieval dates recorded in per-file `*.meta.json` sidecars):
+
+| Indicator | Source | Retrieval mechanism |
+|---|---|---|
+| C1, C2 | Epoch AI Notable Models | Direct CSV download |
+| C3 | OpenAlex Works API (concept `C154945302`) | REST API |
+| C4 | Stanford AI Index 2025, Figure 1.2.3 | PDF extraction via [`extract_patents_from_pdf.py`](extract_patents_from_pdf.py) |
+| G2 | ITU GCI 2024 (5th ed.) via World Bank Data360 | REST API |
+| G3 | V-Dem v16 Liberal Democracy Index | GitHub `RData` download |
+| G5 | IGSC member roster | HTML scrape via [`extract_igsc_from_html.py`](extract_igsc_from_html.py) |
+| I1 | ITU IDI 2024, Report Table 1 | PDF extraction via [`extract_idi_from_pdf.py`](extract_idi_from_pdf.py) |
+| I2, I3 | World Bank WDI (broadband + secure servers) | REST API |
+| I5 | ND-GAIN Country Index 2026 | ZIP download |
+
+### Inlined against the cited URL (1 indicator)
+
+- **G6 (Australia Group membership, binary 0/1)** — inlined in the `EXTRACTIONS` registry against the cited URL because the upstream page (`australiagroup.net/en/participants.html`) redirects to a DFAT-hosted page that is unreliable for programmatic fetch from many environments. Membership rarely changes in practice (India was the most recent addition, January 2018).
+
+### Analyst-coded indicators (3 indicators)
+
+Flagged `requires_verification: True` in §4.9's `EXTRACTIONS` registry; their literature-scheme weights are documented in §3.2:
+
+- **G1 (national AI strategy comprehensiveness, 0–3 rubric, 20% within governance)** — translates the OECD.AI Policy Observatory dashboards into a 0–3 ordinal scale. The rubric translation is the authors'.
+- **G4 (bilateral lab MoU count, 10% within governance)** — enumerates UK gov.uk publications and Anthropic / OpenAI / Google DeepMind partnership press releases. No consolidated public registry exists.
+- **C5 (AISI Network presence, 25% within capacity)** — binary-authoritative from the NIST AISI Network fact sheet for the 7 founding-member middle powers; the 0/1/2 ordinal extension for the 7 non-Network states is authors' coding.
+
+The §12.2 leave-one-indicator-out test shows the **top-5 set is unchanged** when any of G1, G4, or C5 is dropped (under G1 drop, Germany rises from rank 8 to rank 6, displacing Canada 6→7 and Singapore 7→8; see §17.5 for the full reshuffle). Full bibliography in §19 of the notebook.
+
+## Hypothesis-testing results
+
+Six hypotheses are pre-registered with numeric pass criteria in §1.4 and resolved against those criteria in §16.11:
+
+| ID | Hypothesis | Result | Evidence |
+|---|---|---|---|
+| **H1** | The three axes are empirically separable. | **PARTIALLY SUPPORTED** | 5 of 74 cross-axis indicator pairs at \|r\| ≥ 0.7. The C5 × G1 collinearity (r = 0.973) is the largest contributor and is flagged as high-priority future work in §17.8. |
+| **H2** | Each axis carries a one-dimensional latent signal. | **PARTIALLY SUPPORTED** | Infrastructure PA p ≈ 0.01, governance PA p ≈ 0.02 (both significant); capacity-axis dimensionality is empirically untestable at n = 7 complete cases. Governance PC1 explains only ~43% of variance; §16.10 decomposes it into three sparse-PCA sub-axes. |
+| **H3** | The 14 middle powers do not cluster homogeneously. | **SUPPORTED** | k-means silhouette = 0.43 at k = 3; ARI = 1.0 against Ward and average linkage; MDS embedding preserves distance rank at ρ = 0.91. |
+| **H4** | The headline ranking is robust to methodological perturbation. | **SUPPORTED** | All four robustness Spearman ρ values' Fisher-z 95% CI lower bounds clear their thresholds (lowest = 0.876, threshold 0.85 for classifier; other three ≥ 0.90 against threshold 0.70). |
+| **H5** | Top-5 not driven by any single analyst-coded indicator. | **SUPPORTED** | Top-5 set unchanged when any of G1, G4, or C5 is dropped; max single-country rank shift across the three drops is 2 positions. |
+| **H6** | Top-5 and bot-3 tier membership stable under weight perturbation. | **PARTIALLY SUPPORTED** | Seven of the eight baseline-tier countries appear in their baseline tier in ≥ 80% of 10,000 Monte Carlo draws; Israel is the exception at 62% (cycles with Saudi Arabia). |
+
+Aggregate: three fully supported, three partially supported with specific named caveats. The composite-index framework is empirically defensible; the partial-support verdicts surface methodological caveats (C5 × G1 collinearity, governance multidimensionality, single-slot tier cycling) rather than a wholesale framework failure.
 
 ## Notebook structure
 
-The notebook follows the OECD/JRC 10-step composite-indicator process:
+The 139-cell notebook follows the OECD/JRC 10-step composite-indicator process:
 
-- §1 introduction, paper-mapping, and six pre-registered hypotheses (H1–H6 in §1.4; resolved in §16.11 as three fully supported and three partially supported).
-- §2 conceptual framework (axes, attack vectors, composite logic).
-- §3–§5 setup, configuration, data acquisition, cleaning and harmonisation.
-- §6–§7 indicator construction and two-stage imputation.
-- §8 multivariate diagnostics (per-axis PCA + Horn's parallel analysis in §8.1).
-- §9–§11 normalisation, weighting (equal / PCA-derived / literature-elicited), composite computation.
-- §12 sensitivity and robustness (Monte Carlo, leave-one-out, alternative normalisation, classifier sensitivity).
-- §13 vulnerability overlay (per-vector cyber / CBRN / influence-ops preparedness rankings; per-country counterfactual policy scenarios in §13.4).
-- §14 typology — k-means (§14), hierarchical clustering (§14.2), MDS embedding (§14.3).
-- §15 visualisation — country × axis heatmap (§15.1), two-axis typology plot (§15.2), vulnerability per-vector ranks (§15.3), Monte Carlo rank boxplots (§15.4), EU vs member-state cross-validation (§15.5), pairwise axis scatter matrix (§15.6).
-- §16 discussion mapping findings back to working-paper sections, including sparse-PCA governance sub-axes (§16.10) and hypothesis-testing results (§16.11).
-- §17 limitations (§17.1–§17.10), threats-to-validity audit (§17.11), methodological reflections from the build process (§17.12), and future-work priorities.
-- §18 verification (four end-to-end checks + source-URL liveness probe).
-- §19 bibliography.
-- Appendix A — methodology hygiene diagnostics (cross-axis Pearson correlations, Fisher-z 95% CIs on robustness Spearman ρ values, Cronbach-style within-axis α) — recomputed live each rebuild.
-- Appendix B — interpretability (exact Shapley composite decomposition over 2¹⁵ subsets in B.1; permutation feature importance in B.2).
-- Concluding Remarks — workflow recap, headline findings, reproducibility note.
+| § | Content |
+|---|---|
+| **§1** | Introduction, paper-mapping (§1.3), and six pre-registered hypotheses (H1–H6 in §1.4) |
+| **§2** | Conceptual framework — three axes, three attack vectors, composite logic |
+| **§3** | Methodology overview — explicit 10-step OECD/JRC mapping |
+| **§4** | Data acquisition — §4.1–§4.9 covering programmatic and inline sources |
+| **§5** | Data cleaning & harmonisation — EU aggregation, reference-period alignment, missing-data audit |
+| **§6** | Indicator construction — per-indicator transforms (log1p / sqrt / binary / identity) |
+| **§7** | Two-stage imputation — axis-mean in z-space (stage 1) + column-mean fallback (stage 2) |
+| **§8** | Multivariate diagnostics — per-axis PCA + Horn's parallel analysis (§8.1) |
+| **§9–§11** | Normalisation, weighting, composite computation |
+| **§12** | Sensitivity & robustness — Monte Carlo · LOO · alternative normalisation · classifier |
+| **§13** | Vulnerability overlay — per-vector preparedness rankings; counterfactual policy scenarios (§13.4) |
+| **§14** | Typology — k-means + silhouette · hierarchical clustering · MDS embedding |
+| **§15** | Visualisation — six figure subsections (§15.1–§15.6) |
+| **§16** | Discussion — paper-§-by-paper-§ mapping (§16.1–§16.7); sparse-PCA governance sub-axes (§16.10); hypothesis verdicts (§16.11) |
+| **§17** | Limitations (§17.1–§17.10) · four-validity-types audit (§17.11) · methodological reflections (§17.12) · future-work priorities |
+| **§18** | Verification — four end-to-end checks + source-URL liveness probe (§18.1) |
+| **§19** | Bibliography |
+| **Appendix A** | Methodology hygiene — cross-axis correlations · Fisher-z CIs · Cronbach α |
+| **Appendix B** | Interpretability — exact 2¹⁵ Shapley decomposition (B.1) · permutation feature importance (B.2) |
+| **Concluding Remarks** | Workflow recap, headline findings, reproducibility note |
+
+## Reproducibility
+
+- **Random seed** — `SEED = 20260506` (defined in §3.1), passed explicitly to four stochastic entry points:
+  - `np.random.default_rng(SEED)` for the §12.1 Monte Carlo weights
+  - `KMeans(random_state=SEED)` for the §14 k-means typology
+  - `MDS(random_state=SEED, n_init=20)` for the §14.3 embedding
+  - `SparsePCA(random_state=SEED)` for the §16.10 governance sub-axes
+- **Byte-identical regeneration** — all 21 output files and all 16 figures reproduce byte-for-byte across successive `jupyter execute` runs.
+- **Cached snapshot** — the current `data/raw/` snapshot is bundled with the repo. The first run with network access fetches sources from the public web and writes them to the cache; subsequent runs read from cache. Live re-fetch is attempted on every run with cache fallback (§4.x cells share a `fetch_to_cache` helper).
+- **Retrieval-date sidecars** — every cached source has a `*.meta.json` sidecar recording its URL and last successful retrieval date.
+- **End-to-end verification** — §18 contains four checks: output-file existence, robustness-summary read-back, figure DPI suitability, and a full GBR composite reconstruction from raw data (asserted within `1e-3` tolerance). Appendix B.1 additionally asserts Shapley additivity within `1e-6`. §18.1 probes the liveness of every cited source URL on each rebuild.
 
 ## File layout
 
 ```text
-M-PAPI.ipynb              — the notebook (configuration, data, analysis, bibliography)
-README.md                 — this file
-LICENSE                   — MIT for the notebook and Python code; upstream sources retain their own licences (see §19 bibliography)
-requirements.txt
-extract_idi_from_pdf.py      — parses ITU IDI 2024 report PDF Table 1; called by §4.7
-extract_igsc_from_html.py    — parses IGSC member roster from homepage HTML; called by §4.5
-extract_patents_from_pdf.py  — parses Stanford AI Index 2025 Figure 1.2.3 (top-15 per-100k AI patent rates); called by §4.8
-data/raw/                 — cached source files (bundled snapshot; live re-fetch on rerun if reachable, cache fallback otherwise)
-figures/                  — sixteen PNG figures exported by the notebook
-outputs/                  — index CSVs and sensitivity tables exported by the notebook
+M-PAPI.ipynb                  — the notebook (139 cells: config · data · analysis · bibliography)
+README.md                     — this file
+LICENSE                       — MIT for code; per-source attribution for upstream data
+requirements.txt              — Python dependency floor
+.gitignore                    — standard Python / Jupyter / IDE ignores
+extract_idi_from_pdf.py       — ITU IDI 2024 PDF Table 1 → CSV (called by §4.7)
+extract_igsc_from_html.py     — IGSC member roster HTML → CSV (called by §4.5)
+extract_patents_from_pdf.py   — Stanford AI Index Fig 1.2.3 PDF → CSV (called by §4.8)
+data/raw/                     — cached source files + .meta.json retrieval sidecars (bundled snapshot)
+figures/                      — 16 PNG figures exported by the notebook
+outputs/                      — 21 index CSVs and sensitivity tables exported by the notebook
 ```
 
-## Citing the working paper
+## What the index does and does not claim
 
-> Teague, J., Ali, A., Sfeir, S., & Fort, K. (2026). *AI-Proliferation and Middle Powers: Preparation and Response Mechanisms*.
+### Does claim
+
+- Each of the 14 middle powers can be ranked on each of the three axes using publicly available authoritative data.
+- The top-5 set and the bottom-3 set are stable to reasonable variation in weighting and normalisation; within-tier ordering and the marginal slot (5th, 12th) is weight-sensitive.
+- A k-means typology of axis-position archetypes is reported alongside its cluster-validity diagnostics (silhouette score, hierarchical-clustering ARI).
+
+### Does not claim
+
+- That the index predicts which country will suffer the next AI-enabled incident.
+- That a high score means a country is "safe".
+- That all relevant dimensions of preparedness are captured (see §17 Limitations).
+- That the per-country composite values are portable outside the 14-country reference frame (see §11 portability caveat).
+- That the working paper's §3 trigger-event framework is operationalised here — it is not, pending country-year AI-attributed incident data (see §17.7).
+
+## How to cite
+
+```bibtex
+@unpublished{teague2026middlepowers,
+  author = {Teague, James and Ali, Alina and Sfeir, Sophie and Fort, Kristina},
+  title  = {AI-Proliferation and Middle Powers: Preparation and Response Mechanisms},
+  year   = {2026},
+  note   = {Working paper. Companion notebook: \url{https://github.com/khailapvuong/middle-powers-mpapi}}
+}
+```
+
+Or in prose:
+
+> Teague, J., Ali, A., Sfeir, S., & Fort, K. (2026). *AI-Proliferation and Middle Powers: Preparation and Response Mechanisms*. Working paper. Companion notebook: <https://github.com/khailapvuong/middle-powers-mpapi>
+
+## License
+
+- **Notebook and Python code** — MIT (see [`LICENSE`](LICENSE)).
+- **Upstream data sources** — each retains its own licence: Epoch AI CC-BY 4.0 · World Bank CC-BY 4.0 · OpenAlex CC-0 · V-Dem CC-BY · ND-GAIN free with attribution · ITU citable academic use · Stanford HAI free with attribution · AISI Network (NIST) U.S. public domain · IGSC public roster · Australia Group public roster.
+
+Full per-source attribution and licence terms in §19 of the notebook.
