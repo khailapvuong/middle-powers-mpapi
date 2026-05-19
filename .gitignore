@@ -35,3 +35,8 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Power BI — binary assembly artefacts; the data layer + spec + tutorial live in
+# outputs/pbi/ and docs/PBI_*.md so any user can rebuild the .pbix.
+*.pbix
+*.pbip

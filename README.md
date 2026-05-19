@@ -10,6 +10,7 @@ The notebook empirically operationalises the working paper's three-axes framewor
 
 - [Quick start](#quick-start)
 - [Headline result](#headline-result)
+- [Interactive dashboard (Power BI)](#interactive-dashboard-power-bi)
 - [Methodology overview](#methodology-overview)
 - [Data sources](#data-sources)
 - [Hypothesis-testing results](#hypothesis-testing-results)
@@ -72,6 +73,23 @@ Per `outputs/h6_set_membership.json` (computed in §16.11):
 - **Korea's Monte Carlo median rank is 2** (IQR ≈ 2); Korea ranks 2 under both the equal and literature schemes (rank 4 under PCA).
 - The **{France, EU, Japan} block at positions 3–5** is weight-sensitive: France 1.980, EU 1.824, Japan 1.823 — the EU/Japan gap is 0.001 and Monte Carlo gives all three a median rank of 4.
 - **Middle ranks (positions 7–10) are weight-sensitive** — cite with the Monte Carlo IQR range from `outputs/sensitivity_ranks.csv`, not as point ranks.
+
+## Interactive dashboard (Power BI)
+
+For policy / government audiences (DFAT, GAC, MOFA, AISI-equivalent bodies) who consume empirical work through Power BI, the notebook emits a **star-schema slice** of the headline outputs to `outputs/pbi/` (§20 of the notebook). Build the `.pbix` yourself from this data layer using the design + tutorial below — the binary is gitignored on purpose.
+
+| Document | Purpose |
+|---|---|
+| [`outputs/pbi/README.md`](outputs/pbi/README.md) | Schema reference (3 dim + 5 fact tables, relationships, column conventions) |
+| [`docs/PBI_DASHBOARD_SPEC.md`](docs/PBI_DASHBOARD_SPEC.md) | Page-by-page visual spec + DAX measure definitions + Phase-2 deferred list |
+| [`docs/PBI_BUILD_TUTORIAL.md`](docs/PBI_BUILD_TUTORIAL.md) | Step-by-step Power BI Desktop build, ~3-hour walkthrough |
+
+The MVP is a **2-page dashboard**:
+
+- **Page 1 — Overview.** Sortable ranking table with weighting-scheme slicer (equal / PCA / literature); interactive Capacity × Infrastructure typology scatter coloured by §14 archetype, shape-coded by AISI Network membership; KPI cards for rank-1 / rank-14 / top-5 set; robustness-CI bar chart for the four H4 perturbations.
+- **Page 2 — Country drill-through.** Country selector slicer; per-axis profile; per-vector vulnerability ranking; Shapley waterfall over 15 indicators; **counterfactual what-if** with five binary toggles for the §13.4 actions (the killer demo — drag `JOIN_AUSTRALIA_GROUP` from 0 to 1 with Singapore selected and watch the composite shift from 1.809 to ~1.911); Monte Carlo rank-IQR cards with dynamic stability interpretation.
+
+The `.pbix` itself is not committed (`.gitignore` excludes `*.pbix` and `*.pbip`). To rebuild after a notebook re-run: open the `.pbix`, Home → Refresh.
 
 ## Methodology overview
 
@@ -191,7 +209,7 @@ Three additional sensitivity tests were added in response to anticipated supervi
 
 ## Notebook structure
 
-The 145-cell notebook follows the OECD/JRC 10-step composite-indicator process:
+The 152-cell notebook follows the OECD/JRC 10-step composite-indicator process and emits a Power BI consumption layer:
 
 | § | Content |
 |---|---|
@@ -212,6 +230,7 @@ The 145-cell notebook follows the OECD/JRC 10-step composite-indicator process:
 | **§17** | Limitations (§17.1–§17.10) · four-validity-types audit (§17.11) · methodological reflections (§17.12) · considered-but-not-adopted framework alternatives (§17.13) · future-work priorities |
 | **§18** | Verification — four end-to-end checks + source-URL liveness probe (§18.1) |
 | **§19** | Bibliography |
+| **§20** | Power BI dashboard data layer — emits 3 dim + 5 fact CSVs to `outputs/pbi/` for the policy-audience dashboard documented in `docs/PBI_*.md` |
 | **Appendix A** | Methodology hygiene — cross-axis correlations · Fisher-z CIs · Cronbach α |
 | **Appendix B** | Interpretability — exact 2¹⁵ Shapley decomposition (B.1) · permutation feature importance (B.2) |
 | **Concluding Remarks** | Workflow recap, headline findings, reproducibility note |
@@ -234,18 +253,21 @@ The 145-cell notebook follows the OECD/JRC 10-step composite-indicator process:
 ## File layout
 
 ```text
-M-PAPI.ipynb                  — the notebook (145 cells: config · data · analysis · bibliography)
+M-PAPI.ipynb                  — the notebook (152 cells: config · data · analysis · bibliography · PBI export)
 README.md                     — this file
 LICENSE                       — MIT for code; per-source attribution for upstream data
 requirements.txt              — Python dependency floor
 .ruff.toml                    — lint config (target-version py311; E402 exempt for .ipynb)
-.gitignore                    — standard Python / Jupyter / IDE ignores
+.gitignore                    — standard Python / Jupyter / IDE ignores + *.pbix / *.pbip
 extract_idi_from_pdf.py       — ITU IDI 2024 PDF Table 1 → CSV (called by §4.7)
 extract_igsc_from_html.py     — IGSC member roster HTML → CSV (called by §4.5)
 extract_patents_from_pdf.py   — Stanford AI Index Fig 1.2.3 PDF → CSV (called by §4.8)
 data/raw/                     — cached source files + .meta.json retrieval sidecars (bundled snapshot)
 figures/                      — 16 PNG figures exported by the notebook
 outputs/                      — 22 outputs (19 CSV + 3 JSON) of index, sensitivity, and verdict tables
+outputs/pbi/                  — 8 star-schema CSVs (3 dim + 5 fact) + README for Power BI ingestion (§20)
+docs/PBI_DASHBOARD_SPEC.md    — page-by-page dashboard spec + DAX measure definitions
+docs/PBI_BUILD_TUTORIAL.md    — step-by-step Power BI Desktop assembly
 ```
 
 ## What the index does and does not claim
