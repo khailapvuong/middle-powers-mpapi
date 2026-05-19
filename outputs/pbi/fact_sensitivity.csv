@@ -1,0 +1,15 @@
+iso3,name,rank_median,rank_p10,rank_p90,rank_iqr
+GBR,United Kingdom,1,1,3,1
+KOR,South Korea,2,1,5,2
+JPN,Japan,4,3,6,1
+FRA,France,4,2,6,2
+EUU,European Union,4,1,7,3
+CAN,Canada,7,5,9,2
+SGP,Singapore,7,3,9,3
+DEU,Germany,8,6,9,1
+SWE,Sweden,9,7,12,3
+ARE,United Arab Emirates,10,8,12,2
+SAU,Saudi Arabia,11,9,13,2
+ISR,Israel,12,10,14,2
+IND,India,13,10,14,2
+TWN,Taiwan,13,11,14,2

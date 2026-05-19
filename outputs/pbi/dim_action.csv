@@ -1,0 +1,6 @@
+action_key,description,target_indicator,target_axis,policy_nature
+JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,Direct government decision
+PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,Direct government decision
+JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,Direct government decision (multilateral)
+SIGN_LAB_MOU,Sign one additional bilateral frontier-lab MoU,G4_lab_mou_count,governance_orientation,Government negotiation
+FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,Industrial policy

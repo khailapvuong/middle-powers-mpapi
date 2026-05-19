@@ -1,0 +1,15 @@
+iso3,name,cluster,archetype,is_aisi_network
+GBR,United Kingdom,1,Tier-1 preparedness (all axes above mean),1
+CAN,Canada,1,Asymmetric — Capacity Depth-leveraged,1
+FRA,France,1,Tier-1 preparedness (all axes above mean),1
+DEU,Germany,1,Asymmetric — Capacity Depth-leveraged,0
+JPN,Japan,1,Tier-1 preparedness (all axes above mean),1
+IND,India,2,Tier-3 vulnerability (worst on Infrastructure Posture),0
+ISR,Israel,0,Tier-3 vulnerability (worst on Governance Orientation),0
+SGP,Singapore,1,Tier-1 preparedness (all axes above mean),1
+KOR,South Korea,1,Tier-1 preparedness (all axes above mean),1
+SWE,Sweden,0,Asymmetric — Infrastructure Posture-leveraged,0
+SAU,Saudi Arabia,0,Tier-3 vulnerability (worst on Capacity Depth),0
+ARE,United Arab Emirates,0,Asymmetric — Infrastructure Posture-leveraged,0
+EUU,European Union,1,Asymmetric — Capacity Depth-leveraged,1
+TWN,Taiwan,0,Tier-3 vulnerability (worst on Capacity Depth),0
