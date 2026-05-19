@@ -42,16 +42,17 @@ ISO3_OVERRIDES: dict[str, str] = {
 
 # A row in the chart-data block looks like:
 #   <country name>  <whitespace>  <rate>
-# where the rate is a positive decimal. The country name is one or two
-# capitalised words (e.g. "Japan", "South Korea", "United Kingdom"). The
+# where the rate is a positive decimal. The country name is one to three
+# capitalised words (e.g. "Japan", "South Korea", "United Arab Emirates"). The
 # whitespace separator varies from a single space for short-rate rows (e.g.
 # "Denmark 0.47") to a large block of spaces for the chart's top entries
 # (e.g. "South Korea ............... 17.27"), so the regex requires only
 # `\s+` and relies on the bounded chunk between the Fig 1.2.3 caption and
-# the Figure 1.2.4 marker to avoid false positives.
-ROW_RE = re.compile(
-    r"^([A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+)?)\s+(\d+\.\d+)$"
-)
+# the Figure 1.2.4 marker to avoid false positives. The 1-3 word ceiling
+# accommodates "United Arab Emirates" should it ever appear in Stanford's
+# top-15; rates trailing a numeric ratio column (e.g. "+12.5%") are stripped
+# by anchoring on `\d+\.\d+$` so the rate is the last token on the line.
+ROW_RE = re.compile(r"^([A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+){0,2})\s+(\d+\.\d+)$")
 
 
 def to_iso3(name: str) -> str | None:
@@ -59,7 +60,7 @@ def to_iso3(name: str) -> str | None:
     if name in ISO3_OVERRIDES:
         return ISO3_OVERRIDES[name]
     try:
-        return pycountry.countries.lookup(name).alpha_3  # type: ignore[union-attr]
+        return pycountry.countries.lookup(name).alpha_3
     except LookupError:
         return None
 
@@ -86,7 +87,7 @@ def parse() -> pd.DataFrame:
             "the chart-data block."
         )
     chunk = text[start:end]
-    rows: list[dict] = []
+    rows: list[dict[str, str | int | float | None]] = []
     for line in chunk.splitlines():
         m = ROW_RE.match(line.strip())
         if not m:
@@ -113,9 +114,12 @@ def main() -> None:
     df = parse()
     expected = 15
     if len(df) != expected:
-        print(
-            f"[WARN] Expected {expected} country-rate pairs (Stanford publishes "
-            f"top-15), got {len(df)}. Re-verify chunk boundaries."
+        raise RuntimeError(
+            f"Stanford Fig 1.2.3 extractor expected {expected} country-rate pairs "
+            f"(top-15) but got {len(df)}. The PDF layout may have changed; "
+            "re-verify the chunk boundaries (CAPTION / END_MARKER) and the ROW_RE "
+            "country-name token count before re-running. Refusing to overwrite "
+            f"{OUT} with a partial extract."
         )
     df.to_csv(OUT, index=False, encoding="utf-8")
     print(f"Parsed {len(df)} country-rate pairs from Stanford Fig 1.2.3.")
@@ -126,8 +130,20 @@ def main() -> None:
 
     # Sanity check on the 14 middle powers — note 7 are below Stanford's cutoff
     middle_powers = [
-        "GBR", "CAN", "FRA", "DEU", "JPN", "IND", "ISR", "SGP",
-        "KOR", "SWE", "SAU", "ARE", "EUU", "TWN",
+        "GBR",
+        "CAN",
+        "FRA",
+        "DEU",
+        "JPN",
+        "IND",
+        "ISR",
+        "SGP",
+        "KOR",
+        "SWE",
+        "SAU",
+        "ARE",
+        "EUU",
+        "TWN",
     ]
     in_top15 = df[df["iso3"].isin(middle_powers)][
         ["iso3", "country_name", "ai_patents_per_100k"]

@@ -1,8 +1,14 @@
+# M-PAPI Python dependencies.
+# Tested on Python 3.14.2; floors below are minima, not exact pins.
+# For byte-identical regeneration across machines, pin matplotlib to 3.9.x —
+# matplotlib minor-version bumps can shift figure bytes without changing pixels.
+#
+# Python: requires >= 3.11 (uses dict.fromkeys, zip(strict=True), structural pattern matching).
 pandas>=2.2
 numpy>=1.26
 scipy>=1.13
 scikit-learn>=1.5
-matplotlib>=3.9
+matplotlib>=3.9,<3.11
 seaborn>=0.13
 requests>=2.32
 pycountry>=24.0

@@ -1,0 +1,6 @@
+{
+  "url": "https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf",
+  "retrieved_date": "2026-05-18",
+  "size": 215629,
+  "notes": "pdftotext -layout output of stanford_aiindex_2025_ch1.pdf. Regenerable from the cached PDF; consumed by extract_patents_from_pdf.py to derive stanford_ai_patents_2025.csv."
+}

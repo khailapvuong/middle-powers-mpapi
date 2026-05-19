@@ -4,6 +4,8 @@
 
 The notebook empirically operationalises the working paper's three-axes framework — **Capacity Depth**, **Governance Orientation**, **Infrastructure Posture** — across the 14 middle powers named in the paper, and reports per-country preparedness rankings against the three attack vectors discussed in §2 (cyber, CBRN, influence operations).
 
+> **Scope.** M-PAPI quantifies the paper's §1 (axes / country set) and §2 (attack vectors) only. The paper's §3 (trigger-event ladder) and §4 (Detection / Escalation / Mitigation & Containment checklist) are **not** operationalised here — a country-year AI-attributed incident dataset would be required for §3, and §4's checklist actions are surfaced in this notebook only as the §13.4 counterfactual policy-action scenarios, not as country-year preparedness outcomes (see [What the index does and does not claim](#what-the-index-does-and-does-not-claim) for the full scope statement).
+
 ## Table of contents
 
 - [Quick start](#quick-start)
@@ -26,6 +28,10 @@ jupyter nbconvert --to notebook --execute --inplace M-PAPI.ipynb
 ```
 
 The first run fetches sources from the public web and caches them under `data/raw/`. The current snapshot in `data/raw/` is bundled with the repo, so the analysis is fully reproducible offline. Subsequent runs read from cache and attempt live re-fetch with cache fallback.
+
+**Optional system dependency:** the C4 (Stanford AI patents) and I1 (ITU IDI) indicators source from public PDFs that are pre-extracted to `.txt` and bundled in `data/raw/`. If you re-fetch the underlying PDFs, regenerating the `.txt` requires `pdftotext -layout` from [Poppler](https://poppler.freedesktop.org/) on PATH. macOS: `brew install poppler`; Debian/Ubuntu: `apt install poppler-utils`; Windows: install via Poppler-Windows or MiKTeX. With the bundled `.txt` cache present, this dependency is not exercised.
+
+**Clone-folder name:** the GitHub repo is named `middle-powers-mpapi`; `git clone` will land in that folder regardless of any other local name. The notebook resolves paths from `Path.cwd()` at runtime, so the folder name is not load-bearing — run `jupyter nbconvert ... M-PAPI.ipynb` from the repo root.
 
 ## Headline result
 
@@ -169,13 +175,23 @@ Six hypotheses are pre-registered with numeric pass criteria in §1.4 and resolv
 
 Aggregate: three fully supported, three partially supported with specific named caveats. The composite-index framework is empirically defensible; the partial-support verdicts surface methodological caveats (C5 × G1 collinearity, governance multidimensionality, single-slot tier cycling) rather than a wholesale framework failure.
 
+### Targeted robustness checks beyond H1–H6
+
+Three additional sensitivity tests were added in response to anticipated supervisor-review concerns. None changes the headline ranking; each surfaces a quantitative answer to a specific framework concern:
+
+| Check | Concern addressed | Result | Persisted to |
+|---|---|---|---|
+| **§12.2.1 C4-drop sensitivity** | Does Korea's rank-2 position depend on a single Stanford-Top-15 patent figure? | Spearman ρ(baseline_rank, C4-drop_rank) = +0.9912 (Fisher-z 95% CI [+0.972, +0.997]). **Korea rank: 2 → 3 (Δ = +1) when C4 is dropped entirely.** Tier-1 placement survives. | LOO row in `outputs/sensitivity_ranks.csv`; printed in §12.2.1. |
+| **§13.5 V-Dem polarity sensitivity** | Paper §2.4 argues democracies are *more* exposed to influence operations — does flipping V-Dem polarity within the influence-ops vector reshape the per-vector ranking? | Spearman ρ(baseline_infl_rank, V-Dem-flipped_infl_rank) = +0.9473 (Fisher-z 95% CI [+0.838, +0.984]). UAE rises 10 → 7, Saudi Arabia 11 → 9 (autocracies rise as predicted by paper §2.4); Canada 9 → 11, Germany 8 → 10 (democracies fall). UK/France/Japan/India/Israel/EU/Taiwan invariant. | `outputs/vdem_polarity_sensitivity.csv`. |
+| **§16.11(d) H6 mechanical verdict** | The §1.4 pre-registered criterion for H6 was prose-only; encode the asymmetric thresholds (≥ 4/5 top-5 members in ≥ 70% of draws AND ≥ 2/3 bot-3 members in ≥ 80% of draws) as a mechanical PASS/FAIL. | **PASS**. Top-5: 5/5 members in tier in ≥ 70% of draws (UK 99.0%, Korea 93.2%, France 83.8%, Japan 82.5%, EU 80.5%) → PASS at 4/5; bot-3: 2/3 members in tier in ≥ 80% (India 82.0%, Taiwan 81.8%; Israel 62.2% below threshold) → PASS at 2/3. Note: measures (a) exact-set-match and (b) within-1-swap fail their stricter thresholds — §1.4 explicitly excludes those from the pass criteria, which is why §16.11's overall H6 verdict is PARTIALLY SUPPORTED. | `outputs/h6_set_membership.json`, key `per_country_in_tier_mechanical_verdict`. |
+
 ![Robustness forest plot showing four perturbations of the headline literature ranking — equal-vs-PCA, equal-vs-literature, z-score-vs-min-max, and AI-broad-vs-ML-narrow classifier — each as a Spearman rho point estimate with Fisher-z 95 percent confidence interval; pass thresholds (0.70 for the first three, 0.85 for the classifier) marked as dashed lines](figures/fig12_5_robustness_forest.png)
 
 > *Figure 12.5 of the notebook — H4 evidence in visual form. Each row is one robustness perturbation; the horizontal bar is the Spearman ρ point estimate flanked by its Fisher-z 95% CI. The dashed red lines mark the pass threshold for that perturbation (0.70 for the three weighting / normalisation tests; 0.85 for the bibliographic-classifier test). A perturbation passes iff the CI's lower bound sits to the right of its threshold — all four pass.*
 
 ## Notebook structure
 
-The 139-cell notebook follows the OECD/JRC 10-step composite-indicator process:
+The 145-cell notebook follows the OECD/JRC 10-step composite-indicator process:
 
 | § | Content |
 |---|---|
@@ -191,9 +207,9 @@ The 139-cell notebook follows the OECD/JRC 10-step composite-indicator process:
 | **§12** | Sensitivity & robustness — Monte Carlo · LOO · alternative normalisation · classifier |
 | **§13** | Vulnerability overlay — per-vector preparedness rankings; counterfactual policy scenarios (§13.4) |
 | **§14** | Typology — k-means + silhouette · hierarchical clustering · MDS embedding |
-| **§15** | Visualisation — six figure subsections (§15.1–§15.6) |
+| **§15** | Visualisation — six subsections §15.1–§15.6; five render paper-facing figures (§15.5 is a numerical EU vs member-state cross-validation, not a figure) |
 | **§16** | Discussion — paper-§-by-paper-§ mapping (§16.1–§16.7); sparse-PCA governance sub-axes (§16.10); hypothesis verdicts (§16.11) |
-| **§17** | Limitations (§17.1–§17.10) · four-validity-types audit (§17.11) · methodological reflections (§17.12) · future-work priorities |
+| **§17** | Limitations (§17.1–§17.10) · four-validity-types audit (§17.11) · methodological reflections (§17.12) · considered-but-not-adopted framework alternatives (§17.13) · future-work priorities |
 | **§18** | Verification — four end-to-end checks + source-URL liveness probe (§18.1) |
 | **§19** | Bibliography |
 | **Appendix A** | Methodology hygiene — cross-axis correlations · Fisher-z CIs · Cronbach α |
@@ -207,25 +223,29 @@ The 139-cell notebook follows the OECD/JRC 10-step composite-indicator process:
   - `KMeans(random_state=SEED)` for the §14 k-means typology
   - `MDS(random_state=SEED, n_init=20)` for the §14.3 embedding
   - `SparsePCA(random_state=SEED)` for the §16.10 governance sub-axes
-- **Byte-identical regeneration** — all 21 output files and all 16 figures reproduce byte-for-byte across successive `jupyter execute` runs.
+- **Pinned `RUN_DATE`** — `RUN_DATE = "2026-05-06"` (defined in §3.1, same constant as the seed date) so the build stamp is identical across re-runs. Override with the `MPAPI_RUN_DATE` environment variable if you want a live `date.today()`.
+- **Byte-identical regeneration** — within a fixed Python environment (Python 3.14.x, the pinned versions in `requirements.txt`, and the same matplotlib backend), all 22 output files (19 CSV + 3 JSON) and all 16 figures reproduce byte-for-byte across successive `jupyter execute` runs. Cross-environment byte-identity is not asserted; matplotlib version bumps in particular can shift figure bytes even when pixels are visually identical.
 - **Cached snapshot** — the current `data/raw/` snapshot is bundled with the repo. The first run with network access fetches sources from the public web and writes them to the cache; subsequent runs read from cache. Live re-fetch is attempted on every run with cache fallback (§4.x cells share a `fetch_to_cache` helper).
-- **Retrieval-date sidecars** — every cached source has a `*.meta.json` sidecar recording its URL and last successful retrieval date.
+- **Retrieval-date sidecars** — every cached source under `data/raw/` (programmatic fetches, source PDFs, derived CSVs from the `extract_*.py` scripts) has a `*.meta.json` sidecar recording its URL, retrieval date, byte size, and a short provenance note.
+- **Upstream-versioning caveat** — the OpenAlex C3/C16.7.1 concept counts and the V-Dem v16 LDI are upstream-versioned: OpenAlex periodically re-runs concept classification and V-Dem ships annual revisions, so a re-fetch in a future year will not necessarily reproduce the bundled snapshot. The methodology is stable; the values are a 2026-05-18 retrieval-date snapshot (§17.10).
+- **Repository size** — `data/raw/vdem.RData` is 33 MB and dominates clone size. If this becomes a problem, migrate `data/raw/vdem.RData` to Git LFS; the loader (§4.3) is agnostic to storage backend.
 - **End-to-end verification** — §18 contains four checks: output-file existence, robustness-summary read-back, figure DPI suitability, and a full GBR composite reconstruction from raw data (asserted within `1e-3` tolerance). Appendix B.1 additionally asserts Shapley additivity within `1e-6`. §18.1 probes the liveness of every cited source URL on each rebuild.
 
 ## File layout
 
 ```text
-M-PAPI.ipynb                  — the notebook (139 cells: config · data · analysis · bibliography)
+M-PAPI.ipynb                  — the notebook (145 cells: config · data · analysis · bibliography)
 README.md                     — this file
 LICENSE                       — MIT for code; per-source attribution for upstream data
 requirements.txt              — Python dependency floor
+.ruff.toml                    — lint config (target-version py311; E402 exempt for .ipynb)
 .gitignore                    — standard Python / Jupyter / IDE ignores
 extract_idi_from_pdf.py       — ITU IDI 2024 PDF Table 1 → CSV (called by §4.7)
 extract_igsc_from_html.py     — IGSC member roster HTML → CSV (called by §4.5)
 extract_patents_from_pdf.py   — Stanford AI Index Fig 1.2.3 PDF → CSV (called by §4.8)
 data/raw/                     — cached source files + .meta.json retrieval sidecars (bundled snapshot)
 figures/                      — 16 PNG figures exported by the notebook
-outputs/                      — 21 index CSVs and sensitivity tables exported by the notebook
+outputs/                      — 22 outputs (19 CSV + 3 JSON) of index, sensitivity, and verdict tables
 ```
 
 ## What the index does and does not claim

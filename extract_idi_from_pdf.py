@@ -131,7 +131,10 @@ def main() -> None:
     if len(unmapped):
         names = unmapped["economy_name"].tolist()
         print(f"Unmapped to ISO3 ({len(unmapped)}): {names}")
-    # Sanity check on the 14 middle powers
+    # Sanity check against the 13 paper-listed middle powers ITU could plausibly
+    # cover (EU excluded — ITU IDI reports at economy level, not at the EU
+    # supranational level; the notebook builds an EU row from member states in
+    # §5.2 via fill_eu_with_member_mean).
     target = [
         "GBR",
         "CAN",
@@ -149,14 +152,17 @@ def main() -> None:
     ]
     sub = df[df["iso3"].isin(target)][["iso3", "economy_name", "idi_score"]]
     print(
-        f"\nMiddle-power IDI 2024 coverage ({len(sub)}/13 reported by ITU; EU not in dataset):"
+        f"\nMiddle-power IDI 2024 coverage "
+        f"({len(sub)}/{len(target)} reported by ITU; EU not in dataset):"
     )
     print(sub.to_string(index=False))
-    missing = set(target) - set(sub["iso3"])
+    missing = sorted(set(target) - set(sub["iso3"]))
     if missing:
-        print(f"\nNot in ITU IDI 2024: {sorted(missing)}")
+        print(f"\nNot in ITU IDI 2024: {missing}")
         print(
-            "(Notebook will compute EU as member-state aggregate; Taiwan and India remain missing.)"
+            "(The notebook imputes these downstream — §7 axis-mean if the "
+            "indicator's overall missingness is below IMPUTATION_THRESHOLD, "
+            "otherwise §11 column-mean.)"
         )
 
 

@@ -1,0 +1,6 @@
+{
+  "url": "https://www.itu.int/dms_pub/itu-d/opb/ind/d-ind-ict_mdd-2024-3-pdf-e.pdf",
+  "retrieved_date": "2026-05-18",
+  "size": 6461,
+  "notes": "Derived CSV: ITU IDI 2024 Table 1 country scores extracted from the public report PDF via extract_idi_from_pdf.py. Columns: economy_name, iso3, idi_score, idi_2023, year, region, income_group."
+}

@@ -117,7 +117,10 @@ def main() -> None:
     print(f"Extracted {len(df)} IGSC member firms")
     df.to_csv(OUT, index=False, encoding="utf-8")
     print(f"Wrote {OUT}")
-    # Country counts of relevance
+    # Country counts of relevance.
+    # EU excluded — IGSC publishes member firms, not supranational aggregates;
+    # the notebook builds the EU G5 row in §5.2 as the sum of EU member-state
+    # firm counts (named + supplementary EU members).
     target = [
         "GBR",
         "CAN",

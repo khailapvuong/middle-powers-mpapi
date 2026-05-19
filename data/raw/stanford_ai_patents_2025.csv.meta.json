@@ -1,0 +1,6 @@
+{
+  "url": "https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf",
+  "retrieved_date": "2026-05-18",
+  "size": 410,
+  "notes": "Derived CSV: top-15 country-rate pairs for granted AI patents per 100,000 inhabitants (2023), extracted from Figure 1.2.3 of the Stanford AI Index 2025 Chapter 1 PDF via extract_patents_from_pdf.py. Columns: country_name, iso3, ai_patents_per_100k, year."
+}

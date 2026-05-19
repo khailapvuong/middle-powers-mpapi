@@ -1,0 +1,6 @@
+{
+  "url": "https://www.itu.int/dms_pub/itu-d/opb/ind/d-ind-ict_mdd-2024-3-pdf-e.pdf",
+  "retrieved_date": "2026-05-18",
+  "size": 1910683,
+  "notes": "Source PDF for I1 ITU IDI 2024 indicator. The official ITU IDI dataset Excel is auth-gated; the public report PDF carries the same per-country scores in Table 1. The PDF is parsed to text via `pdftotext -layout` into itu_idi_2024_report.txt, then extract_idi_from_pdf.py parses the table into itu_idi_2024.csv."
+}

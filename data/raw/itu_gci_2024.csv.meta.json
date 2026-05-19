@@ -1,5 +1,5 @@
 {
   "url": "https://data360api.worldbank.org/data360/data?DATABASE_ID=ITU_GCI&INDICATOR=ITU_GCI_GCI_OVRL_SCRE&format=csv&top=2000",
-  "retrieved_date": "2026-05-18",
+  "retrieved_date": "2026-05-06",
   "size": 40310
 }

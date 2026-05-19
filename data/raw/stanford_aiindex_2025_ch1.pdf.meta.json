@@ -1,0 +1,6 @@
+{
+  "url": "https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf",
+  "retrieved_date": "2026-05-18",
+  "size": 2869922,
+  "notes": "Source PDF for C4 AI-patents-per-100k indicator (Stanford AI Index 2025, Chapter 1, Figure 1.2.3). The PDF is parsed to text via `pdftotext -layout` into stanford_aiindex_2025_ch1.txt, then the §4.8 cell calls extract_patents_from_pdf.py to materialise the top-15 country-rate pairs into stanford_ai_patents_2025.csv."
+}

@@ -1,0 +1,22 @@
+# Ruff configuration for the M-PAPI repository.
+#
+# Scope: keep this file minimal. Apply ruff's defaults (pycodestyle E/W + pyflakes F)
+# uniformly to the Python scripts; relax the notebook for conventions that ruff
+# treats as warnings but Jupyter treats as idiomatic.
+
+target-version = "py311"
+
+[lint]
+# Default rule set (E, F, W). Do NOT opt into stricter categories (B, E501,
+# SIM, UP) project-wide — several flag notebook conventions that are not bugs:
+#   * B018 useless-expression: triggered by a bare `df` at the end of a cell,
+#     which is the canonical way to display a DataFrame in Jupyter.
+#   * E501 line-too-long: triggered by long URL strings and long f-strings
+#     used for diagnostic output.
+
+[lint.per-file-ignores]
+# nbqa flattens the notebook into one virtual module before invoking ruff, so
+# perfectly idiomatic cell-local imports raise E402 (module-level import not
+# at top). Suppress E402 for notebooks only; scripts still get the full E/F/W
+# checks.
+"*.ipynb" = ["E402"]

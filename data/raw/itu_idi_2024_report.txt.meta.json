@@ -1,0 +1,6 @@
+{
+  "url": "https://www.itu.int/dms_pub/itu-d/opb/ind/d-ind-ict_mdd-2024-3-pdf-e.pdf",
+  "retrieved_date": "2026-05-18",
+  "size": 209680,
+  "notes": "pdftotext -layout output of itu_idi_2024_report.pdf. Regenerable from the cached PDF; consumed by extract_idi_from_pdf.py to derive itu_idi_2024.csv."
+}

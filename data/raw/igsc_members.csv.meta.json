@@ -1,0 +1,6 @@
+{
+  "url": "https://genesynthesisconsortium.org/",
+  "retrieved_date": "2026-05-18",
+  "size": 3278,
+  "notes": "Derived CSV: IGSC member firm roster extracted from the cached igsc_homepage.html via extract_igsc_from_html.py, then joined to a curated HQ-country lookup. Columns: firm_name, firm_url, hq_iso3, hq_source_note. Each row's hq_source_note cites the firm's own corporate page used to determine HQ."
+}
