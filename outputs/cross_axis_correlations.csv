@@ -6,7 +6,7 @@ G3_vdem_libdem,I3_secure_servers,governance_orientation,infrastructure_posture,0
 C3_ai_publications,G6_australia_group,capacity_depth,governance_orientation,0.7024,0.7024,strong
 C1_notable_models,I3_secure_servers,capacity_depth,infrastructure_posture,0.6788,0.6788,moderate
 C1_notable_models,G6_australia_group,capacity_depth,governance_orientation,0.6364,0.6364,moderate
-C3_ai_publications,I1_idi_2024,capacity_depth,infrastructure_posture,-0.6215,0.6215,moderate
+C3_ai_publications,I1_idi_2024,capacity_depth,infrastructure_posture,-0.6216,0.6216,moderate
 G6_australia_group,I1_idi_2024,governance_orientation,infrastructure_posture,-0.6155,0.6155,moderate
 C2_training_compute,I2_broadband,capacity_depth,infrastructure_posture,0.5788,0.5788,moderate
 C5_aisi_presence,G6_australia_group,capacity_depth,governance_orientation,0.5575,0.5575,moderate
@@ -24,7 +24,7 @@ C1_notable_models,G4_lab_mou_count,capacity_depth,governance_orientation,0.4502,
 G3_vdem_libdem,I5_ndgain_readiness,governance_orientation,infrastructure_posture,0.4424,0.4424,
 C5_aisi_presence,G5_igsc_membership,capacity_depth,governance_orientation,0.4239,0.4239,
 G3_vdem_libdem,I2_broadband,governance_orientation,infrastructure_posture,0.41,0.41,
-C3_ai_publications,G1_ai_strategy,capacity_depth,governance_orientation,0.4084,0.4084,
+C3_ai_publications,G1_ai_strategy,capacity_depth,governance_orientation,0.4083,0.4083,
 C5_aisi_presence,G3_vdem_libdem,capacity_depth,governance_orientation,0.4006,0.4006,
 C4_ai_patents,G4_lab_mou_count,capacity_depth,governance_orientation,-0.3943,0.3943,
 C1_notable_models,I5_ndgain_readiness,capacity_depth,infrastructure_posture,0.3749,0.3749,
@@ -34,13 +34,13 @@ G1_ai_strategy,I2_broadband,governance_orientation,infrastructure_posture,0.3353
 G3_vdem_libdem,I1_idi_2024,governance_orientation,infrastructure_posture,-0.335,0.335,
 C1_notable_models,I1_idi_2024,capacity_depth,infrastructure_posture,-0.323,0.323,
 G2_global_cybersec_index,I5_ndgain_readiness,governance_orientation,infrastructure_posture,0.2983,0.2983,
-C2_training_compute,I5_ndgain_readiness,capacity_depth,infrastructure_posture,0.2949,0.2949,
+C2_training_compute,I5_ndgain_readiness,capacity_depth,infrastructure_posture,0.295,0.295,
 C4_ai_patents,G1_ai_strategy,capacity_depth,governance_orientation,0.2833,0.2833,
 C3_ai_publications,G5_igsc_membership,capacity_depth,governance_orientation,0.2778,0.2778,
 C2_training_compute,I1_idi_2024,capacity_depth,infrastructure_posture,0.271,0.271,
 C2_training_compute,G6_australia_group,capacity_depth,governance_orientation,0.2681,0.2681,
 G4_lab_mou_count,I2_broadband,governance_orientation,infrastructure_posture,0.2653,0.2653,
-C3_ai_publications,I5_ndgain_readiness,capacity_depth,infrastructure_posture,-0.2502,0.2502,
+C3_ai_publications,I5_ndgain_readiness,capacity_depth,infrastructure_posture,-0.2501,0.2501,
 G4_lab_mou_count,I1_idi_2024,governance_orientation,infrastructure_posture,0.2438,0.2438,
 G5_igsc_membership,I3_secure_servers,governance_orientation,infrastructure_posture,0.2395,0.2395,
 C3_ai_publications,G4_lab_mou_count,capacity_depth,governance_orientation,0.2381,0.2381,

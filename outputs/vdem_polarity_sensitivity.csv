@@ -1,0 +1,15 @@
+iso3,name,rank_baseline,rank_vdem_flipped,rank_delta
+ARE,United Arab Emirates,10,7,-3
+CAN,Canada,9,11,2
+SAU,Saudi Arabia,11,9,-2
+DEU,Germany,8,10,2
+KOR,South Korea,2,3,1
+SGP,Singapore,3,2,-1
+SWE,Sweden,7,8,1
+JPN,Japan,5,5,0
+FRA,France,4,4,0
+GBR,United Kingdom,1,1,0
+IND,India,14,14,0
+ISR,Israel,13,13,0
+EUU,European Union,6,6,0
+TWN,Taiwan,12,12,0

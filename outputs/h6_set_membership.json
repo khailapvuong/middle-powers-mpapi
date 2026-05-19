@@ -14,7 +14,7 @@
   ],
   "exact_set_match": {
     "threshold": 0.95,
-    "top5_share": 0.4601,
+    "top5_share": 0.46,
     "top5_verdict": "FAIL",
     "bot3_share": 0.4344,
     "bot3_verdict": "FAIL"
@@ -31,7 +31,7 @@
       "EUU": 0.805,
       "FRA": 0.8383,
       "GBR": 0.9903,
-      "JPN": 0.8255,
+      "JPN": 0.8254,
       "KOR": 0.9316
     },
     "bot3_members": {
@@ -39,5 +39,16 @@
       "ISR": 0.6219,
       "TWN": 0.8179
     }
+  },
+  "per_country_in_tier_mechanical_verdict": {
+    "top5_threshold_share": 0.7,
+    "top5_min_pass_count": 4,
+    "top5_pass_count": 5,
+    "top5_verdict": "PASS",
+    "bot3_threshold_share": 0.8,
+    "bot3_min_pass_count": 2,
+    "bot3_pass_count": 2,
+    "bot3_verdict": "PASS",
+    "combined_verdict": "PASS"
   }
 }
