@@ -1,0 +1,52 @@
+{
+  "name": "arXiv",
+  "dataColors": [
+    "#B31B1B",
+    "#1F4E79",
+    "#4A4A4A",
+    "#70AD47",
+    "#FFC000",
+    "#7030A0",
+    "#ED7D31",
+    "#808080"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1A1A1A",
+  "tableAccent": "#B31B1B",
+  "good": "#70AD47",
+  "neutral": "#808080",
+  "bad": "#B31B1B",
+  "minimum": "#FAEAEA",
+  "center": "#FFFFFF",
+  "maximum": "#B31B1B",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontColor": {"solid": {"color": "#B31B1B"}},
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "alignment": "left",
+            "bold": true
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {"solid": {"color": "#FFFFFF"}},
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {"solid": {"color": "#B31B1B"}},
+            "radius": 0
+          }
+        ]
+      }
+    }
+  }
+}

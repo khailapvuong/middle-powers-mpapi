@@ -36,7 +36,6 @@ ENV/
 Thumbs.db
 desktop.ini
 
-# Power BI — binary assembly artefacts; the data layer + spec + tutorial live in
-# outputs/pbi/ and docs/PBI_*.md so any user can rebuild the .pbix.
-*.pbix
+# Power BI — the .pbip project-folder format is excluded (noisy diffs); the
+# assembled .pbix lives in the repo root alongside the data layer + spec + tutorial.
 *.pbip
