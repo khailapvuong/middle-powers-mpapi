@@ -76,13 +76,12 @@ Per `outputs/h6_set_membership.json` (computed in §16.11):
 
 ## Interactive dashboard (Power BI)
 
-For policy / government audiences (DFAT, GAC, MOFA, AISI-equivalent bodies) who consume empirical work through Power BI, the assembled dashboard ships at the repo root as **[`M-PAPI-Dashboard.pbix`](M-PAPI-Dashboard.pbix)**. It is built on the star-schema data layer emitted by §20 of the notebook to `outputs/pbi/` and is styled via [`docs/arxiv_theme.json`](docs/arxiv_theme.json).
+For policy / government audiences (DFAT, GAC, MOFA, AISI-equivalent bodies) who consume empirical work through Power BI, the assembled dashboard ships at the repo root as **[`M-PAPI-Dashboard.pbix`](M-PAPI-Dashboard.pbix)**. It is built on the star-schema data layer emitted by §20 of the notebook to `outputs/pbi/`.
 
 | File | Purpose |
 |---|---|
 | [`M-PAPI-Dashboard.pbix`](M-PAPI-Dashboard.pbix) | Assembled 2-page dashboard — open in Power BI Desktop (Free) |
 | [`outputs/pbi/README.md`](outputs/pbi/README.md) | Data-layer schema reference (3 dim + 5 fact tables, relationships, column conventions) |
-| [`docs/arxiv_theme.json`](docs/arxiv_theme.json) | arXiv-palette PBI theme applied to the dashboard |
 
 The 2-page layout:
 
@@ -267,7 +266,6 @@ figures/                      — 16 PNG figures exported by the notebook
 outputs/                      — 22 outputs (19 CSV + 3 JSON) of index, sensitivity, and verdict tables
 outputs/pbi/                  — 8 star-schema CSVs (3 dim + 5 fact) + README for Power BI ingestion (§20)
 M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview + Country drill-through)
-docs/arxiv_theme.json         — arXiv-palette PBI theme applied to the dashboard
 ```
 
 ## What the index does and does not claim
