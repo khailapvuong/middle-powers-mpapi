@@ -76,20 +76,20 @@ Per `outputs/h6_set_membership.json` (computed in §16.11):
 
 ## Interactive dashboard (Power BI)
 
-For policy / government audiences (DFAT, GAC, MOFA, AISI-equivalent bodies) who consume empirical work through Power BI, the notebook emits a **star-schema slice** of the headline outputs to `outputs/pbi/` (§20 of the notebook). Build the `.pbix` yourself from this data layer using the design + tutorial below — the binary is gitignored on purpose.
+For policy / government audiences (DFAT, GAC, MOFA, AISI-equivalent bodies) who consume empirical work through Power BI, the assembled dashboard ships at the repo root as **[`M-PAPI-Dashboard.pbix`](M-PAPI-Dashboard.pbix)**. It is built on the star-schema data layer emitted by §20 of the notebook to `outputs/pbi/` and is styled via [`docs/arxiv_theme.json`](docs/arxiv_theme.json).
 
-| Document | Purpose |
+| File | Purpose |
 |---|---|
-| [`outputs/pbi/README.md`](outputs/pbi/README.md) | Schema reference (3 dim + 5 fact tables, relationships, column conventions) |
-| [`docs/PBI_DASHBOARD_SPEC.md`](docs/PBI_DASHBOARD_SPEC.md) | Page-by-page visual spec + DAX measure definitions + Phase-2 deferred list |
-| [`docs/PBI_BUILD_TUTORIAL.md`](docs/PBI_BUILD_TUTORIAL.md) | Step-by-step Power BI Desktop build, ~3-hour walkthrough |
+| [`M-PAPI-Dashboard.pbix`](M-PAPI-Dashboard.pbix) | Assembled 2-page dashboard — open in Power BI Desktop (Free) |
+| [`outputs/pbi/README.md`](outputs/pbi/README.md) | Data-layer schema reference (3 dim + 5 fact tables, relationships, column conventions) |
+| [`docs/arxiv_theme.json`](docs/arxiv_theme.json) | arXiv-palette PBI theme applied to the dashboard |
 
-The MVP is a **2-page dashboard**:
+The 2-page layout:
 
-- **Page 1 — Overview.** Sortable ranking table with weighting-scheme slicer (equal / PCA / literature); interactive Capacity × Infrastructure typology scatter coloured by §14 archetype, shape-coded by AISI Network membership; KPI cards for rank-1 / rank-14 / top-5 set; robustness-CI bar chart for the four H4 perturbations.
-- **Page 2 — Country drill-through.** Country selector slicer; per-axis profile; per-vector vulnerability ranking; Shapley waterfall over 15 indicators; **counterfactual what-if** with five binary toggles for the §13.4 actions (the killer demo — drag `JOIN_AUSTRALIA_GROUP` from 0 to 1 with Singapore selected and watch the composite shift from 1.809 to ~1.911); Monte Carlo rank-IQR cards with dynamic stability interpretation.
+- **Page 1 — Overview.** Sortable ranking table with weighting-scheme slicer (equal / PCA / literature); interactive Capacity × Infrastructure typology scatter coloured by §14 archetype, shape-coded by AISI Network membership; archetype button slicer acting as legend and filter; robustness-CI bar chart for the four H4 perturbations.
+- **Page 2 — Country drill-through.** Country + weighting-scheme slicers; per-axis profile; per-vector vulnerability ranking; Shapley waterfall over 15 indicators; **counterfactual what-if** with five binary toggles for the §13.4 actions (the killer demo — drag `JOIN_AUSTRALIA_GROUP` from 0 to 1 with Singapore selected and watch the composite shift from 1.809 to ~1.911); Monte Carlo rank-range card.
 
-The `.pbix` itself is not committed (`.gitignore` excludes `*.pbix` and `*.pbip`). To rebuild after a notebook re-run: open the `.pbix`, Home → Refresh.
+To refresh after a notebook re-run: open the `.pbix`, Home → Refresh.
 
 ## Methodology overview
 
@@ -230,7 +230,7 @@ The 152-cell notebook follows the OECD/JRC 10-step composite-indicator process a
 | **§17** | Limitations (§17.1–§17.10) · four-validity-types audit (§17.11) · methodological reflections (§17.12) · considered-but-not-adopted framework alternatives (§17.13) · future-work priorities |
 | **§18** | Verification — four end-to-end checks + source-URL liveness probe (§18.1) |
 | **§19** | Bibliography |
-| **§20** | Power BI dashboard data layer — emits 3 dim + 5 fact CSVs to `outputs/pbi/` for the policy-audience dashboard documented in `docs/PBI_*.md` |
+| **§20** | Power BI dashboard data layer — emits 3 dim + 5 fact CSVs to `outputs/pbi/` consumed by the shipped `M-PAPI-Dashboard.pbix` at the repo root |
 | **Appendix A** | Methodology hygiene — cross-axis correlations · Fisher-z CIs · Cronbach α |
 | **Appendix B** | Interpretability — exact 2¹⁵ Shapley decomposition (B.1) · permutation feature importance (B.2) |
 | **Concluding Remarks** | Workflow recap, headline findings, reproducibility note |
@@ -258,7 +258,7 @@ README.md                     — this file
 LICENSE                       — MIT for code; per-source attribution for upstream data
 requirements.txt              — Python dependency floor
 .ruff.toml                    — lint config (target-version py311; E402 exempt for .ipynb)
-.gitignore                    — standard Python / Jupyter / IDE ignores + *.pbix / *.pbip
+.gitignore                    — standard Python / Jupyter / IDE ignores + *.pbip
 extract_idi_from_pdf.py       — ITU IDI 2024 PDF Table 1 → CSV (called by §4.7)
 extract_igsc_from_html.py     — IGSC member roster HTML → CSV (called by §4.5)
 extract_patents_from_pdf.py   — Stanford AI Index Fig 1.2.3 PDF → CSV (called by §4.8)
@@ -266,8 +266,8 @@ data/raw/                     — cached source files + .meta.json retrieval sid
 figures/                      — 16 PNG figures exported by the notebook
 outputs/                      — 22 outputs (19 CSV + 3 JSON) of index, sensitivity, and verdict tables
 outputs/pbi/                  — 8 star-schema CSVs (3 dim + 5 fact) + README for Power BI ingestion (§20)
-docs/PBI_DASHBOARD_SPEC.md    — page-by-page dashboard spec + DAX measure definitions
-docs/PBI_BUILD_TUTORIAL.md    — step-by-step Power BI Desktop assembly
+M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview + Country drill-through)
+docs/arxiv_theme.json         — arXiv-palette PBI theme applied to the dashboard
 ```
 
 ## What the index does and does not claim
