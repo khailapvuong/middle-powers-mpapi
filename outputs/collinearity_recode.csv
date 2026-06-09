@@ -1,0 +1,15 @@
+iso3,name,rank_C5_in_capacity,rank_C5_in_governance,rank_delta
+GBR,United Kingdom,1,1,0
+KOR,South Korea,2,2,0
+FRA,France,3,4,1
+EUU,European Union,4,3,-1
+JPN,Japan,5,5,0
+CAN,Canada,6,6,0
+SGP,Singapore,7,7,0
+DEU,Germany,8,8,0
+SWE,Sweden,9,9,0
+ARE,United Arab Emirates,10,10,0
+SAU,Saudi Arabia,11,11,0
+ISR,Israel,12,12,0
+IND,India,13,13,0
+TWN,Taiwan,14,14,0

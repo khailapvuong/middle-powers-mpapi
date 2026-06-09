@@ -28,7 +28,15 @@ pip install -r requirements.txt
 jupyter nbconvert --to notebook --execute --inplace M-PAPI.ipynb
 ```
 
-The first run fetches sources from the public web and caches them under `data/raw/`. The current snapshot in `data/raw/` is bundled with the repo, so the analysis is fully reproducible offline. Subsequent runs read from cache and attempt live re-fetch with cache fallback.
+The bundled `data/raw/` snapshot makes the analysis fully reproducible offline. **For byte-stable reproduction against the shipped snapshot, run with `MPAPI_OFFLINE=1`** (e.g. `MPAPI_OFFLINE=1 jupyter nbconvert --to notebook --execute --inplace M-PAPI.ipynb`), which reads only the cache and never touches the network. Without that flag, every run attempts a live re-fetch *first* and overwrites the cache on success (falling back to cache only on network failure); because two sources are upstream-versioned (OpenAlex Concepts, V-Dem annual releases), an online run can therefore produce values that differ from the bundled snapshot.
+
+**Execution fallback.** `jupyter nbconvert --execute` relies on nbconvert's exporter configuration. If it fails for a reason unrelated to this repository — e.g. a stale *global* Jupyter config referencing an uninstalled extension such as `jupyter_contrib_nbextensions` — run the notebook either through the GUI (open `M-PAPI.ipynb` in JupyterLab or Jupyter Notebook → **Run All**) or from the command line via `nbclient`, which bypasses nbconvert's exporter layer and reads the notebook as UTF-8:
+
+```bash
+python -c "import nbformat; from nbclient import NotebookClient; nb = nbformat.read('M-PAPI.ipynb', as_version=4); NotebookClient(nb).execute(); nbformat.write(nb, 'M-PAPI.ipynb')"
+```
+
+`nbformat` and `nbclient` ship as `nbconvert` dependencies, so no extra install is required; prefix with `MPAPI_OFFLINE=1` for byte-stable offline reproduction. (On Windows, prefer this `nbclient` form or the GUI over `jupyter execute`, which can mis-read the UTF-8 notebook under a non-UTF-8 system locale.)
 
 **Optional system dependency:** the C4 (Stanford AI patents) and I1 (ITU IDI) indicators source from public PDFs that are pre-extracted to `.txt` and bundled in `data/raw/`. If you re-fetch the underlying PDFs, regenerating the `.txt` requires `pdftotext -layout` from [Poppler](https://poppler.freedesktop.org/) on PATH. macOS: `brew install poppler`; Debian/Ubuntu: `apt install poppler-utils`; Windows: install via Poppler-Windows or MiKTeX. With the bundled `.txt` cache present, this dependency is not exercised.
 
@@ -50,13 +58,13 @@ Literature-weighted composite ranking (full table and per-scheme variants in §1
 
 ![Two-axis typology plot showing 14 middle powers positioned by Capacity Depth (x-axis) and Infrastructure Posture (y-axis), with archetype colour coding (Tier-1 / Asymmetric / Tier-3) and AISI Network membership marker shape](figures/fig15_2_typology.png)
 
-> *Figure 15.2 of the notebook — country positions on Capacity Depth × Infrastructure Posture. Colour encodes the §14 k-means archetype (Tier-1 preparedness · Asymmetric–Capacity-leveraged · Asymmetric–Infrastructure-leveraged · Tier-3 vulnerability); marker shape encodes AISI Network membership. Taiwan's infrastructure coordinate is column-mean-imputed (the four infrastructure indicators are unobserved for Taiwan; see §14 observability caveat).*
+> *Figure 15.2 of the notebook — country positions on Capacity Depth × Infrastructure Posture. Colour encodes the §14 per-country archetype, derived from each country's own axis z-profile (not the k-means cluster id): Tier-1 preparedness (all axes above mean) · Asymmetric–Capacity-leveraged · Asymmetric–Infrastructure-leveraged · and three Tier-3 vulnerability variants tagged by worst axis (Capacity, Governance, or Infrastructure) — six categories in total. Marker shape encodes AISI Network membership. Taiwan's infrastructure coordinate is column-mean-imputed (the four infrastructure indicators are unobserved for Taiwan; see §14 observability caveat).*
 
 ### Tier stability across weighting schemes
 
 - The **top-5 set** {UK, South Korea, France, EU, Japan} is identical across all three weighting schemes (equal, PCA-derived, literature-elicited).
 - The **bottom-3 set** {Israel, India, Taiwan} is identical under the equal and literature schemes, with Saudi Arabia at rank 11. Under the PCA scheme, Israel rises from rank 12 to rank 10, so PCA's bottom-3 is {Saudi Arabia, India, Taiwan}.
-- **Robustness** (`outputs/robustness_summary_with_ci.csv`): every perturbation reports Spearman ρ ≥ 0.96. Fisher-z 95% CI lower bounds span [+0.876, +0.986] — the classifier-sensitivity check (lowest at +0.876) clears its 0.85 threshold; the three weighting/normalisation perturbations all clear the 0.70 threshold with lower bounds ≥ 0.90.
+- **Robustness** (`outputs/robustness_summary_with_ci.csv`): every perturbation reports Spearman ρ ≥ 0.96. Under the Bonett–Wright Spearman SE, the three weighting/normalisation perturbations clear the 0.70 threshold with wide margins (95% CI lower bounds ≥ 0.877); the classifier-sensitivity check (ρ = 0.960) has a CI lower bound of 0.845, which clears the 0.70 robustness floor but sits marginally below its stricter 0.85 bar — so the ranking is robust to weighting and normalisation, and borderline to the C3 concept choice (this is why H4 is *partially* supported).
 
 ### Tier stability is partial — single-slot cycling
 
@@ -86,7 +94,7 @@ For policy / government audiences (DFAT, GAC, MOFA, AISI-equivalent bodies) who 
 The 2-page layout:
 
 - **Page 1 — Overview.** Sortable ranking table with weighting-scheme slicer (equal / PCA / literature); interactive Capacity × Infrastructure typology scatter coloured by §14 archetype, shape-coded by AISI Network membership; archetype button slicer acting as legend and filter; robustness-CI bar chart for the four H4 perturbations.
-- **Page 2 — Country drill-through.** Country + weighting-scheme slicers; per-axis profile; per-vector vulnerability ranking; Shapley waterfall over 15 indicators; **counterfactual what-if** with five binary toggles for the §13.4 actions (the killer demo — drag `JOIN_AUSTRALIA_GROUP` from 0 to 1 with Singapore selected and watch the composite shift from 1.809 to ~1.911); Monte Carlo rank-range card.
+- **Page 2 — Country drill-through.** Country + weighting-scheme slicers; per-axis profile; per-vector vulnerability ranking; Shapley waterfall over 15 indicators; **counterfactual what-if** with five binary toggles for the §13.4 actions (e.g. setting `JOIN_AUSTRALIA_GROUP` from 0 to 1 with Singapore selected raises its composite from 1.809 to 1.911, moving it from rank 6 to rank 4); Monte Carlo rank-range card.
 
 To refresh after a notebook re-run: open the `.pbix`, Home → Refresh.
 
@@ -100,7 +108,7 @@ flowchart LR
   Config["§3.2 configuration<br/>15 indicators · 3 weighting schemes"]
   Acq["§4 data acquisition<br/>11 programmatic · 1 inlined · 3 analyst-coded"]
   Pipeline["§5–§11 pipeline<br/>clean → impute → normalise<br/>→ weight → composite"]
-  Sens["§12 sensitivity<br/>Monte Carlo · LOO<br/>alt-norm · classifier"]
+  Sens["§12 sensitivity<br/>Monte Carlo · LOO · alt-norm · classifier<br/>+ ε-grid · collinearity · coding-collapse"]
   Overlay["§13 vulnerability overlay<br/>cyber · CBRN · influence"]
   Verdicts["§16.11<br/>H1–H6 verdicts"]
   Paper --> Config --> Acq --> Pipeline
@@ -141,7 +149,10 @@ Per-vector cross-axis weights are the authors' translation of the paper's §2.2�
 - **Leave-one-indicator-out (§12.2)** — rank impact bound for each indicator.
 - **Alternative normalisation (§12.3)** — min-max vs z-score Spearman ρ.
 - **Classifier sensitivity (§16.7.1)** — AI-broad vs ML-narrow OpenAlex concepts for C3.
-- **Fisher-z 95% CIs** on all four robustness Spearman ρ values (Appendix A.2).
+- **Geometric-shift ε sensitivity (§12.6)** — a five-value ε grid (1e-4 … 1.0) bounding the bottom tier's dependence on the geometric-shift constant; separates ε-stable ranks from ε-dependent bottom-tier composite magnitudes.
+- **C5×G1 axis-reassignment (§12.7)** — recompute the headline with C5 moved to governance to bound the ordering impact of the C5/G1 cross-axis double-count.
+- **Analyst-coded judgment-collapse (§12.8)** — collapse G1/G4/C5 each to its authoritative core (and all three at once) to bound how much the interpretive coding layer drives the ranking.
+- **Bonett–Wright Spearman Fisher-z 95% CIs** on all four robustness Spearman ρ values (Appendix A.2).
 
 ## Data sources
 
@@ -175,7 +186,7 @@ Flagged `requires_verification: True` in §4.9's `EXTRACTIONS` registry; their l
 - **G4 (bilateral lab MoU count, 10% within governance)** — enumerates UK gov.uk publications and Anthropic / OpenAI / Google DeepMind partnership press releases. No consolidated public registry exists.
 - **C5 (AISI Network presence, 25% within capacity)** — binary-authoritative from the NIST AISI Network fact sheet for the 7 founding-member middle powers; the 0/1/2 ordinal extension for the 7 non-Network states is authors' coding.
 
-The §12.2 leave-one-indicator-out test shows the **top-5 set is unchanged** when any of G1, G4, or C5 is dropped (under G1 drop, Germany rises from rank 8 to rank 6, displacing Canada 6→7 and Singapore 7→8; see §17.5 for the full reshuffle). Full bibliography in §19 of the notebook.
+Per-country coding protocols and evidence citations for all three are recorded in **§4.9.1** (`ANALYST_CODING_EVIDENCE`) — e.g. each G1 score names the underlying national AI strategy (document, body, year), and values resting on authors' attestation rather than a single authoritative dataset are marked as such. Two robustness layers bound their influence: the §12.2 leave-one-indicator-out test shows the **top-5 set is unchanged** when any of G1, G4, or C5 is dropped (under G1 drop, Germany rises from rank 8 to rank 6, displacing Canada 6→7 and Singapore 7→8; see §17.5 for the full reshuffle), and **§12.8 collapses each indicator's interpretive layer to its authoritative core** (G1→has-safety-provisions, C5→AISI-Network-member, G4→has-≥1-MoU) and confirms the headline ranking is essentially unchanged (`outputs/analyst_coding_audit.csv`). Full bibliography in §19 of the notebook.
 
 ## Hypothesis-testing results
 
@@ -186,11 +197,11 @@ Six hypotheses are pre-registered with numeric pass criteria in §1.4 and resolv
 | **H1** | The three axes are empirically separable. | **PARTIALLY SUPPORTED** | 5 of 74 cross-axis indicator pairs at \|r\| ≥ 0.7. The C5 × G1 collinearity (r = 0.973) is the largest contributor and is flagged as high-priority future work in §17.8. |
 | **H2** | Each axis carries a one-dimensional latent signal. | **PARTIALLY SUPPORTED** | Infrastructure PA p ≈ 0.01, governance PA p ≈ 0.02 (both significant); capacity-axis dimensionality is empirically untestable at n = 7 complete cases. Governance PC1 explains only ~43% of variance; §16.10 decomposes it into three sparse-PCA sub-axes. |
 | **H3** | The 14 middle powers do not cluster homogeneously. | **SUPPORTED** | k-means silhouette = 0.43 at k = 3; ARI = 1.0 against Ward and average linkage; MDS embedding preserves distance rank at ρ = 0.91. |
-| **H4** | The headline ranking is robust to methodological perturbation. | **SUPPORTED** | All four robustness Spearman ρ values' Fisher-z 95% CI lower bounds clear their thresholds (lowest = 0.876, threshold 0.85 for classifier; other three ≥ 0.90 against threshold 0.70). |
+| **H4** | The headline ranking is robust to methodological perturbation. | **PARTIALLY SUPPORTED** | Under the Bonett–Wright Spearman SE the three weighting/normalisation perturbations clear with wide margin (CI lower bounds 0.877 / 0.982 / 0.982 against the 0.70 floor); the classifier-sensitivity check (ρ = 0.960) has CI lower bound 0.845, which clears 0.70 but is marginally below its stricter 0.85 bar — robust on weighting/normalisation, borderline on the C3 concept choice. |
 | **H5** | Top-5 not driven by any single analyst-coded indicator. | **SUPPORTED** | Top-5 set unchanged when any of G1, G4, or C5 is dropped; max single-country rank shift across the three drops is 2 positions. |
 | **H6** | Top-5 and bot-3 tier membership stable under weight perturbation. | **PARTIALLY SUPPORTED** | Seven of the eight baseline-tier countries appear in their baseline tier in ≥ 80% of 10,000 Monte Carlo draws; Israel is the exception at 62% (cycles with Saudi Arabia). |
 
-Aggregate: three fully supported, three partially supported with specific named caveats. The composite-index framework is empirically defensible; the partial-support verdicts surface methodological caveats (C5 × G1 collinearity, governance multidimensionality, single-slot tier cycling) rather than a wholesale framework failure.
+Aggregate: two fully supported (H3, H5), four partially supported (H1, H2, H4, H6) with specific named caveats. The composite-index framework is empirically defensible; the partial-support verdicts surface methodological caveats (C5 × G1 collinearity, governance multidimensionality, classifier-sensitivity borderline at the stricter 0.85 bar, single-slot tier cycling) rather than a wholesale framework failure.
 
 ### Targeted robustness checks beyond H1–H6
 
@@ -198,30 +209,33 @@ Three additional sensitivity tests were added in response to anticipated supervi
 
 | Check | Concern addressed | Result | Persisted to |
 |---|---|---|---|
-| **§12.2.1 C4-drop sensitivity** | Does Korea's rank-2 position depend on a single Stanford-Top-15 patent figure? | Spearman ρ(baseline_rank, C4-drop_rank) = +0.9912 (Fisher-z 95% CI [+0.972, +0.997]). **Korea rank: 2 → 3 (Δ = +1) when C4 is dropped entirely.** Tier-1 placement survives. | LOO row in `outputs/sensitivity_ranks.csv`; printed in §12.2.1. |
-| **§13.5 V-Dem polarity sensitivity** | Paper §2.4 argues democracies are *more* exposed to influence operations — does flipping V-Dem polarity within the influence-ops vector reshape the per-vector ranking? | Spearman ρ(baseline_infl_rank, V-Dem-flipped_infl_rank) = +0.9473 (Fisher-z 95% CI [+0.838, +0.984]). UAE rises 10 → 7, Saudi Arabia 11 → 9 (autocracies rise as predicted by paper §2.4); Canada 9 → 11, Germany 8 → 10 (democracies fall). UK/France/Japan/India/Israel/EU/Taiwan invariant. | `outputs/vdem_polarity_sensitivity.csv`. |
+| **§12.2.1 C4-drop sensitivity** | Does Korea's rank-2 position depend on a single Stanford-Top-15 patent figure? | Spearman ρ(baseline_rank, C4-drop_rank) = +0.9912 (Bonett–Wright Fisher-z 95% CI [+0.963, +0.998]). **Korea rank: 2 → 3 (Δ = +1) when C4 is dropped entirely.** Tier-1 placement survives. | LOO row in `outputs/sensitivity_ranks.csv`; printed in §12.2.1. |
+| **§13.5 V-Dem polarity sensitivity** | Paper §2.4 argues democracies are *more* exposed to influence operations — does flipping V-Dem polarity within the influence-ops vector reshape the per-vector ranking? | Spearman ρ(baseline_infl_rank, V-Dem-flipped_infl_rank) = +0.9473 (Bonett–Wright Fisher-z 95% CI [+0.798, +0.987]). Largest movers: UAE rises 10 → 7 and Saudi Arabia 11 → 9 (autocracies rise as predicted by paper §2.4), while Canada falls 9 → 11 and Germany 8 → 10 (democracies fall). The other ten countries shift by at most one rank — Korea (2 → 3), Singapore (3 → 2) and Sweden (7 → 8) by ±1; UK, France, Japan, India, Israel, EU and Taiwan unchanged. | `outputs/vdem_polarity_sensitivity.csv`. |
 | **§16.11(d) H6 mechanical verdict** | The §1.4 pre-registered criterion for H6 was prose-only; encode the asymmetric thresholds (≥ 4/5 top-5 members in ≥ 70% of draws AND ≥ 2/3 bot-3 members in ≥ 80% of draws) as a mechanical PASS/FAIL. | **PASS**. Top-5: 5/5 members in tier in ≥ 70% of draws (UK 99.0%, Korea 93.2%, France 83.8%, Japan 82.5%, EU 80.5%) → PASS at 4/5; bot-3: 2/3 members in tier in ≥ 80% (India 82.0%, Taiwan 81.8%; Israel 62.2% below threshold) → PASS at 2/3. Note: measures (a) exact-set-match and (b) within-1-swap fail their stricter thresholds — §1.4 explicitly excludes those from the pass criteria, which is why §16.11's overall H6 verdict is PARTIALLY SUPPORTED. | `outputs/h6_set_membership.json`, key `per_country_in_tier_mechanical_verdict`. |
+| **§12.6 geometric-shift ε sensitivity** | The composite shifts z-scored axes by `+ ε` (ε = 1e-3) before the geometric mean; ε is the one aggregation constant §12.1–§12.5 never perturb, and the country at an axis minimum contributes `log(ε)`. Does the bottom tier depend on it? | Across ε ∈ {1e-4, 1e-3, 1e-2, 1e-1, 1.0} the **ranking is ε-invariant** (Spearman ρ = 1.000 for ε ≤ 0.1; ρ = 0.991 at ε = 1.0). But the **bottom-tier composite values are an ε-artifact**: Taiwan's composite spans 0.023 → 1.54 and Israel's 0.072 → 1.75 across the grid (~68× / ~24×). **Cite the bottom tier as ranks, not magnitudes.** | `outputs/eps_sensitivity.csv`; printed in §12.6. |
+| **§12.7 C5×G1 axis-reassignment** | C5 (AISI presence, capacity) and G1 (AI strategy, governance) are near-collinear (r = 0.973), so the shared AI-safety-institution signal loads into two axes. How much of the ranking is the double-count? | Reassigning C5 to governance (the §17.13 alternative #1) under equal within-axis weights gives Spearman ρ = +0.996 (Bonett–Wright Fisher-z 95% CI [+0.981, +0.999]); the **top-5 set is unchanged** and the **max single-country shift is 1** (only France↔EU swap at the 3/4 boundary). The double-count inflates the Tier-1↔Tier-3 gap without re-ordering the table. | `outputs/collinearity_recode.csv`; printed in §12.7. |
+| **§12.8 analyst-coded judgment-collapse** | G1/G4/C5 carry one interpretive layer each (G1's 2-vs-3 safety boundary, C5's "announced" ordinal, G4's MoU count). How much does that judgment drive the ranking? | Collapsing each to its authoritative core — and all three at once — leaves the headline **unchanged: Spearman ρ = 1.000, top-5 preserved, 0 rank shifts** in every variant. (G1 takes only {2,3} in-sample, so its binary collapse is a structural no-op under z-scoring; the C5 and G4 collapses are genuine category merges — C5 {0,1,3}→{0,1}, G4 UK 3→1 — and still move nothing.) | `outputs/analyst_coding_audit.csv`; printed in §12.8. |
 
 ![Robustness forest plot showing four perturbations of the headline literature ranking — equal-vs-PCA, equal-vs-literature, z-score-vs-min-max, and AI-broad-vs-ML-narrow classifier — each as a Spearman rho point estimate with Fisher-z 95 percent confidence interval; pass thresholds (0.70 for the first three, 0.85 for the classifier) marked as dashed lines](figures/fig12_5_robustness_forest.png)
 
-> *Figure 12.5 of the notebook — H4 evidence in visual form. Each row is one robustness perturbation; the horizontal bar is the Spearman ρ point estimate flanked by its Fisher-z 95% CI. The dashed red lines mark the pass threshold for that perturbation (0.70 for the three weighting / normalisation tests; 0.85 for the bibliographic-classifier test). A perturbation passes iff the CI's lower bound sits to the right of its threshold — all four pass.*
+> *Figure 12.5 of the notebook — H4 evidence in visual form. Each row is one robustness perturbation; the horizontal bar is the Spearman ρ point estimate flanked by its Fisher-z 95% CI. The dashed red lines mark the pass threshold for that perturbation (0.70 for the three weighting / normalisation tests; 0.85 for the bibliographic-classifier test). A perturbation passes iff the CI's lower bound sits to the right of its threshold — under the Bonett–Wright Spearman SE the three weighting/normalisation tests pass with wide margins, while the classifier-sensitivity test is borderline (CI lower bound 0.845, just left of its 0.85 line).*
 
 ## Notebook structure
 
-The 152-cell notebook follows the OECD/JRC 10-step composite-indicator process and emits a Power BI consumption layer:
+The 163-cell notebook follows the OECD/JRC 10-step composite-indicator process and emits a Power BI consumption layer:
 
 | § | Content |
 |---|---|
 | **§1** | Introduction, paper-mapping (§1.3), and six pre-registered hypotheses (H1–H6 in §1.4) |
 | **§2** | Conceptual framework — three axes, three attack vectors, composite logic |
 | **§3** | Methodology overview — explicit 10-step OECD/JRC mapping |
-| **§4** | Data acquisition — §4.1–§4.9 covering programmatic and inline sources |
+| **§4** | Data acquisition — §4.1–§4.9 covering programmatic and inline sources; §4.9.1 analyst-coded coding protocols + per-country evidence |
 | **§5** | Data cleaning & harmonisation — EU aggregation, reference-period alignment, missing-data audit |
 | **§6** | Indicator construction — per-indicator transforms (log1p / sqrt / binary / identity) |
 | **§7** | Two-stage imputation — axis-mean in z-space (stage 1) + column-mean fallback (stage 2) |
 | **§8** | Multivariate diagnostics — per-axis PCA + Horn's parallel analysis (§8.1) |
 | **§9–§11** | Normalisation, weighting, composite computation |
-| **§12** | Sensitivity & robustness — Monte Carlo · LOO · alternative normalisation · classifier |
+| **§12** | Sensitivity & robustness — Monte Carlo · LOO · alternative normalisation · classifier · geometric-shift ε grid (§12.6) · C5×G1 axis-reassignment (§12.7) · analyst-coded judgment-collapse (§12.8) |
 | **§13** | Vulnerability overlay — per-vector preparedness rankings; counterfactual policy scenarios (§13.4) |
 | **§14** | Typology — k-means + silhouette · hierarchical clustering · MDS embedding |
 | **§15** | Visualisation — six subsections §15.1–§15.6; five render paper-facing figures (§15.5 is a numerical EU vs member-state cross-validation, not a figure) |
@@ -242,17 +256,17 @@ The 152-cell notebook follows the OECD/JRC 10-step composite-indicator process a
   - `MDS(random_state=SEED, n_init=20)` for the §14.3 embedding
   - `SparsePCA(random_state=SEED)` for the §16.10 governance sub-axes
 - **Pinned `RUN_DATE`** — `RUN_DATE = "2026-05-06"` (defined in §3.1, same constant as the seed date) so the build stamp is identical across re-runs. Override with the `MPAPI_RUN_DATE` environment variable if you want a live `date.today()`.
-- **Byte-identical regeneration** — within a fixed Python environment (Python 3.14.x, the pinned versions in `requirements.txt`, and the same matplotlib backend), all 22 output files (19 CSV + 3 JSON) and all 16 figures reproduce byte-for-byte across successive `jupyter execute` runs. Cross-environment byte-identity is not asserted; matplotlib version bumps in particular can shift figure bytes even when pixels are visually identical.
-- **Cached snapshot** — the current `data/raw/` snapshot is bundled with the repo. The first run with network access fetches sources from the public web and writes them to the cache; subsequent runs read from cache. Live re-fetch is attempted on every run with cache fallback (§4.x cells share a `fetch_to_cache` helper).
+- **Byte-identical regeneration** — within a fixed Python environment (Python 3.14.x, the pinned versions in `requirements.txt`, and the same matplotlib backend), all 25 output files (22 CSV + 3 JSON) and all 16 figures reproduce byte-for-byte across successive notebook re-runs (run with `MPAPI_OFFLINE=1` so live re-fetches cannot perturb the inputs). Cross-environment byte-identity is not asserted; matplotlib version bumps in particular can shift figure bytes even when pixels are visually identical.
+- **Cached snapshot** — the current `data/raw/` snapshot is bundled with the repo. By default `fetch_to_cache` is **live-first, not cache-first**: every run attempts a live re-fetch and overwrites the cache on success, using the cache only as a network-failure fallback. Set `MPAPI_OFFLINE=1` to force cache-only reads with no network access — the recommended mode for byte-stable reproduction of the shipped snapshot (§4.x cells share the `fetch_to_cache` helper).
 - **Retrieval-date sidecars** — every cached source under `data/raw/` (programmatic fetches, source PDFs, derived CSVs from the `extract_*.py` scripts) has a `*.meta.json` sidecar recording its URL, retrieval date, byte size, and a short provenance note.
-- **Upstream-versioning caveat** — the OpenAlex C3/C16.7.1 concept counts and the V-Dem v16 LDI are upstream-versioned: OpenAlex periodically re-runs concept classification and V-Dem ships annual revisions, so a re-fetch in a future year will not necessarily reproduce the bundled snapshot. The methodology is stable; the values are a 2026-05-18 retrieval-date snapshot (§17.10).
+- **Upstream-versioning caveat** — the OpenAlex C3 concept counts (and the §16.7.1 ML-narrow variant) and the V-Dem v16 LDI are upstream-versioned: OpenAlex periodically re-runs concept classification and V-Dem ships annual revisions, so a re-fetch in a future year will not necessarily reproduce the bundled snapshot. The methodology is stable; the bundled values are a fixed retrieval snapshot — programmatic API sources retrieved 2026-05-06, the PDF/HTML-derived sources (Stanford patents, ITU IDI, IGSC roster) retrieved 2026-05-18, per the `*.meta.json` sidecars (§17.10).
 - **Repository size** — `data/raw/vdem.RData` is 33 MB and dominates clone size. If this becomes a problem, migrate `data/raw/vdem.RData` to Git LFS; the loader (§4.3) is agnostic to storage backend.
 - **End-to-end verification** — §18 contains four checks: output-file existence, robustness-summary read-back, figure DPI suitability, and a full GBR composite reconstruction from raw data (asserted within `1e-3` tolerance). Appendix B.1 additionally asserts Shapley additivity within `1e-6`. §18.1 probes the liveness of every cited source URL on each rebuild.
 
 ## File layout
 
 ```text
-M-PAPI.ipynb                  — the notebook (152 cells: config · data · analysis · bibliography · PBI export)
+M-PAPI.ipynb                  — the notebook (163 cells: config · data · analysis · bibliography · PBI export)
 README.md                     — this file
 LICENSE                       — MIT for code; per-source attribution for upstream data
 requirements.txt              — Python dependency floor
@@ -263,7 +277,7 @@ extract_igsc_from_html.py     — IGSC member roster HTML → CSV (called by §4
 extract_patents_from_pdf.py   — Stanford AI Index Fig 1.2.3 PDF → CSV (called by §4.8)
 data/raw/                     — cached source files + .meta.json retrieval sidecars (bundled snapshot)
 figures/                      — 16 PNG figures exported by the notebook
-outputs/                      — 22 outputs (19 CSV + 3 JSON) of index, sensitivity, and verdict tables
+outputs/                      — 25 outputs (22 CSV + 3 JSON) of index, sensitivity, and verdict tables
 outputs/pbi/                  — 8 star-schema CSVs (3 dim + 5 fact) + README for Power BI ingestion (§20)
 M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview + Country drill-through)
 ```
@@ -282,6 +296,7 @@ M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview 
 - That a high score means a country is "safe".
 - That all relevant dimensions of preparedness are captured (see §17 Limitations).
 - That the per-country composite values are portable outside the 14-country reference frame (see §11 portability caveat).
+- That the bottom-tier composite *values* are precise: they are sensitive to the geometric-shift constant ε (see §12.6 ε-sensitivity grid); only the *ranks* are interpretable at the bottom of the table.
 - That the working paper's §3 trigger-event framework is operationalised here — it is not, pending country-year AI-attributed incident data (see §17.7).
 
 ## How to cite
