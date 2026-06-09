@@ -1,0 +1,296 @@
+% ============================================================================
+% M-PAPI companion paper -- bibliography
+% Entries grouped: working paper, methods, weighting frameworks, data sources,
+% software stack. Values transcribed from the notebook's Section 19 bibliography,
+% the data/raw/*.meta.json provenance sidecars, and the working paper's own
+% reference list.
+% ============================================================================
+
+% ----- Working paper -----
+@unpublished{teague2026middlepowers,
+  author       = {Teague, James and Ali, Alina and Sfeir, Sophie and Fort, Kristina},
+  title        = {{AI-Proliferation and Middle Powers: Preparation and Response Mechanisms}},
+  year         = {2026},
+  note         = {Working paper. Companion notebook: \url{https://github.com/khailapvuong/middle-powers-mpapi}}
+}
+
+% ----- Methodology / statistics -----
+@book{oecd2008handbook,
+  author       = {{OECD} and {European Commission, Joint Research Centre}},
+  title        = {{Handbook on Constructing Composite Indicators: Methodology and User Guide}},
+  year         = {2008},
+  publisher    = {OECD Publishing},
+  address      = {Paris},
+  doi          = {10.1787/9789264043466-en}
+}
+
+@article{horn1965parallel,
+  author       = {Horn, John L.},
+  title        = {A rationale and test for the number of factors in factor analysis},
+  journal      = {Psychometrika},
+  volume       = {30},
+  number       = {2},
+  pages        = {179--185},
+  year         = {1965},
+  doi          = {10.1007/BF02289447}
+}
+
+@article{bonett2000sample,
+  author       = {Bonett, Douglas G. and Wright, Thomas A.},
+  title        = {Sample size requirements for estimating {Pearson}, {Kendall} and {Spearman} correlations},
+  journal      = {Psychometrika},
+  volume       = {65},
+  number       = {1},
+  pages        = {23--28},
+  year         = {2000},
+  doi          = {10.1007/BF02294183}
+}
+
+@article{cronbach1951alpha,
+  author       = {Cronbach, Lee J.},
+  title        = {Coefficient alpha and the internal structure of tests},
+  journal      = {Psychometrika},
+  volume       = {16},
+  number       = {3},
+  pages        = {297--334},
+  year         = {1951},
+  doi          = {10.1007/BF02310555}
+}
+
+@book{shadish2002experimental,
+  author       = {Shadish, William R. and Cook, Thomas D. and Campbell, Donald T.},
+  title        = {{Experimental and Quasi-Experimental Designs for Generalized Causal Inference}},
+  year         = {2002},
+  publisher    = {Houghton Mifflin},
+  address      = {Boston}
+}
+
+@incollection{shapley1953value,
+  author       = {Shapley, Lloyd S.},
+  title        = {A value for $n$-person games},
+  booktitle    = {Contributions to the Theory of Games II},
+  editor       = {Kuhn, Harold W. and Tucker, Albert W.},
+  pages        = {307--317},
+  year         = {1953},
+  publisher    = {Princeton University Press}
+}
+
+@article{kruskal1964mds,
+  author       = {Kruskal, Joseph B.},
+  title        = {Multidimensional scaling by optimizing goodness of fit to a nonmetric hypothesis},
+  journal      = {Psychometrika},
+  volume       = {29},
+  number       = {1},
+  pages        = {1--27},
+  year         = {1964},
+  doi          = {10.1007/BF02289565}
+}
+
+@article{rousseeuw1987silhouettes,
+  author       = {Rousseeuw, Peter J.},
+  title        = {Silhouettes: A graphical aid to the interpretation and validation of cluster analysis},
+  journal      = {Journal of Computational and Applied Mathematics},
+  volume       = {20},
+  pages        = {53--65},
+  year         = {1987},
+  doi          = {10.1016/0377-0427(87)90125-7}
+}
+
+@article{hubert1985ari,
+  author       = {Hubert, Lawrence and Arabie, Phipps},
+  title        = {Comparing partitions},
+  journal      = {Journal of Classification},
+  volume       = {2},
+  number       = {1},
+  pages        = {193--218},
+  year         = {1985},
+  doi          = {10.1007/BF01908075}
+}
+
+% ----- Literature-elicited weighting frameworks -----
+@techreport{dehoopscheffer2024pivotal,
+  author       = {de Hoop Scheffer, Alexandra and Quencez, Martin and Tausendfreund, Rachel and Mohan, Garima and Weber, Gabriel and Jagtiani, Sudha and Kausch, Kristina},
+  title        = {{Pivotal Powers}},
+  institution  = {German Marshall Fund of the United States},
+  year         = {2024},
+  url          = {https://www.gmfus.org/}
+}
+
+@techreport{sandoval2026sovereign,
+  author       = {Sandoval, Felipe J. V. and Wilkinson, Isabella and Krasodomski, Alex and Wilkinson, Rowan},
+  title        = {{How middle powers can weather US and Chinese AI dominance: The case for `sovereign AI' strategies}},
+  institution  = {Royal Institute of International Affairs (Chatham House)},
+  year         = {2026},
+  doi          = {10.55317/9781784136710}
+}
+
+@techreport{wang2024geopolitics,
+  author       = {Wang, Jenny and Milne, Chloe and Jess Hu, Zhang and Khan, Farah},
+  title        = {{Navigating geopolitics in AI governance}},
+  institution  = {Oxford Global Society},
+  year         = {2024},
+  url          = {https://oxgs.org/2024/04/08/oxgs-report-navigating-geopolitics-in-ai-governance/}
+}
+
+@misc{tortoise2023globalai,
+  author       = {{Tortoise Media}},
+  title        = {{The Global AI Index}},
+  year         = {2023},
+  howpublished = {Tortoise Intelligence},
+  url          = {https://www.tortoisemedia.com/intelligence/global-ai/}
+}
+
+% ----- Data sources -----
+@misc{epoch2024models,
+  author       = {{Epoch AI}},
+  title        = {{Data on Notable AI Models}},
+  year         = {2024},
+  howpublished = {\url{https://epoch.ai/data}},
+  note         = {Licence CC-BY 4.0. Retrieved 2026-05-06}
+}
+
+@article{priem2022openalex,
+  author       = {Priem, Jason and Piwowar, Heather and Orr, Richard},
+  title        = {{OpenAlex}: A fully-open index of scholarly works, authors, venues, institutions, and concepts},
+  journal      = {arXiv preprint arXiv:2205.01833},
+  year         = {2022},
+  doi          = {10.48550/arXiv.2205.01833}
+}
+
+@techreport{maslej2025aiindex,
+  author       = {Maslej, Nestor and Fattorini, Loredana and Perrault, Raymond and others},
+  title        = {{The AI Index 2025 Annual Report}},
+  institution  = {Stanford Institute for Human-Centered Artificial Intelligence (HAI)},
+  year         = {2025},
+  note         = {Chapter 1, Figure 1.2.3 (AI patents per 100{,}000 inhabitants)},
+  url          = {https://hai.stanford.edu/ai-index/2025-ai-index-report}
+}
+
+@techreport{itu2024gci,
+  author       = {{International Telecommunication Union}},
+  title        = {{Global Cybersecurity Index 2024}},
+  institution  = {ITU},
+  year         = {2024},
+  note         = {5th edition; accessed via World Bank Data360}
+}
+
+@techreport{itu2024idi,
+  author       = {{International Telecommunication Union}},
+  title        = {{Measuring digital development: The ICT Development Index 2024}},
+  institution  = {ITU},
+  year         = {2024},
+  url          = {https://www.itu.int/en/ITU-D/Statistics/}
+}
+
+@misc{vdem2026v16,
+  author       = {Coppedge, Michael and Gerring, John and Knutsen, Carl Henrik and others},
+  title        = {{V-Dem Country-Year Dataset v16}},
+  year         = {2026},
+  howpublished = {Varieties of Democracy (V-Dem) Project},
+  url          = {https://www.v-dem.net/}
+}
+
+@misc{worldbank2024wdi,
+  author       = {{World Bank}},
+  title        = {{World Development Indicators}},
+  year         = {2024},
+  note         = {Series IT.NET.BBND.P2 (fixed broadband) and IT.NET.SECR.P6 (secure servers). Licence CC-BY 4.0},
+  url          = {https://data.worldbank.org/}
+}
+
+@misc{ndgain2026,
+  author       = {{University of Notre Dame}},
+  title        = {{Notre Dame Global Adaptation Initiative (ND-GAIN) Country Index}},
+  year         = {2026},
+  url          = {https://gain.nd.edu/our-work/country-index/}
+}
+
+@misc{igsc2026,
+  author       = {{International Gene Synthesis Consortium}},
+  title        = {{IGSC Member Roster}},
+  year         = {2026},
+  url          = {https://genesynthesisconsortium.org/}
+}
+
+@misc{australiagroup2024,
+  author       = {{Australia Group}},
+  title        = {{Australia Group Participants}},
+  year         = {2024},
+  url          = {https://www.australiagroup.net/en/participants.html}
+}
+
+@misc{nist2024aisi,
+  author       = {{U.S. Department of Commerce}},
+  title        = {{Fact Sheet: U.S. Department of Commerce \& U.S. Department of State Launch the International Network of AI Safety Institutes}},
+  year         = {2024},
+  howpublished = {NIST},
+  url          = {https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international}
+}
+
+@misc{oecdai2024,
+  author       = {{OECD}},
+  title        = {{OECD.AI Policy Observatory: National AI Policies Database}},
+  year         = {2024},
+  url          = {https://oecd.ai/en/dashboards/national}
+}
+
+% ----- Software stack -----
+@article{harris2020numpy,
+  author       = {Harris, Charles R. and Millman, K. Jarrod and van der Walt, St{\'e}fan J. and others},
+  title        = {Array programming with {NumPy}},
+  journal      = {Nature},
+  volume       = {585},
+  pages        = {357--362},
+  year         = {2020},
+  doi          = {10.1038/s41586-020-2649-2}
+}
+
+@inproceedings{mckinney2010pandas,
+  author       = {McKinney, Wes},
+  title        = {Data structures for statistical computing in {Python}},
+  booktitle    = {Proceedings of the 9th Python in Science Conference},
+  pages        = {56--61},
+  year         = {2010},
+  doi          = {10.25080/Majora-92bf1922-00a}
+}
+
+@article{virtanen2020scipy,
+  author       = {Virtanen, Pauli and Gommers, Ralf and Oliphant, Travis E. and others},
+  title        = {{SciPy} 1.0: fundamental algorithms for scientific computing in {Python}},
+  journal      = {Nature Methods},
+  volume       = {17},
+  pages        = {261--272},
+  year         = {2020},
+  doi          = {10.1038/s41592-019-0686-2}
+}
+
+@article{pedregosa2011scikit,
+  author       = {Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and others},
+  title        = {Scikit-learn: Machine learning in {Python}},
+  journal      = {Journal of Machine Learning Research},
+  volume       = {12},
+  pages        = {2825--2830},
+  year         = {2011}
+}
+
+@article{hunter2007matplotlib,
+  author       = {Hunter, John D.},
+  title        = {Matplotlib: A 2D graphics environment},
+  journal      = {Computing in Science \& Engineering},
+  volume       = {9},
+  number       = {3},
+  pages        = {90--95},
+  year         = {2007},
+  doi          = {10.1109/MCSE.2007.55}
+}
+
+@article{waskom2021seaborn,
+  author       = {Waskom, Michael L.},
+  title        = {seaborn: statistical data visualization},
+  journal      = {Journal of Open Source Software},
+  volume       = {6},
+  number       = {60},
+  pages        = {3021},
+  year         = {2021},
+  doi          = {10.21105/joss.03021}
+}
