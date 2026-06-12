@@ -1,5 +1,4 @@
 variant,spearman_rho_vs_headline,fisher_ci_lo,fisher_ci_hi,top5_preserved,max_rank_shift
 G1 -> binary (has safety/CBRN provisions),1.0,1.0,1.0,True,0
-C5 -> binary (AISI Network member),1.0,1.0,1.0,True,0
-G4 -> binary (has >=1 bilateral lab MoU),1.0,1.0,1.0,True,0
-ALL THREE collapsed simultaneously,1.0,1.0,1.0,True,0
+C5 -> binary (AISI Network member),0.9956,0.9815,0.999,True,1
+BOTH collapsed simultaneously,0.9956,0.9815,0.999,True,1

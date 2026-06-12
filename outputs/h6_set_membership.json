@@ -14,30 +14,30 @@
   ],
   "exact_set_match": {
     "threshold": 0.95,
-    "top5_share": 0.46,
+    "top5_share": 0.4717,
     "top5_verdict": "FAIL",
-    "bot3_share": 0.4344,
+    "bot3_share": 0.283,
     "bot3_verdict": "FAIL"
   },
   "within_1_swap": {
     "threshold": 0.9,
-    "top5_share": 0.9378,
+    "top5_share": 0.9193,
     "top5_verdict": "PASS",
-    "bot3_share": 0.8316,
+    "bot3_share": 0.7137,
     "bot3_verdict": "FAIL"
   },
   "per_country_in_tier_frequency": {
     "top5_members": {
-      "EUU": 0.805,
-      "FRA": 0.8383,
-      "GBR": 0.9903,
-      "JPN": 0.8254,
-      "KOR": 0.9316
+      "EUU": 0.7583,
+      "FRA": 0.8501,
+      "GBR": 0.9859,
+      "JPN": 0.8098,
+      "KOR": 0.9803
     },
     "bot3_members": {
-      "IND": 0.8202,
-      "ISR": 0.6219,
-      "TWN": 0.8179
+      "IND": 0.7582,
+      "ISR": 0.4869,
+      "TWN": 0.7415
     }
   },
   "per_country_in_tier_mechanical_verdict": {
@@ -47,8 +47,8 @@
     "top5_verdict": "PASS",
     "bot3_threshold_share": 0.8,
     "bot3_min_pass_count": 2,
-    "bot3_pass_count": 2,
-    "bot3_verdict": "PASS",
-    "combined_verdict": "PASS"
+    "bot3_pass_count": 0,
+    "bot3_verdict": "FAIL",
+    "combined_verdict": "FAIL"
   }
 }

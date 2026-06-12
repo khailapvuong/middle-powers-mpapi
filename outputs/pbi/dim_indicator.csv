@@ -7,7 +7,6 @@ C5_aisi_presence,capacity_depth,C5 Aisi Presence,none,higher_is_better,§1 — p
 G1_ai_strategy,governance_orientation,G1 Ai Strategy,none,higher_is_better,§1 — paper §1 (governance maturity)
 G2_global_cybersec_index,governance_orientation,G2 Global Cybersec Index,none,higher_is_better,§2.2 — paper §2.2 (cyber-governance proxy)
 G3_vdem_libdem,governance_orientation,G3 Vdem Libdem,none,higher_is_better,§2.4 — paper §2.4 (democratic-resilience proxy)
-G4_lab_mou_count,governance_orientation,G4 Lab Mou Count,none,higher_is_better,§1 — paper §1 (alliance posture)
 G5_igsc_membership,governance_orientation,G5 Igsc Membership,none,higher_is_better,§2.3 — paper §2.3 (biosecurity-industry proxy)
 G6_australia_group,governance_orientation,G6 Australia Group,none,higher_is_better,§2.3 — paper §2.3 (CBRN export-control regime)
 I1_idi_2024,infrastructure_posture,I1 Idi 2024,none,higher_is_better,§1 — paper §1 (ICT infrastructure)

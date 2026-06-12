@@ -7,12 +7,11 @@
     "C5_aisi_presence": 0.24788562978218157
   },
   "governance_orientation": {
-    "G1_ai_strategy": 0.257016121547318,
-    "G2_global_cybersec_index": 5.6573496254841414e-05,
-    "G3_vdem_libdem": 0.13079102811429874,
-    "G4_lab_mou_count": 0.18580170734479112,
-    "G5_igsc_membership": 0.250486470579975,
-    "G6_australia_group": 0.1758480989173623
+    "G1_ai_strategy": 0.24720815542474903,
+    "G2_global_cybersec_index": 0.02189137581430411,
+    "G3_vdem_libdem": 0.2883200427390954,
+    "G5_igsc_membership": 0.15518245798181637,
+    "G6_australia_group": 0.28739796804003503
   },
   "infrastructure_posture": {
     "I1_idi_2024": 0.12375168686224737,

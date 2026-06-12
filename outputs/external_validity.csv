@@ -1,14 +1,14 @@
 iso3,name,mpapi_composite_lit,gairi_2024_overall,mpapi_rank,gairi_rank,rank_diff
-GBR,United Kingdom,2.3144,78.88,1,4,-3
-KOR,South Korea,2.1849,79.98,2,2,0
-FRA,France,1.9797,79.36,3,3,0
-JPN,Japan,1.8231,75.75,4,7,-3
-SGP,Singapore,1.8086,84.25,5,1,4
-CAN,Canada,1.4722,78.18,6,5,1
-DEU,Germany,1.4344,76.9,7,6,1
-SWE,Sweden,1.1572,75.4,8,9,-1
-ARE,United Arab Emirates,1.02,75.66,9,8,1
-SAU,Saudi Arabia,0.9216,72.36,10,12,-2
+KOR,South Korea,2.2559,79.98,1,2,-1
+GBR,United Kingdom,2.2557,78.88,2,4,-2
+FRA,France,1.9927,79.36,3,3,0
+JPN,Japan,1.8268,75.75,4,7,-3
+SGP,Singapore,1.7969,84.25,5,1,4
+DEU,Germany,1.4812,76.9,6,6,0
+CAN,Canada,1.4313,78.18,7,5,2
+SWE,Sweden,1.195,75.4,8,9,-1
+ARE,United Arab Emirates,0.9539,75.66,9,8,1
+SAU,Saudi Arabia,0.8563,72.36,10,12,-2
 ISR,Israel,0.1438,74.52,11,11,0
-IND,India,0.106,62.81,12,13,-1
-TWN,Taiwan,0.0572,74.58,13,10,3
+IND,India,0.1095,62.81,12,13,-1
+TWN,Taiwan,0.06,74.58,13,10,3

@@ -1,15 +1,15 @@
 iso3,name,SPC1,SPC2,SPC3
-GBR,United Kingdom,4.455,1.032,0.908
-CAN,Canada,0.249,1.156,-1.943
-FRA,France,0.747,1.323,0.481
-DEU,Germany,-1.328,0.834,0.011
-JPN,Japan,0.747,1.15,-0.106
-IND,India,-1.328,-0.534,0.278
-ISR,Israel,-0.829,-1.117,-1.7
-SGP,Singapore,0.249,-1.272,0.848
-KOR,South Korea,-0.109,1.163,0.908
-SWE,Sweden,-1.328,1.02,0.621
-SAU,Saudi Arabia,-0.472,-2.535,0.908
-ARE,United Arab Emirates,-0.472,-2.456,0.908
-EUU,European Union,0.747,1.049,-1.49
-TWN,Taiwan,-1.328,-0.813,-0.628
+GBR,United Kingdom,0.831,0.906,3.079
+CAN,Canada,0.958,-1.952,0.312
+FRA,France,1.13,0.477,0.865
+DEU,Germany,1.082,0.007,-1.102
+JPN,Japan,0.952,-0.111,0.865
+IND,India,-0.324,0.274,-1.102
+ISR,Israel,-0.916,-1.709,-0.549
+SGP,Singapore,-1.53,0.846,0.312
+KOR,South Korea,0.966,0.906,0.865
+SWE,Sweden,1.273,0.618,-1.102
+SAU,Saudi Arabia,-2.373,0.906,-1.102
+ARE,United Arab Emirates,-2.292,0.906,-1.102
+EUU,European Union,0.849,-1.498,0.865
+TWN,Taiwan,-0.604,-0.574,-1.102

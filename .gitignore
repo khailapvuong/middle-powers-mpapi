@@ -39,3 +39,17 @@ desktop.ini
 # Power BI — the .pbip project-folder format is excluded (noisy diffs); the
 # assembled .pbix lives in the repo root alongside the data layer + spec + tutorial.
 *.pbip
+
+# LaTeX build artifacts (paper/main.tex and paper/main.pdf are kept; the rest
+# are regenerated on each `latexmk`/`pdflatex` build).
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
