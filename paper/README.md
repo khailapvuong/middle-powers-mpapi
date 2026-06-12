@@ -8,8 +8,8 @@ Self-contained arXiv-style source for **"Operationalising the Three-Axes Framewo
 |---|---|
 | `main.tex` | The paper (single-column preprint; standard CTAN packages only). |
 | `references.bib` | Bibliography (data sources, methods, weighting frameworks, software stack, working paper). |
-| `figures/` | The 16 figures, copied from `../figures/` so this folder is self-contained. |
-| `main.pdf` | Pre-compiled output (≈22 pp). |
+| `figures/` | The 19 figures, copied from `../figures/` so this folder is self-contained. |
+| `main.pdf` | Pre-compiled output. |
 
 ## Compile
 
