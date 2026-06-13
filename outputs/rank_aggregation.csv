@@ -1,0 +1,15 @@
+iso3,name,literature_rank,borda_rank,kemeny_rank
+KOR,South Korea,1,1,1
+GBR,United Kingdom,2,2,3
+FRA,France,3,3,4
+JPN,Japan,4,5,7
+EUU,European Union,5,3,2
+SGP,Singapore,6,6,8
+DEU,Germany,7,7,5
+CAN,Canada,8,8,6
+SWE,Sweden,9,9,9
+ARE,United Arab Emirates,10,10,10
+SAU,Saudi Arabia,11,11,11
+ISR,Israel,12,14,12
+IND,India,13,12,13
+TWN,Taiwan,14,13,14

@@ -1,0 +1,15 @@
+iso3,country,current_rank,current_tier,target_tier,min_set_size,min_actions,new_rank,new_composite,feasible
+KOR,South Korea,1,top-5,—,0.0,(already top tier),1,2.238,True
+GBR,United Kingdom,2,top-5,—,0.0,(already top tier),2,2.178,True
+FRA,France,3,top-5,—,0.0,(already top tier),3,1.928,True
+JPN,Japan,4,top-5,—,0.0,(already top tier),4,1.764,True
+EUU,European Union,5,top-5,—,0.0,(already top tier),5,1.75,True
+SGP,Singapore,6,middle,top-5,1.0,JOIN_AUSTRALIA_GROUP,4,1.841,True
+DEU,Germany,7,middle,top-5,3.0,FOSTER_IGSC_FIRM; JOIN_AISI; PUBLISH_AI_STRATEGY,4,1.777,True
+CAN,Canada,8,middle,top-5,,(unreachable with the 4 levers),8,1.383,False
+SWE,Sweden,9,middle,top-5,,(unreachable with the 4 levers),9,1.049,False
+ARE,United Arab Emirates,10,middle,top-5,,(unreachable with the 4 levers),10,0.885,False
+SAU,Saudi Arabia,11,middle,top-5,,(unreachable with the 4 levers),11,0.793,False
+ISR,Israel,12,bottom-3,middle,1.0,PUBLISH_AI_STRATEGY,10,0.552,True
+IND,India,13,bottom-3,middle,,(unreachable with the 4 levers),13,0.103,False
+TWN,Taiwan,14,bottom-3,middle,,(unreachable with the 4 levers),14,0.06,False

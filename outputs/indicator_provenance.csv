@@ -1,0 +1,197 @@
+iso3,name,indicator,axis,value_used,provenance_class,source,url
+GBR,United Kingdom,C1_notable_models,capacity_depth,5.2575,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+GBR,United Kingdom,C2_training_compute,capacity_depth,56.603,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+GBR,United Kingdom,C3_ai_publications,capacity_depth,10.4843,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+GBR,United Kingdom,C4_ai_patents,capacity_depth,0.4187,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+GBR,United Kingdom,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+GBR,United Kingdom,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+GBR,United Kingdom,G2_global_cybersec_index,governance_orientation,100.0,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+GBR,United Kingdom,G3_vdem_libdem,governance_orientation,0.689,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+GBR,United Kingdom,G5_igsc_membership,governance_orientation,5.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+GBR,United Kingdom,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+GBR,United Kingdom,I1_idi_2024,infrastructure_posture,93.6,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+GBR,United Kingdom,I2_broadband,infrastructure_posture,42.1648,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+GBR,United Kingdom,I3_secure_servers,infrastructure_posture,11.1339,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+GBR,United Kingdom,I5_ndgain_readiness,infrastructure_posture,0.6813,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+CAN,Canada,C1_notable_models,capacity_depth,4.9416,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+CAN,Canada,C2_training_compute,capacity_depth,56.3044,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+CAN,Canada,C3_ai_publications,capacity_depth,9.8571,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+CAN,Canada,C4_ai_patents,capacity_depth,,imputed_column_mean,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+CAN,Canada,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+CAN,Canada,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+CAN,Canada,G2_global_cybersec_index,governance_orientation,93.1779,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+CAN,Canada,G3_vdem_libdem,governance_orientation,0.736,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+CAN,Canada,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+CAN,Canada,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+CAN,Canada,I1_idi_2024,infrastructure_posture,88.6,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+CAN,Canada,I2_broadband,infrastructure_posture,42.5238,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+CAN,Canada,I3_secure_servers,infrastructure_posture,10.5895,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+CAN,Canada,I5_ndgain_readiness,infrastructure_posture,0.6452,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+FRA,France,C1_notable_models,capacity_depth,4.7791,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+FRA,France,C2_training_compute,capacity_depth,58.9541,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+FRA,France,C3_ai_publications,capacity_depth,9.9661,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+FRA,France,C4_ai_patents,capacity_depth,0.3577,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+FRA,France,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+FRA,France,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+FRA,France,G2_global_cybersec_index,governance_orientation,98.9777,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+FRA,France,G3_vdem_libdem,governance_orientation,0.8,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+FRA,France,G5_igsc_membership,governance_orientation,1.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+FRA,France,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+FRA,France,I1_idi_2024,infrastructure_posture,89.8,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+FRA,France,I2_broadband,infrastructure_posture,48.9252,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+FRA,France,I3_secure_servers,infrastructure_posture,10.9556,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+FRA,France,I5_ndgain_readiness,infrastructure_posture,0.649,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+DEU,Germany,C1_notable_models,capacity_depth,4.6634,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+DEU,Germany,C2_training_compute,capacity_depth,56.2757,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+DEU,Germany,C3_ai_publications,capacity_depth,10.2438,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+DEU,Germany,C4_ai_patents,capacity_depth,0.7975,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+DEU,Germany,C5_aisi_presence,capacity_depth,1.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+DEU,Germany,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+DEU,Germany,G2_global_cybersec_index,governance_orientation,97.8543,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+DEU,Germany,G3_vdem_libdem,governance_orientation,0.782,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+DEU,Germany,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+DEU,Germany,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+DEU,Germany,I1_idi_2024,infrastructure_posture,87.8,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+DEU,Germany,I2_broadband,infrastructure_posture,45.6069,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+DEU,Germany,I3_secure_servers,infrastructure_posture,11.9324,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+DEU,Germany,I5_ndgain_readiness,infrastructure_posture,0.6816,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+JPN,Japan,C1_notable_models,capacity_depth,3.989,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+JPN,Japan,C2_training_compute,capacity_depth,55.9259,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+JPN,Japan,C3_ai_publications,capacity_depth,9.9608,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+JPN,Japan,C4_ai_patents,capacity_depth,1.7192,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+JPN,Japan,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+JPN,Japan,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+JPN,Japan,G2_global_cybersec_index,governance_orientation,97.5731,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+JPN,Japan,G3_vdem_libdem,governance_orientation,0.734,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+JPN,Japan,G5_igsc_membership,governance_orientation,1.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+JPN,Japan,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+JPN,Japan,I1_idi_2024,infrastructure_posture,93.2,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+JPN,Japan,I2_broadband,infrastructure_posture,38.6312,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+JPN,Japan,I3_secure_servers,infrastructure_posture,10.4021,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+JPN,Japan,I5_ndgain_readiness,infrastructure_posture,0.6851,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+IND,India,C1_notable_models,capacity_depth,3.091,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+IND,India,C2_training_compute,capacity_depth,53.8867,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+IND,India,C3_ai_publications,capacity_depth,11.2404,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+IND,India,C4_ai_patents,capacity_depth,,imputed_column_mean,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+IND,India,C5_aisi_presence,capacity_depth,1.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+IND,India,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+IND,India,G2_global_cybersec_index,governance_orientation,98.4926,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+IND,India,G3_vdem_libdem,governance_orientation,0.26,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+IND,India,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+IND,India,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+IND,India,I1_idi_2024,infrastructure_posture,85.7829,imputed_axis_mean,"ITU IDI 2024, Report Table 1",https://www.itu.int
+IND,India,I2_broadband,infrastructure_posture,3.1505,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+IND,India,I3_secure_servers,infrastructure_posture,7.1012,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+IND,India,I5_ndgain_readiness,infrastructure_posture,0.3937,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+ISR,Israel,C1_notable_models,capacity_depth,3.6109,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+ISR,Israel,C2_training_compute,capacity_depth,55.3782,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+ISR,Israel,C3_ai_publications,capacity_depth,8.0507,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+ISR,Israel,C4_ai_patents,capacity_depth,,imputed_column_mean,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+ISR,Israel,C5_aisi_presence,capacity_depth,0.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+ISR,Israel,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+ISR,Israel,G2_global_cybersec_index,governance_orientation,93.7581,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+ISR,Israel,G3_vdem_libdem,governance_orientation,0.588,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+ISR,Israel,G5_igsc_membership,governance_orientation,1.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+ISR,Israel,G6_australia_group,governance_orientation,0.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+ISR,Israel,I1_idi_2024,infrastructure_posture,92.5,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+ISR,Israel,I2_broadband,infrastructure_posture,29.1837,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+ISR,Israel,I3_secure_servers,infrastructure_posture,9.4217,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+ISR,Israel,I5_ndgain_readiness,infrastructure_posture,0.5239,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+SGP,Singapore,C1_notable_models,capacity_depth,3.9318,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+SGP,Singapore,C2_training_compute,capacity_depth,58.0642,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+SGP,Singapore,C3_ai_publications,capacity_depth,8.8476,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+SGP,Singapore,C4_ai_patents,capacity_depth,0.6831,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+SGP,Singapore,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+SGP,Singapore,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+SGP,Singapore,G2_global_cybersec_index,governance_orientation,99.8565,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+SGP,Singapore,G3_vdem_libdem,governance_orientation,0.36,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+SGP,Singapore,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+SGP,Singapore,G6_australia_group,governance_orientation,0.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+SGP,Singapore,I1_idi_2024,infrastructure_posture,97.8,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+SGP,Singapore,I2_broadband,infrastructure_posture,27.8137,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+SGP,Singapore,I3_secure_servers,infrastructure_posture,12.2533,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+SGP,Singapore,I5_ndgain_readiness,infrastructure_posture,0.8001,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+KOR,South Korea,C1_notable_models,capacity_depth,5.0069,imputed_axis_mean,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+KOR,South Korea,C2_training_compute,capacity_depth,59.4657,imputed_axis_mean,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+KOR,South Korea,C3_ai_publications,capacity_depth,9.8089,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+KOR,South Korea,C4_ai_patents,capacity_depth,2.9053,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+KOR,South Korea,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+KOR,South Korea,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+KOR,South Korea,G2_global_cybersec_index,governance_orientation,100.0,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+KOR,South Korea,G3_vdem_libdem,governance_orientation,0.739,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+KOR,South Korea,G5_igsc_membership,governance_orientation,1.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+KOR,South Korea,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+KOR,South Korea,I1_idi_2024,infrastructure_posture,94.4,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+KOR,South Korea,I2_broadband,infrastructure_posture,47.8015,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+KOR,South Korea,I3_secure_servers,infrastructure_posture,9.3846,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+KOR,South Korea,I5_ndgain_readiness,infrastructure_posture,0.727,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+SWE,Sweden,C1_notable_models,capacity_depth,3.0445,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+SWE,Sweden,C2_training_compute,capacity_depth,54.1406,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+SWE,Sweden,C3_ai_publications,capacity_depth,8.6834,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+SWE,Sweden,C4_ai_patents,capacity_depth,0.5539,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+SWE,Sweden,C5_aisi_presence,capacity_depth,0.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+SWE,Sweden,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+SWE,Sweden,G2_global_cybersec_index,governance_orientation,99.3128,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+SWE,Sweden,G3_vdem_libdem,governance_orientation,0.853,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+SWE,Sweden,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+SWE,Sweden,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+SWE,Sweden,I1_idi_2024,infrastructure_posture,95.3,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+SWE,Sweden,I2_broadband,infrastructure_posture,40.6157,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+SWE,Sweden,I3_secure_servers,infrastructure_posture,10.9169,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+SWE,Sweden,I5_ndgain_readiness,infrastructure_posture,0.7135,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+SAU,Saudi Arabia,C1_notable_models,capacity_depth,2.6391,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+SAU,Saudi Arabia,C2_training_compute,capacity_depth,57.8181,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+SAU,Saudi Arabia,C3_ai_publications,capacity_depth,9.2852,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+SAU,Saudi Arabia,C4_ai_patents,capacity_depth,,imputed_column_mean,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+SAU,Saudi Arabia,C5_aisi_presence,capacity_depth,0.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+SAU,Saudi Arabia,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+SAU,Saudi Arabia,G2_global_cybersec_index,governance_orientation,100.0,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+SAU,Saudi Arabia,G3_vdem_libdem,governance_orientation,0.047,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+SAU,Saudi Arabia,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+SAU,Saudi Arabia,G6_australia_group,governance_orientation,0.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+SAU,Saudi Arabia,I1_idi_2024,infrastructure_posture,95.7,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+SAU,Saudi Arabia,I2_broadband,infrastructure_posture,44.0706,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+SAU,Saudi Arabia,I3_secure_servers,infrastructure_posture,6.1816,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+SAU,Saudi Arabia,I5_ndgain_readiness,infrastructure_posture,0.5728,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+ARE,United Arab Emirates,C1_notable_models,capacity_depth,3.1355,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+ARE,United Arab Emirates,C2_training_compute,capacity_depth,57.7063,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+ARE,United Arab Emirates,C3_ai_publications,capacity_depth,8.4224,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+ARE,United Arab Emirates,C4_ai_patents,capacity_depth,,imputed_column_mean,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+ARE,United Arab Emirates,C5_aisi_presence,capacity_depth,0.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+ARE,United Arab Emirates,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+ARE,United Arab Emirates,G2_global_cybersec_index,governance_orientation,100.0,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+ARE,United Arab Emirates,G3_vdem_libdem,governance_orientation,0.077,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+ARE,United Arab Emirates,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+ARE,United Arab Emirates,G6_australia_group,governance_orientation,0.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+ARE,United Arab Emirates,I1_idi_2024,infrastructure_posture,97.5,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+ARE,United Arab Emirates,I2_broadband,infrastructure_posture,40.8401,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+ARE,United Arab Emirates,I3_secure_servers,infrastructure_posture,8.3412,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+ARE,United Arab Emirates,I5_ndgain_readiness,infrastructure_posture,0.5871,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+EUU,European Union,C1_notable_models,capacity_depth,5.4972,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+EUU,European Union,C2_training_compute,capacity_depth,59.0281,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+EUU,European Union,C3_ai_publications,capacity_depth,11.9144,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+EUU,European Union,C4_ai_patents,capacity_depth,1.246,programmatic,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+EUU,European Union,C5_aisi_presence,capacity_depth,3.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+EUU,European Union,G1_ai_strategy,governance_orientation,3.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+EUU,European Union,G2_global_cybersec_index,governance_orientation,94.2608,programmatic,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+EUU,European Union,G3_vdem_libdem,governance_orientation,0.6954,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+EUU,European Union,G5_igsc_membership,governance_orientation,1.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+EUU,European Union,G6_australia_group,governance_orientation,1.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+EUU,European Union,I1_idi_2024,infrastructure_posture,91.3,programmatic,"ITU IDI 2024, Report Table 1",https://www.itu.int
+EUU,European Union,I2_broadband,infrastructure_posture,45.0493,programmatic,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+EUU,European Union,I3_secure_servers,infrastructure_posture,11.3869,programmatic,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+EUU,European Union,I5_ndgain_readiness,infrastructure_posture,0.5848,programmatic,ND-GAIN Country Index 2026,https://gain.nd.edu
+TWN,Taiwan,C1_notable_models,capacity_depth,2.6391,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+TWN,Taiwan,C2_training_compute,capacity_depth,45.9046,programmatic,Epoch AI - Notable AI Models,https://epoch.ai/data/all_ai_models.csv
+TWN,Taiwan,C3_ai_publications,capacity_depth,8.9569,programmatic,OpenAlex Works API (concept C154945302),https://api.openalex.org/works
+TWN,Taiwan,C4_ai_patents,capacity_depth,,imputed_column_mean,"Stanford AI Index 2025, Fig 1.2.3",https://hai.stanford.edu/ai-index
+TWN,Taiwan,C5_aisi_presence,capacity_depth,1.0,analyst_coded,AISI Network (NIST) + per-country citations (4.9.1),https://www.nist.gov/news-events/news/2024/11/fact-sheet-us-department-commerce-us-department-state-launch-international
+TWN,Taiwan,G1_ai_strategy,governance_orientation,2.0,analyst_coded,OECD.AI Policy Observatory + per-country citations (4.9.1),https://oecd.ai/en/dashboards/national
+TWN,Taiwan,G2_global_cybersec_index,governance_orientation,96.4678,imputed_axis_mean,ITU GCI 2024 (via World Bank Data360),https://datahub.itu.int
+TWN,Taiwan,G3_vdem_libdem,governance_orientation,0.704,programmatic,V-Dem v16 (v2x_libdem),https://www.v-dem.net
+TWN,Taiwan,G5_igsc_membership,governance_orientation,0.0,programmatic,IGSC member roster,https://genesynthesisconsortium.org/
+TWN,Taiwan,G6_australia_group,governance_orientation,0.0,inlined_authoritative,Australia Group - Participants,https://www.australiagroup.net/en/participants.html
+TWN,Taiwan,I1_idi_2024,infrastructure_posture,,imputed_column_mean,"ITU IDI 2024, Report Table 1",https://www.itu.int
+TWN,Taiwan,I2_broadband,infrastructure_posture,,imputed_column_mean,World Bank WDI IT.NET.BBND.P2,https://data.worldbank.org
+TWN,Taiwan,I3_secure_servers,infrastructure_posture,,imputed_column_mean,World Bank WDI IT.NET.SECR.P6,https://data.worldbank.org
+TWN,Taiwan,I5_ndgain_readiness,infrastructure_posture,,imputed_column_mean,ND-GAIN Country Index 2026,https://gain.nd.edu

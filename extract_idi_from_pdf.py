@@ -125,6 +125,13 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     df = parse()
     print(f"Parsed {len(df)} economies from IDI 2024 Table 1")
+    _IDI_MIN_ROWS = 100
+    if len(df) < _IDI_MIN_ROWS:
+        raise RuntimeError(
+            f"ITU IDI 2024 extractor parsed only {len(df)} economies (Table 1 lists "
+            f"~170; floor {_IDI_MIN_ROWS}). The PDF layout or ROW_RE likely changed; "
+            f"refusing to overwrite {OUT} with a partial extract."
+        )
     df.to_csv(OUT, index=False, encoding="utf-8")
     print(f"Wrote {OUT}")
     unmapped = df[df["iso3"].isna()]

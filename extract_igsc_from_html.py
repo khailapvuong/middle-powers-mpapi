@@ -115,6 +115,13 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     df = parse()
     print(f"Extracted {len(df)} IGSC member firms")
+    _IGSC_MIN_ROWS = 10
+    if len(df) < _IGSC_MIN_ROWS:
+        raise RuntimeError(
+            f"IGSC extractor parsed only {len(df)} member firms (floor {_IGSC_MIN_ROWS}); "
+            "the homepage markup likely changed (the <h4><a> member-link pattern). "
+            f"Refusing to overwrite {OUT} with a partial extract."
+        )
     df.to_csv(OUT, index=False, encoding="utf-8")
     print(f"Wrote {OUT}")
     # Country counts of relevance.

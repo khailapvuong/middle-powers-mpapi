@@ -1,0 +1,7 @@
+assumption,required_for_causal_reading,holds_in_this_design,why
+Well-defined intervention (consistency),Yes,Partial,"The indicator change is well-defined, but the real-world action (e.g. 'join AISI') is heterogeneous across countries."
+No unmeasured confounding (exchangeability),Yes,No,AISI membership / strategy co-vary with latent state capacity (C5xG1 r=0.965); unobserved capacity cannot be adjusted for at n=14.
+No interference between units (SUTVA),Yes,No,"The composite is relative within the 14 jurisdictions, so one country's action shifts others' ranks; cross-country spillovers are plausible."
+Temporal precedence (cause before effect),Yes,No,Single cross-sectional snapshot; action and outcome are measured at the same time.
+Structural stability / no effect modification,Yes,No,"One 2024-2025 snapshot; axis structure, weights, and the threat landscape may shift."
+"Outcome is real-world preparedness, not the index",Yes,No,The recompute moves the composite C (a measurement); the causal target Y (actual preparedness) is unobserved and only proxied.

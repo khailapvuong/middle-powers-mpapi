@@ -39,7 +39,7 @@
 \thispagestyle{fancy}
 
 \begin{abstract}
-\noindent The working paper \emph{AI-Proliferation and Middle Powers} argues that fourteen named middle powers differ along three axes---\emph{capacity depth}, \emph{governance orientation}, and \emph{infrastructure posture}---and that the tractability of preparedness actions depends on a country's position along them, yet it never empirically positions any country. This companion study closes that gap with the Middle-Power AI-Proliferation Preparedness Index (M-PAPI): a reproducible composite indicator built from fourteen publicly sourced indicators following the OECD/JRC \emph{Handbook on Constructing Composite Indicators}. We report a literature-weighted ranking in which the United Kingdom and South Korea are tied at the top ($2.256$ each) and India ($0.109$) and Taiwan ($0.060$) trail; the top-five set $\{$UK, Korea, France, EU, Japan$\}$ is identical across equal-, PCA-, and literature-weighting schemes. Six hypotheses are pre-registered with numeric pass criteria and resolved mechanically: two are fully supported (cluster heterogeneity; insensitivity of the top tier to any single analyst-coded indicator) and four are partially supported with specific, named caveats (cross-axis separability, axis dimensionality, ranking robustness, and tier-membership stability). A vulnerability overlay maps axis scores onto the paper's three attack vectors, and counterfactual scenarios quantify per-country policy leverage. The ranking is strongly rank-concordant with the independent Oxford Insights Government AI Readiness Index 2024 (Spearman $\rho=0.863$ over the thirteen jurisdictions both cover), evidence of external concurrent validity. All outputs regenerate byte-for-byte under a pinned seed and an offline data snapshot. The index empirically grounds the paper's $\S$1--$\S$2 premise---the middle powers are differentiable, and the most-exposed tier is identifiable---while explicitly declining the $\S$3--$\S$4 claims it cannot yet test.
+\noindent The working paper \emph{AI-Proliferation and Middle Powers} argues that fourteen named middle powers differ along three axes---\emph{capacity depth}, \emph{governance orientation}, and \emph{infrastructure posture}---and that the tractability of preparedness actions depends on a country's position along them, yet it never empirically positions any country. This companion study closes that gap with the Middle-Power AI-Proliferation Preparedness Index (M-PAPI): a reproducible composite indicator built from fourteen publicly sourced indicators following the OECD/JRC \emph{Handbook on Constructing Composite Indicators}. We report a literature-weighted ranking in which South Korea ($2.238$) and the United Kingdom ($2.178$) co-lead---Korea first under the equal and literature schemes, the UK first under PCA---and India ($0.103$) and Taiwan ($0.060$) trail; the top-five set $\{$UK, Korea, France, EU, Japan$\}$ is identical across equal-, PCA-, and literature-weighting schemes. Six hypotheses are pre-registered with numeric pass criteria and resolved mechanically: two are fully supported (cluster heterogeneity; insensitivity of the top tier to any single analyst-coded indicator) and four are partially supported with specific, named caveats (cross-axis separability, axis dimensionality, ranking robustness, and tier-membership stability). A vulnerability overlay maps axis scores onto the paper's three attack vectors, and counterfactual scenarios quantify per-country policy leverage. The ranking is strongly rank-concordant with the independent Oxford Insights Government AI Readiness Index 2024 (Spearman $\rho=0.863$ over the thirteen jurisdictions both cover), evidence of external concurrent validity. All outputs regenerate byte-for-byte under a pinned seed and an offline data snapshot. The index empirically grounds the paper's $\S$1--$\S$2 premise---the middle powers are differentiable, and the most-exposed tier is identifiable---while explicitly declining the $\S$3--$\S$4 claims it cannot yet test.
 \end{abstract}
 
 \noindent\textbf{Keywords:} composite indicators; AI governance; middle powers; AI proliferation; reproducible research; sensitivity analysis.
@@ -109,11 +109,11 @@ Composite indicators are routinely criticised for their dependence on weighting.
 \subsection{Indicator set and provenance}
 Table~\ref{tab:indicators} lists the fourteen indicators with their source, pre-normalisation transform, and within-axis literature weight. Twelve of the fourteen are fully sourced from Tier-1 institutional providers with no analyst-coding step (eleven retrieved programmatically; one---Australia Group membership, G6---inlined against its cited public roster because the upstream page is unreliable for automated fetch). Programmatic sources include Epoch AI \citep{epoch2024models} for notable-model counts and training compute (C1, C2), OpenAlex \citep{priem2022openalex} for AI publications (C3), the Stanford AI Index \citep{maslej2025aiindex} for AI patents per 100{,}000 inhabitants (C4), the ITU Global Cybersecurity Index \citep{itu2024gci} (G2), V-Dem \citep{vdem2026v16} for the liberal-democracy index (G3), the IGSC roster \citep{igsc2026} (G5), the ITU ICT Development Index \citep{itu2024idi} (I1), the World Bank WDI \citep{worldbank2024wdi} for broadband and secure servers (I2, I3), and the ND-GAIN Country Index \citep{ndgain2026} (I5).
 
-Two indicators carry an analyst-coding step and are flagged \texttt{requires\_verification} in the project's data registry: G1 (national AI-strategy comprehensiveness, a 0--3 rubric over the OECD.AI Policy Observatory \citep{oecdai2024}) and the ordinal extension of C5 (AISI presence; the binary 0/3 split between Network and non-Network members is authoritative from the NIST fact sheet \citep{nist2024aisi}, while the intermediate codes for non-members are authorial). For each, per-country coding protocols and evidence citations are recorded in the notebook, and Section~\ref{sec:results} shows that collapsing each indicator to its authoritative core leaves the ranking unchanged. A fifteenth candidate indicator---a bilateral frontier-lab MoU count (G4)---was excluded from the scored composite for lack of a reproducible authoritative source: there is no public registry of such MoUs, the landscape blurs MoU, partnership, and commercial deal, and documented cases often involve a national AI Safety Institute, double-counting C5. The bilateral-lab-MoU concept is retained qualitatively; excluding G4 leaves the UK and Korea tied at the top.
+Two indicators carry an analyst-coding step and are flagged \texttt{requires\_verification} in the project's data registry: G1 (national AI-strategy comprehensiveness, a 0--3 rubric over the OECD.AI Policy Observatory \citep{oecdai2024}) and the ordinal extension of C5 (AISI presence; the binary 0/3 split between Network and non-Network members is authoritative from the NIST fact sheet \citep{nist2024aisi}, while the intermediate codes for non-members are authorial). For each, per-country coding protocols and evidence citations are recorded in the notebook, and Section~\ref{sec:results} shows that collapsing each indicator to its authoritative core leaves the ranking unchanged. A fifteenth candidate indicator---a bilateral frontier-lab MoU count (G4)---was excluded from the scored composite for lack of a reproducible authoritative source: there is no public registry of such MoUs, the landscape blurs MoU, partnership, and commercial deal, and documented cases often involve a national AI Safety Institute, double-counting C5. The bilateral-lab-MoU concept is retained qualitatively; excluding G4 leaves South Korea and the UK co-leading at the top.
 
 \begin{table}[t]
 \centering
-\caption{The fourteen indicators: axis assignment, source, pre-normalisation transform, and within-axis weight under the literature scheme. Polarity is ``higher is better'' throughout.}
+\caption{The fourteen indicators: axis assignment, source, pre-normalisation transform, and within-axis weight under the literature scheme. Weights are elicited as relative weights and renormalised to sum to one within each axis before aggregation (Eq.~\ref{eq:axis}); the governance weights shown sum to $0.90$ as elicited and are rescaled accordingly. Polarity is ``higher is better'' throughout.}
 \label{tab:indicators}
 \footnotesize
 \begin{tabularx}{\textwidth}{@{}l Y l c c@{}}
@@ -141,7 +141,7 @@ I5 & ND-GAIN readiness (Notre Dame) & Infrastructure & none & 0.20 \\
 \end{table}
 
 \subsection{Missingness and observability}
-The raw $14\times14$ matrix is $91.3\%$ observed ($179$ of $196$ cells). Figure~\ref{fig:missing} maps every cell to one of three states: observed, stage-1 axis-mean imputed, or stage-2 column-mean fallback. The largest gap is C4 (AI patents), missing for seven of the fourteen jurisdictions because they fall below the Stanford AI Index's published top-15 cut-off; C4 therefore exceeds the imputation threshold and its missing cells are column-mean filled. Taiwan's four infrastructure indicators are unobserved (a missing-not-at-random exclusion from ITU and World Bank ICT collection) and are likewise column-mean filled---a caveat carried through every downstream figure.
+The raw $14\times14$ matrix is $92.9\%$ observed ($182$ of $196$ cells). Figure~\ref{fig:missing} maps every cell to one of three states: observed, stage-1 axis-mean imputed, or stage-2 column-mean fallback. The largest gap is C4 (AI patents), missing for six of the fourteen jurisdictions because they fall below the Stanford AI Index's published top-15 cut-off; C4 therefore exceeds the imputation threshold and its missing cells are column-mean filled. Taiwan's four infrastructure indicators are unobserved (a missing-not-at-random exclusion from ITU and World Bank ICT collection) and are likewise column-mean filled---a caveat carried through every downstream figure.
 
 \begin{figure}[t]
 \centering
@@ -156,7 +156,7 @@ The raw $14\times14$ matrix is $91.3\%$ observed ($179$ of $196$ cells). Figure~
 The pipeline follows the OECD/JRC ten-step process \citep{oecd2008handbook}: theoretical framework (Section~\ref{sec:framework}), data selection (Section~\ref{sec:data}), imputation, multivariate analysis, normalisation, weighting, aggregation, robustness, back-to-the-data interpretation, and visualisation.
 
 \subsection{Cleaning, transforms, and imputation}
-Count-like indicators (C1--C4, I3) receive a $\log(1+x)$ transform; bounded scores and ordinals are left untransformed. The European Union row is constructed from member states---summed for count indicators that upstream sources report per country, and member-mean for bounded scores and per-capita rates---a deliberate but internally asymmetric construction that we flag as a limitation (Section~\ref{sec:limits}). Missing cells whose indicator has at most $30\%$ missingness are imputed by the country's average $z$-position across its other same-axis indicators (stage 1); indicators above that threshold, and cells with no observed axis-mate, fall through to column-mean imputation (stage 2). Only six cells receive stage-1 imputation.
+Count-like indicators (C1--C4, I3) receive a $\log(1+x)$ transform; bounded scores and ordinals are left untransformed. The European Union row is constructed from member states---summed for count indicators that upstream sources report per country, and member-mean for bounded scores and per-capita rates---a deliberate but internally asymmetric construction that we flag as a limitation (Section~\ref{sec:limits}). Missing cells whose indicator has at most $30\%$ missingness are imputed by the country's average $z$-position across its other same-axis indicators (stage 1); indicators above that threshold, and cells with no observed axis-mate, fall through to column-mean imputation (stage 2). Only four cells receive stage-1 imputation.
 
 \subsection{Normalisation and aggregation}
 Each indicator is normalised by $z$-score across the fourteen jurisdictions,
@@ -164,7 +164,7 @@ Each indicator is normalised by $z$-score across the fourteen jurisdictions,
 z_{ij} = \frac{x_{ij} - \bar{x}_j}{\sigma_j},
 \end{equation}
 with min--max normalisation retained as a sensitivity check. Within each axis $a$, the axis score is a linear weighted sum of its normalised indicators,
-\begin{equation}
+\begin{equation}\label{eq:axis}
 A_{ia} = \sum_{j \in a} w_j\, z_{ij}, \qquad \sum_{j \in a} w_j = 1 .
 \end{equation}
 Across axes, the composite is a weighted \emph{geometric} mean, which penalises imbalance so that no single axis fully compensates for weakness on another---consistent with the paper's $\S$4 logic that all three axes matter. Because $z$-scored axis scores can be negative, each axis is shifted to positive support before the logarithm:
@@ -177,12 +177,12 @@ with $\varepsilon = 10^{-3}$. The shift makes per-country composite \emph{values
 Three schemes are reported side by side: \textbf{equal} (uniform within and across axes); \textbf{PCA-derived} (within-axis weights proportional to squared first-principal-component loadings, computed at run time); and \textbf{literature-elicited} (Table~\ref{tab:indicators}; across-axis weights $0.40/0.30/0.30$), synthesised from the GMF \emph{Pivotal Powers} \citep{dehoopscheffer2024pivotal}, Chatham House sovereign-AI \citep{sandoval2026sovereign}, and Tortoise Global AI Index \citep{tortoise2023globalai} frameworks. The PCA scheme is presented as a sensitivity benchmark only: at $n=14$ its loadings are unstable, and on the governance axis it effectively zeroes the cybersecurity indicator (G2) and reallocates its mass chiefly to G3 and G6.
 
 \subsection{Multivariate diagnostics}
-We assess whether each axis coheres as a one-dimensional construct using within-axis correlations, Cronbach's $\alpha$ \citep{cronbach1951alpha}, and Horn's parallel analysis \citep{horn1965parallel} (Figure~\ref{fig:pa}). Parallel analysis compares each axis's observed first-component explained-variance ratio against a $95$th-percentile permutation null over $10{,}000$ shuffles. The infrastructure and governance axes clear the null ($p=0.014$ and $p=0.040$); the capacity axis is borderline ($p=0.076$) and, with only seven complete cases, is effectively untestable. Cronbach's $\alpha$ is $0.741$ (capacity), $0.579$ (governance, below the conventional $0.7$ threshold), and $0.722$ (infrastructure).
+We assess whether each axis coheres as a one-dimensional construct using within-axis correlations, Cronbach's $\alpha$ \citep{cronbach1951alpha}, and Horn's parallel analysis \citep{horn1965parallel} (Figure~\ref{fig:pa}). Parallel analysis compares each axis's observed first-component explained-variance ratio against a $95$th-percentile permutation null over $10{,}000$ shuffles. The infrastructure and governance axes clear the null ($p=0.014$ and $p=0.040$); the capacity axis is fit on only eight complete cases---below the ten-case testability floor---so its parallel-analysis verdict is suppressed as unstable (its $p$ swings from $\approx0.08$ at $n=7$ to $\approx0.01$ at $n=8$). Cronbach's $\alpha$ is $0.782$ (capacity), $0.579$ (governance, below the conventional $0.7$ threshold), and $0.722$ (infrastructure).
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.97\textwidth]{figures/fig8_1_parallel_analysis.png}
-\caption{Horn's parallel analysis per axis ($10{,}000$ permutations). Bars: observed explained-variance ratio per component; red line: $95$th-percentile permutation null; dashed grey: the $50\%$ heuristic. The first component clears the null for governance and infrastructure but not for capacity (fit on $n=7$ complete cases). Source: \texttt{outputs/parallel\_analysis.csv}.}
+\caption{Horn's parallel analysis per axis ($10{,}000$ permutations). Bars: observed explained-variance ratio per component; red line: $95$th-percentile permutation null; dashed grey: the $50\%$ heuristic. The first component clears the null for governance and infrastructure; capacity is untestable (fit on $n=8$ complete cases, below the ten-case testability floor). Source: \texttt{outputs/parallel\_analysis.csv}.}
 \label{fig:pa}
 \end{figure}
 
@@ -193,6 +193,8 @@ Rank stability is probed with: a $10{,}000$-draw Dirichlet$(\alpha{=}1)$ Monte C
 \end{equation}
 is the variance-stabilised form appropriate for Spearman's $\rho$ (wider than the naive Pearson $1/\sqrt{n-3}$). A second, \emph{joint} Monte Carlo perturbs the imputed cells alongside the weights---stage-1 axis-mean cells by the country's observed within-axis $z$-dispersion, and stage-2/MNAR cells by $N(0,\sigma_2)$ with $\sigma_2\in\{0.5,1.0\}$---while holding every \emph{observed} value fixed, yielding per-country credible rank intervals and tier-membership probabilities (Section~\ref{sec:results}, Figure~\ref{fig:rankunc}). Concurrent validity is assessed against an independent external index (Section~\ref{subsec:extval}).
 
+\paragraph{Country-influence and weighting-free checks.} Two further checks target the small-$n$ leverage and weight-dependence concerns head-on. A leave-one-\emph{country}-out jackknife \citep{quenouille1949approximate,tukey1958bias} drops each of the fourteen jurisdictions in turn, re-normalises the remaining thirteen (z-scores are sample-relative), and recomputes both the ranking and the $k$-means typology ($k=3$ held fixed to isolate the country-drop effect from model selection), quantifying how much any single country drives the order (Spearman $\rho$ with Bonett--Wright CI on the retained thirteen) and the partition (adjusted Rand index against the full typology). Separately, a \emph{weighting-free} consensus ranking treats each of the fourteen indicators as one equal ballot and aggregates the fourteen ballots with no cardinal weights---neither within- nor across-axis---via the Borda count \citep{borda1781memoire} and the exact Kemeny--Young median ranking \citep{kemeny1959mathematics,young1988optimal}, the order minimising total Kendall-$\tau$ disagreement with the ballots, solved as a mixed-integer programme over the fourteen alternatives. If the headline survives an aggregation that removes the weighting step entirely, the ordering is a property of the data rather than of the weights.
+
 \subsection{Typology and interpretability}
 Country archetypes are obtained by $k$-means with a silhouette-selected $k$ \citep{rousseeuw1987silhouettes}, cross-checked against hierarchical clustering (adjusted Rand index, \citealp{hubert1985ari}) and a multidimensional-scaling embedding \citep{kruskal1964mds}. Per-indicator contributions to the headline composite are decomposed exactly by enumerating all $2^{14}$ Shapley \citep{shapley1953value} coalitions, complemented by permutation feature importance and, over the same coalition set, exact second-order Shapley \emph{interaction} indices \citep{grabisch1999interaction} that quantify pairwise indicator redundancy (Appendix~\ref{app:interp}, Figure~\ref{fig:shapint}). Internal consistency, clustering, and MDS use \texttt{scikit-learn} \citep{pedregosa2011scikit}; the stack also includes NumPy \citep{harris2020numpy}, pandas \citep{mckinney2010pandas}, SciPy \citep{virtanen2020scipy}, Matplotlib \citep{hunter2007matplotlib}, and seaborn \citep{waskom2021seaborn}.
 
@@ -200,7 +202,7 @@ Country archetypes are obtained by $k$-means with a silhouette-selected $k$ \cit
 \section{Results}\label{sec:results}
 % ============================================================
 \subsection{Headline ranking}
-Table~\ref{tab:headline} reports the composite under all three schemes. Under the literature scheme the United Kingdom and South Korea are tied at the top ($2.256$ each---the UK leads under equal and PCA weighting, and the two tie to three-decimal precision under literature), and India ($0.109$) and Taiwan ($0.060$) trail. The top-five set $\{$UK, Korea, France, EU, Japan$\}$ is identical across all three schemes; the bottom-three set contains $\{$India, Taiwan$\}$ under every scheme, with the third slot Israel under the literature scheme and Saudi Arabia under the equal and PCA schemes. Figure~\ref{fig:typology} positions the countries on the capacity $\times$ infrastructure plane, colour-coded by archetype and shape-coded by AISI Network membership.
+Table~\ref{tab:headline} reports the composite under all three schemes. Under the literature scheme South Korea ($2.238$) and the United Kingdom ($2.178$) co-lead---Korea ranks first under the equal and literature schemes, the UK first under PCA---and India ($0.103$) and Taiwan ($0.060$) trail. The top-five set $\{$UK, Korea, France, EU, Japan$\}$ is identical across all three schemes; the bottom-three set contains $\{$India, Taiwan$\}$ under every scheme, with the third slot Israel under the literature scheme and Saudi Arabia under the equal and PCA schemes. Figure~\ref{fig:typology} positions the countries on the capacity $\times$ infrastructure plane, colour-coded by archetype and shape-coded by AISI Network membership.
 
 \begin{table}[t]
 \centering
@@ -211,19 +213,19 @@ Table~\ref{tab:headline} reports the composite under all three schemes. Under th
 \toprule
 \textbf{Rank} & \textbf{Country} & \textbf{Equal} & \textbf{PCA} & \textbf{Literature} \\
 \midrule
-1  & South Korea           & 2.096 & 2.367 & 2.256 \\
-2  & United Kingdom        & 2.147 & 2.490 & 2.256 \\
-3  & France                & 1.823 & 2.283 & 1.993 \\
-4  & Japan                 & 1.745 & 2.108 & 1.827 \\
-5  & European Union        & 1.781 & 2.343 & 1.798 \\
-6  & Singapore             & 1.372 & 1.668 & 1.797 \\
-7  & Germany               & 1.393 & 1.875 & 1.481 \\
-8  & Canada                & 1.420 & 2.084 & 1.431 \\
-9  & Sweden                & 1.034 & 1.372 & 1.195 \\
-10 & United Arab Emirates  & 0.337 & 0.395 & 0.954 \\
-11 & Saudi Arabia          & 0.113 & 0.116 & 0.856 \\
-12 & Israel                & 0.360 & 0.936 & 0.144 \\
-13 & India                 & 0.081 & 0.101 & 0.109 \\
+1  & South Korea           & 2.086 & 2.365 & 2.238 \\
+2  & United Kingdom        & 2.083 & 2.420 & 2.178 \\
+3  & France                & 1.769 & 2.227 & 1.928 \\
+4  & Japan                 & 1.701 & 2.055 & 1.764 \\
+5  & European Union        & 1.750 & 2.299 & 1.750 \\
+6  & Singapore             & 1.324 & 1.622 & 1.731 \\
+7  & Germany               & 1.339 & 1.820 & 1.411 \\
+8  & Canada                & 1.381 & 2.027 & 1.383 \\
+9  & Sweden                & 0.883 & 1.275 & 1.049 \\
+10 & United Arab Emirates  & 0.314 & 0.382 & 0.885 \\
+11 & Saudi Arabia          & 0.106 & 0.113 & 0.793 \\
+12 & Israel                & 0.329 & 0.888 & 0.132 \\
+13 & India                 & 0.077 & 0.098 & 0.103 \\
 14 & Taiwan                & 0.077 & 0.117 & 0.060 \\
 \bottomrule
 \end{tabular}
@@ -237,7 +239,7 @@ Table~\ref{tab:headline} reports the composite under all three schemes. Under th
 \end{figure}
 
 \subsection{Robustness}
-Under the Bonett--Wright standard error, the equal-vs-PCA and normalisation perturbations clear the $0.70$ robustness floor with wide margins (Table~\ref{tab:robust}, Figure~\ref{fig:forest}). The equal-vs-literature perturbation ($\rho=0.960$, CI lower bound $0.845$) and the bibliographic-classifier check ($\rho=0.960$, CI lower bound $0.845$) both clear the $0.70$ floor yet sit below the stricter $0.85$ bar imposed on the classifier (a core measurement choice rather than a downstream weight perturbation). The Monte Carlo rank distributions (Appendix Figure~\ref{fig:rankdist}) show the United Kingdom and South Korea co-leading at a median rank of~2 and the $\{$France, Japan, EU$\}$ block sharing a median rank of~4.
+Under the Bonett--Wright standard error, the equal-vs-PCA, equal-vs-literature, and normalisation perturbations all clear the $0.70$ robustness floor with comfortable margins, and their CI lower bounds ($0.911$, $0.861$, and $0.861$) also clear the stricter $0.85$ bar (Table~\ref{tab:robust}, Figure~\ref{fig:forest}). Only the bibliographic-classifier check ($\rho=0.960$, CI lower bound $0.845$) sits just below the $0.85$ bar imposed on the classifier (a core measurement choice rather than a downstream weight perturbation), while still clearing the $0.70$ floor. The Monte Carlo rank distributions (Appendix Figure~\ref{fig:rankdist}) show the United Kingdom and South Korea co-leading at a median rank of~2 and the $\{$France, Japan, EU$\}$ block sharing a median rank of~4.
 
 \begin{table}[t]
 \centering
@@ -248,9 +250,9 @@ Under the Bonett--Wright standard error, the equal-vs-PCA and normalisation pert
 \toprule
 \textbf{Perturbation} & \textbf{$\rho$} & \textbf{Threshold} & \textbf{95\% CI} & \textbf{Verdict} \\
 \midrule
-Weighting: equal vs PCA            & 0.982 & 0.70 & $[0.928,\,0.996]$ & clears \\
-Weighting: equal vs literature     & 0.960 & 0.70 & $[0.845,\,0.990]$ & clears \\
-Normalisation: $z$ vs min--max     & 0.978 & 0.70 & $[0.911,\,0.995]$ & clears \\
+Weighting: equal vs PCA            & 0.978 & 0.70 & $[0.911,\,0.995]$ & clears \\
+Weighting: equal vs literature     & 0.965 & 0.70 & $[0.861,\,0.992]$ & clears \\
+Normalisation: $z$ vs min--max     & 0.965 & 0.70 & $[0.861,\,0.992]$ & clears \\
 Classifier: AI-broad vs ML-narrow  & 0.960 & 0.85 & $[0.845,\,0.990]$ & borderline \\
 \bottomrule
 \end{tabular}
@@ -259,11 +261,11 @@ Classifier: AI-broad vs ML-narrow  & 0.960 & 0.85 & $[0.845,\,0.990]$ & borderli
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.92\textwidth]{figures/fig12_5_robustness_forest.png}
-\caption{Robustness forest plot: Spearman $\rho$ point estimates with Bonett--Wright Fisher-$z$ $95\%$ CIs against each perturbation's pass threshold (dashed). The equal-vs-PCA and normalisation checks clear $0.70$ with wide margins; the equal-vs-literature and classifier checks are borderline against the stricter $0.85$ bar applied to the classifier. Source: \texttt{outputs/robustness\_summary\_with\_ci.csv}.}
+\caption{Robustness forest plot: Spearman $\rho$ point estimates with Bonett--Wright Fisher-$z$ $95\%$ CIs against each perturbation's pass threshold (dashed). The equal-vs-PCA, equal-vs-literature, and normalisation checks clear $0.70$ with wide margins (all three CI lower bounds also clear $0.85$); only the classifier check is borderline against the stricter $0.85$ bar applied to it. Source: \texttt{outputs/robustness\_summary\_with\_ci.csv}.}
 \label{fig:forest}
 \end{figure}
 
-\paragraph{Rank uncertainty.} The joint Monte Carlo---perturbing weights \emph{and} imputed cells while holding observed values fixed---attaches an uncertainty band to every position. Under the most conservative setting ($\sigma_2=1.0$), the United Kingdom and South Korea each sit in the top five in $\geq 98\%$ of draws (co-leading at a median rank of~2); the bottom tier is weaker (India and Taiwan in the bottom three in $77\%$ and $71\%$ of draws). The added imputation noise widens the credible intervals only marginally over the weight-only Monte Carlo (Figure~\ref{fig:rankunc}), confirming that the headline ordering is not an artefact of the fixed imputed values---the cells the pipeline had to fill do not drive the ranking. The middle of the table is where the bands overlap most, consistent with the single-slot instability behind H6's partial verdict.
+\paragraph{Rank uncertainty.} The joint Monte Carlo---perturbing weights \emph{and} imputed cells while holding observed values fixed---attaches an uncertainty band to every position. Under the most conservative setting ($\sigma_2=1.0$), the United Kingdom and South Korea each sit in the top five in about $98\%$ of draws (co-leading at a median rank of~2); the bottom tier is weaker (India and Taiwan in the bottom three in $76\%$ and $61\%$ of draws). The added imputation noise widens the credible intervals only marginally over the weight-only Monte Carlo (Figure~\ref{fig:rankunc}), confirming that the headline ordering is not an artefact of the fixed imputed values---the cells the pipeline had to fill do not drive the ranking. The middle of the table is where the bands overlap most, consistent with the single-slot instability behind H6's partial verdict.
 
 \begin{figure}[t]
 \centering
@@ -272,8 +274,10 @@ Classifier: AI-broad vs ML-narrow  & 0.960 & 0.85 & $[0.845,\,0.990]$ & borderli
 \label{fig:rankunc}
 \end{figure}
 
+\paragraph{Country influence and weighting-free consensus.} Two further checks (Section~\ref{sec:methods}) confirm the ordering is neither a single-country artefact nor a weighting artefact. The leave-one-\emph{country}-out jackknife shows that dropping any one jurisdiction shifts the retained thirteen by at most three rank positions (worst case: dropping India or Taiwan), the retained-order Spearman $\rho$ never falls below $0.945$, and the $k$-means typology is identical (ARI $=1.0$) for twelve of the fourteen drops---dipping only when India, the singleton archetype, is removed (ARI $=0.61$). The weighting-free consensus is equally reassuring: aggregating the fourteen indicator ballots with \emph{no} cardinal weights reproduces the literature ordering under both the Borda count (Spearman $\rho=0.979$, $95\%$ CI $[0.915,\,0.995]$) and the exact Kemeny--Young median ranking ($\rho=0.930$, $[0.739,\,0.982]$). South Korea is first under both and the top-five and bottom-three sets are preserved under Borda; the only consequential disagreement is that the Kemeny median elevates Germany into the fifth slot and demotes Japan to seventh---a weight-independent reminder that the 3--5 block is the table's soft region (Appendix Figures~\ref{fig:loocountry} and~\ref{fig:rankagg}).
+
 \subsection{Pre-registered hypotheses}
-Table~\ref{tab:hyp} records the six hypotheses, their numeric pass criteria, and their mechanically resolved verdicts. Two are fully supported (H3, H5) and four are partially supported with named caveats (H1, H2, H4, H6). The partial verdicts surface specific methodological caveats---a near-collinear pair across two axes (C5$\times$G1, Pearson $r=0.973$), governance multidimensionality, two borderline robustness checks (equal-vs-literature and the classifier), and a weight-sensitive bottom tier---rather than a wholesale framework failure. The C5$\times$G1 collinearity is the largest of only five cross-axis indicator pairs at $|r|\geq0.7$ (of 65 pairs).
+Table~\ref{tab:hyp} records the six hypotheses, their numeric pass criteria, and their mechanically resolved verdicts. Two are fully supported (H3, H5) and four are partially supported with named caveats (H1, H2, H4, H6). The partial verdicts surface specific methodological caveats---a near-collinear pair across two axes (C5$\times$G1, Pearson $r=0.965$), governance multidimensionality, one borderline robustness check (the bibliographic classifier), and a weight-sensitive bottom tier---rather than a wholesale framework failure. The C5$\times$G1 collinearity is the largest of only five cross-axis indicator pairs at $|r|\geq0.7$ (of 65 pairs).
 
 \begin{table}[t]
 \centering
@@ -284,12 +288,12 @@ Table~\ref{tab:hyp} records the six hypotheses, their numeric pass criteria, and
 \toprule
 \textbf{ID} & \textbf{Hypothesis} & \textbf{Verdict} & \textbf{Evidence} \\
 \midrule
-H1 & The three axes are empirically separable. & Partial & $5$ of $65$ cross-axis pairs at $|r|\geq0.7$; C5$\times$G1 ($r=0.973$) is the largest contributor. \\
-H2 & Each axis carries a one-dimensional signal. & Partial & Infrastructure $p=0.014$, governance $p=0.040$ (both significant); capacity untestable at $n=7$; governance PC1 explains $45.6\%$. \\
-H3 & The 14 powers do not cluster homogeneously. & Supported & Silhouette $0.427$ at $k=3$; ARI $=1.0$ vs Ward, complete, and average linkage; MDS distance-rank $\rho=0.919$. \\
-H4 & The ranking is robust to perturbation. & Partial & Equal-vs-PCA and normalisation clear with wide margins; equal-vs-literature and classifier both have CI lower bound $0.845$ (below the $0.85$ classifier bar). \\
+H1 & The three axes are empirically separable. & Partial & $5$ of $65$ cross-axis pairs at $|r|\geq0.7$; C5$\times$G1 ($r=0.965$) is the largest contributor. \\
+H2 & Each axis carries a one-dimensional signal. & Partial & Infrastructure $p=0.014$, governance $p=0.040$ (both significant); capacity untestable at $n=8$; governance PC1 explains $45.6\%$. \\
+H3 & The 14 powers do not cluster homogeneously. & Supported & Silhouette $0.426$ at $k=3$; ARI $=1.0$ vs complete and average linkage ($0.727$ vs Ward); MDS distance-rank $\rho=0.910$. \\
+H4 & The ranking is robust to perturbation. & Partial & Equal-vs-PCA, equal-vs-literature, and normalisation clear the $0.85$ bar (CI lower bounds $0.911$/$0.861$/$0.861$); only the classifier (CI lower bound $0.845$) sits below it. \\
 H5 & The top-5 is not driven by any one coded indicator. & Supported & Top-5 set unchanged dropping either G1 or C5; judgment-collapse min $\rho=0.996$, max single-country shift $1$. \\
-H6 & Top-5 and bottom-3 tier membership are stable. & Partial & $5/5$ top-5 members in tier in $\geq70\%$ of draws; no bottom-3 member reaches $80\%$, Israel only $48.7\%$, cycling with Saudi Arabia. \\
+H6 & Top-5 and bottom-3 tier membership are stable. & Partial & $5/5$ top-5 members in tier in $\geq70\%$ of draws; no bottom-3 member reaches $80\%$, Israel only $50.4\%$, cycling with Saudi Arabia. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -305,7 +309,7 @@ Applying the per-vector weights (Table~\ref{tab:vectorweights}) to the literatur
 \end{figure}
 
 \subsection{Counterfactual policy leverage}
-To operationalise the paper's $\S$4 claim that tractability depends on axis position, we recompute the composite under four direct policy actions per country (e.g.\ joining the AISI Network, publishing a safety-provisioned AI strategy, joining the Australia Group). Figure~\ref{fig:cf} reports the composite change; the highest-leverage action differs by country and by starting position. For example, with Singapore selected, joining the Australia Group raises its composite from $1.797$ to $1.911$ (rank 6 to 4). For countries at an axis minimum, the geometric-shift artefact can understate the composite change, so an axis-level reading is reported alongside.
+To operationalise the paper's $\S$4 claim that tractability depends on axis position, we recompute the composite under four direct policy actions per country (e.g.\ joining the AISI Network, publishing a safety-provisioned AI strategy, joining the Australia Group). Figure~\ref{fig:cf} reports the composite change; the highest-leverage action differs by country and by starting position. For example, with Singapore selected, joining the Australia Group raises its composite from $1.731$ to $1.841$ (rank 6 to 4). For countries at an axis minimum, the geometric-shift artefact can understate the composite change, so an axis-level reading is reported alongside.
 
 \begin{figure}[t]
 \centering
@@ -314,13 +318,33 @@ To operationalise the paper's $\S$4 claim that tractability depends on axis posi
 \label{fig:cf}
 \end{figure}
 
+\subsection{Minimal-action-set optimisation}\label{subsec:mas}
+The counterfactuals above move one lever at a time; the working paper's $\S$4 \emph{tractability} claim is sharper---which improvements are \emph{reachable}, and at what effort. Enumerating the full $2^4 = 16$ action space per country (counting only \emph{effective} actions, so a country already in the AISI Network pays nothing to ``join'' it), we identify each below-top country's \emph{minimal action set}: the fewest effective actions that lift it into the next composite-rank tier (bottom-3 $\to$ middle $\to$ top-5; Figure~\ref{fig:mas}). Tractability is starkly heterogeneous. Only three of the nine below-top jurisdictions can cross into the next tier through these four levers at all: Singapore needs a single action (join the Australia Group: rank 6 $\to$ 4), Israel a single action (publish a safety-provisioned AI strategy: rank 12 $\to$ 10), and Germany three (join the AISI Network, publish a strategy, and foster an IGSC firm: rank 7 $\to$ 4). The remaining six---Canada, Sweden, the UAE, Saudi Arabia, India, and Taiwan---cannot reach the next tier through these governance/capacity levers alone; India and Taiwan in particular are held down by infrastructure and capacity deficits the four actions do not address. This is an explicit, per-country statement of \emph{where} preparedness is cheaply tractable and where it is not---exactly the question $\S$4 raises. Cost here is action count; a weighted-cost variant is a drop-in substitution.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fig13_7_minimal_action_sets.png}
+\caption{Minimal action set per below-top country: the fewest effective actions (blue) that reach the next composite tier; rows marked unreachable cannot cross with the four levers. Unit cost; reuses the §13.4 recompute. Source: \texttt{outputs/minimal\_action\_sets.csv}.}
+\label{fig:mas}
+\end{figure}
+
+\subsection{Causal-interpretation boundary}\label{subsec:causal}
+The counterfactuals (\S\ref{subsec:mas} and Figure~\ref{fig:cf}) are \emph{mechanical recomputations of the index} under a hypothetical indicator change---they answer ``if indicator $X$ took value $x'$, the composite would move by $\Delta$''---not estimates of the causal effect of a policy on real-world preparedness, and we do not present them as such. Reading a counterfactual $\Delta$ causally would require, in the language of Pearl's do-calculus \citep{pearl2009causal} and the potential-outcomes framework \citep{hernan2020causal}, a well-defined intervention, no unmeasured confounding, no interference between units, temporal precedence, and structural stability---none of which a single cross-sectional snapshot of $n = 14$ jurisdictions satisfies: AISI membership and strategy comprehensiveness co-vary with latent state capacity (the C5$\times$G1 $r = 0.965$ signal), one country's action shifts others' \emph{relative} ranks, and cause and outcome are observed simultaneously (Figure~\ref{fig:dag}; the full assumptions ledger is in \texttt{outputs/causal\_assumptions.csv}). The counterfactuals are therefore index-structural sensitivity probes and tractability illustrations, consistent with $\S$4's qualitative framing, while the paper's $\S$3 trigger-event/causal claims remain explicitly out of scope pending country-year incident data (Section~\ref{sec:limits}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig13_8_causal_dag.png}
+\caption{Causal-interpretation boundary for the counterfactuals. The index computes only the solid path (action $\to X_a \to A \to$ composite $C$); a causal claim about real-world preparedness $Y$ would need the dashed/dotted paths identified, which an $n = 14$ cross-section cannot do. Source: \texttt{outputs/causal\_assumptions.csv}.}
+\label{fig:dag}
+\end{figure}
+
 \subsection{Typology}
-The silhouette-selected $k=3$ $k$-means partition separates a Tier-1/asymmetric-developed group, a mid group, and India as a singleton; the partition is identical to Ward, complete, and average-linkage hierarchical clustering (ARI $=1.0$ for all three). The MDS embedding (Figure~\ref{fig:mds}) preserves the pairwise-distance rank at $\rho=0.919$ and visually separates the archetypes.
+The silhouette-selected $k=3$ $k$-means partition separates a Tier-1/asymmetric-developed group, a mid group, and India as a singleton; the partition is identical to complete- and average-linkage hierarchical clustering (ARI $=1.0$) and close to Ward (ARI $=0.727$). The MDS embedding (Figure~\ref{fig:mds}) preserves the pairwise-distance rank at $\rho=0.910$ and visually separates the archetypes.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/fig14_3_mds_embedding.png}
-\caption{Multidimensional-scaling embedding of the 14 jurisdictions in the full fourteen-indicator space (distance-rank $\rho=0.919$). Colour: archetype; marker shape: AISI Network membership. Source: \texttt{outputs/mds\_coordinates.csv}.}
+\caption{Multidimensional-scaling embedding of the 14 jurisdictions in the full fourteen-indicator space (distance-rank $\rho=0.910$). Colour: archetype; marker shape: AISI Network membership. Source: \texttt{outputs/mds\_coordinates.csv}.}
 \label{fig:mds}
 \end{figure}
 
@@ -329,7 +353,7 @@ The silhouette-selected $k=3$ $k$-means partition separates a Tier-1/asymmetric-
 % ============================================================
 The index supplies the empirical layer the working paper asserts but does not provide.
 
-\paragraph{It grounds the $\S$1 premise.} The paper claims the fourteen middle powers ``differ along three axes.'' H3 confirms this empirically: the countries do not cluster homogeneously (silhouette $0.427$; a clustering that is identical across all three linkage methods), and the typology identifies coherent archetypes---Tier-1 (UK, Korea, France, Japan, Singapore), capacity-leveraged (EU, Canada, Germany), infrastructure-leveraged (Sweden, UAE), and a Tier-3 vulnerable group (Israel, Saudi Arabia, India, Taiwan).
+\paragraph{It grounds the $\S$1 premise.} The paper claims the fourteen middle powers ``differ along three axes.'' H3 confirms this empirically: the countries do not cluster homogeneously (silhouette $0.426$; a $k$-means partition identical to complete- and average-linkage clustering, ARI $=1.0$, and close to Ward, ARI $=0.727$), and the typology identifies coherent archetypes---Tier-1 (UK, Korea, France, Japan, Singapore), capacity-leveraged (EU, Canada, Germany), infrastructure-leveraged (Sweden, UAE), and a Tier-3 vulnerable group (Israel, Saudi Arabia, India, Taiwan).
 
 \paragraph{It identifies the most-exposed tier.} The paper argues that lower-capacity middle powers face a ``structurally under-addressed vulnerability.'' The index makes that tier concrete and reproducible: India and Taiwan are the two lowest-ranked composites under all three weighting schemes, and the three least-prepared states on every per-vector overlay are India, Israel, and Taiwan (in vector-specific order); the third bottom-tier composite slot cycles between Israel and Saudi Arabia (the single-slot instability behind H6's partial verdict). This illustrates---rather than merely asserts---which states the paper's argument most urgently concerns.
 
@@ -354,9 +378,9 @@ Following \citet{shadish2002experimental}, we organise residual risks by validit
 
 \textbf{Construct validity.} Several indicators are disclosed proxies whose link to the axis label is indirect: ND-GAIN readiness (I5) is a climate-adaptation measure used as an infrastructure-resilience proxy; V-Dem (G3) measures political-system democracy, not AI governance \emph{per se}; the IGSC count (G5) measures industrial biosecurity participation; and secure-server density (I3) increasingly reflects certificate-registration jurisdiction rather than substantive infrastructure. These are the most pressable choices; the defence is that the axes are the paper's, the proxies are transparent, and the ranking is robust to dropping any single indicator.
 
-\textbf{Cross-axis collinearity.} C5 (AISI presence) and G1 (AI-strategy comprehensiveness) are near-collinear ($r=0.973$) yet sit in different axes, so a shared institutional signal enters the composite twice. Reassigning C5 to governance leaves the top-five set unchanged (Spearman $\rho=0.987$, maximum single-country shift~1), so the double-count does not re-order the table. The exact second-order Shapley interaction index puts a magnitude on the overlap \emph{inside} the composite: $I(\text{C5},\text{G1})=+0.008$---small and mildly \emph{complementary}, not substitutive. The high correlation is thus a shared-information property (the two indicators co-vary across countries) rather than a large additive redundancy in the aggregated score; because C5 and G1 sit in different axes, the cross-axis geometric mean makes their joint marginal contribution slightly positive. The genuinely substitutive interactions are all within-axis pairs (e.g.\ C1$\times$C2 $=-0.019$), exactly as linear within-axis aggregation of correlated indicators predicts (Appendix~\ref{app:interp}). The double-count remains an acknowledged construct flaw---two indicators of one latent institutional-capacity signal---but its measured aggregate effect is bounded.
+\textbf{Cross-axis collinearity.} C5 (AISI presence) and G1 (AI-strategy comprehensiveness) are near-collinear ($r=0.965$) yet sit in different axes, so a shared institutional signal enters the composite twice. Reassigning C5 to governance leaves the top-five set unchanged (Spearman $\rho=0.987$, maximum single-country shift~1), so the double-count does not re-order the table. The exact second-order Shapley interaction index puts a magnitude on the overlap \emph{inside} the composite: $I(\text{C5},\text{G1})=+0.009$---small and mildly \emph{complementary}, not substitutive. The high correlation is thus a shared-information property (the two indicators co-vary across countries) rather than a large additive redundancy in the aggregated score; because C5 and G1 sit in different axes, the cross-axis geometric mean makes their joint marginal contribution slightly positive. The genuinely substitutive interactions are all within-axis pairs (e.g.\ C1$\times$C2 $=-0.022$), exactly as linear within-axis aggregation of correlated indicators predicts (Appendix~\ref{app:interp}). The double-count remains an acknowledged construct flaw---two indicators of one latent institutional-capacity signal---but its measured aggregate effect is bounded.
 
-\textbf{Weighting and aggregation.} The vector-overlay weights are authorial translations of the paper's qualitative arguments, so the per-vector rankings are the most judgment-dependent output. The across-axis geometric mean introduces a shift constant $\varepsilon$: an $\varepsilon$-grid spanning $10^{-4}$ to $1$ shows the ranking is $\varepsilon$-invariant (Spearman $\rho=1.000$ for $\varepsilon\leq0.1$, $0.982$ at $\varepsilon=1$), but the bottom-tier composite \emph{values} are an $\varepsilon$-artefact (Taiwan's value spans $0.024$ to $1.56$ across the grid). The bottom tier should therefore be cited as ranks, not magnitudes.
+\textbf{Weighting and aggregation.} The vector-overlay weights are authorial translations of the paper's qualitative arguments, so the per-vector rankings are the most judgment-dependent output. The across-axis geometric mean introduces a shift constant $\varepsilon$: an $\varepsilon$-grid spanning $10^{-4}$ to $1$ shows the ranking is $\varepsilon$-invariant (Spearman $\rho=1.000$ for $\varepsilon\leq0.1$, $0.978$ at $\varepsilon=1$), but the bottom-tier composite \emph{values} are an $\varepsilon$-artefact (Taiwan's value spans $0.024$ to $1.56$ across the grid). The bottom tier should therefore be cited as ranks, not magnitudes.
 
 \textbf{Inference and external validity.} With $n=14$, point-estimate rank correlations carry non-negligible sampling variance, which the Bonett--Wright CIs make explicit. The sample is the fourteen named middle powers only; results do not generalise to non-middle-powers or small states, and composite values are not portable outside the fourteen-country reference frame. The ranking does, however, agree strongly with the independent Oxford Insights GAIRI 2024 index over the thirteen jurisdictions both cover (Spearman $\rho=0.863$; Section~\ref{subsec:extval}), which bounds the concern that the ordering is an artefact of the authors' own weighting.
 
@@ -377,9 +401,25 @@ Every indicator value cites a named source with a retrieval date and URL, record
 % ============================================================
 \section{Full robustness and dimensionality}\label{app:robust}
 % ============================================================
-Table~\ref{tab:vuln} gives the full per-vector vulnerability ranking. Figure~\ref{fig:rankdist} gives the Monte Carlo rank distributions; Figure~\ref{fig:withinaxis} the within-axis indicator correlations; Figure~\ref{fig:crossaxis} the full indicator correlation matrix; Figure~\ref{fig:dendro} the hierarchical clustering under three linkage methods; Figures~\ref{fig:axisheat}, \ref{fig:scatter}, and \ref{fig:govbiplot} the axis scoreboard, pairwise axis scatter matrix, and sparse-PCA governance sub-axes respectively.
+Table~\ref{tab:vuln} gives the full per-vector vulnerability ranking. Figure~\ref{fig:rankdist} gives the Monte Carlo rank distributions; Figure~\ref{fig:withinaxis} the within-axis indicator correlations; Figure~\ref{fig:crossaxis} the full indicator correlation matrix; Figure~\ref{fig:dendro} the hierarchical clustering under three linkage methods; Figures~\ref{fig:axisheat}, \ref{fig:scatter}, and \ref{fig:govbiplot} the axis scoreboard, pairwise axis scatter matrix, and sparse-PCA governance sub-axes respectively; and Figures~\ref{fig:loocountry} and~\ref{fig:rankagg} the leave-one-country-out jackknife and the weighting-free consensus ranking.
 
-The $\varepsilon$-sensitivity, C5-reassignment, and analyst-coded judgment-collapse checks all leave the top-five set intact: the analyst-collapse variants (G1 and C5 individually and both at once) return min Spearman $\rho=0.996$ with at most a single mid-table shift, and the C5-reassignment returns $\rho=0.987$. Cross-axis correlations at $|r|\geq0.7$ number five of sixty-five pairs (C5$\times$G1 $0.973$; C1$\times$G1 $0.779$; C4$\times$I3 $-0.771$; G3$\times$I3 $0.722$; C3$\times$G6 $0.702$). Tier-membership stability over $10{,}000$ Monte Carlo draws: all five top-5 members in tier $\geq70\%$ of draws (UK $98.6\%$, Korea $98.0\%$, France $85.0\%$, Japan $81.0\%$, EU $75.8\%$); no bottom-3 member reaches $80\%$ (India $75.8\%$, Taiwan $74.2\%$, Israel $48.7\%$); exact-set-match $47\%/28\%$ and within-one-swap $92\%/71\%$ for the top-5/bottom-3.
+The $\varepsilon$-sensitivity, C5-reassignment, and analyst-coded judgment-collapse checks all leave the top-five set intact: the analyst-collapse variants (G1 and C5 individually and both at once) return min Spearman $\rho=0.996$ with at most a single mid-table shift, and the C5-reassignment returns $\rho=0.987$. Cross-axis correlations at $|r|\geq0.7$ number five of sixty-five pairs (C5$\times$G1 $0.965$; C1$\times$G1 $0.781$; C4$\times$I3 $-0.748$; G3$\times$I3 $0.722$; C3$\times$G6 $0.702$). Tier-membership stability over $10{,}000$ Monte Carlo draws: all five top-5 members in tier $\geq70\%$ of draws (UK $98.3\%$, Korea $98.2\%$, France $84.4\%$, Japan $81.8\%$, EU $76.7\%$); no bottom-3 member reaches $80\%$ (India $75.1\%$, Taiwan $61.3\%$, Israel $50.4\%$); exact-set-match $48\%/23\%$ and within-one-swap $92\%/66\%$ for the top-5/bottom-3.
+
+The leave-one-country-out jackknife (Figure~\ref{fig:loocountry}) and the weighting-free consensus ranking (Figure~\ref{fig:rankagg}) corroborate the headline: dropping any single jurisdiction moves the retained thirteen by at most three rank positions (retained-order Spearman $\rho \geq 0.945$; typology ARI $=1.0$ for twelve of fourteen drops, $0.61$ only when the India singleton is removed), and a consensus that uses no cardinal weights tracks the literature ordering at Borda $\rho = 0.979$ and Kemeny--Young $\rho = 0.930$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.97\textwidth]{figures/fig12_10_leave_one_country_out.png}
+\caption{Leave-one-country-out (jackknife) robustness. Left: the maximum absolute rank shift among the retained thirteen when each country is dropped (rank-leverage). Right: the Adjusted Rand Index between the refit $k=3$ typology and the full partition. Source: \texttt{outputs/leave\_one\_country\_out.csv}.}
+\label{fig:loocountry}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig12_11_rank_aggregation.png}
+\caption{Weighting-free consensus ranking. The literature composite rank versus the Borda count and the exact Kemeny--Young median ranking, each aggregating the fourteen indicator ballots with no cardinal weights. Source: \texttt{outputs/rank\_aggregation.csv}.}
+\label{fig:rankagg}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -390,20 +430,20 @@ The $\varepsilon$-sensitivity, C5-reassignment, and analyst-coded judgment-colla
 \toprule
 \textbf{Country} & \textbf{Cyber} & \textbf{Rk} & \textbf{CBRN} & \textbf{Rk} & \textbf{Infl.} & \textbf{Rk} \\
 \midrule
-South Korea           &  0.74 & 1  &  0.83 & 1  &  0.68 & 2 \\
-United Kingdom        &  0.69 & 2  &  0.82 & 2  &  0.70 & 1 \\
-Singapore             &  0.47 & 3  &  0.26 & 6  &  0.54 & 3 \\
-European Union        &  0.47 & 4  &  0.57 & 4  &  0.23 & 6 \\
-France                &  0.44 & 5  &  0.60 & 3  &  0.37 & 4 \\
-Japan                 &  0.32 & 6  &  0.36 & 5  &  0.32 & 5 \\
-Canada                &  0.07 & 7  &  0.15 & 7  & -0.10 & 9 \\
-Germany               &  0.02 & 8  &  0.05 & 8  & -0.02 & 8 \\
-Sweden                & -0.09 & 9  & -0.30 & 9  &  0.18 & 7 \\
-United Arab Emirates  & -0.26 & 10 & -0.48 & 10 & -0.17 & 10 \\
+South Korea           &  0.78 & 1  &  0.88 & 1  &  0.70 & 1 \\
+United Kingdom        &  0.67 & 2  &  0.80 & 2  &  0.69 & 2 \\
+Singapore             &  0.47 & 3  &  0.26 & 6  &  0.53 & 3 \\
+European Union        &  0.46 & 4  &  0.55 & 4  &  0.22 & 6 \\
+France                &  0.43 & 5  &  0.59 & 3  &  0.37 & 4 \\
+Japan                 &  0.32 & 6  &  0.35 & 5  &  0.32 & 5 \\
+Canada                &  0.06 & 7  &  0.14 & 7  & -0.11 & 9 \\
+Germany               &  0.00 & 8  &  0.03 & 8  & -0.03 & 8 \\
+Sweden                & -0.10 & 9  & -0.31 & 9  &  0.17 & 7 \\
+United Arab Emirates  & -0.27 & 10 & -0.49 & 10 & -0.17 & 10 \\
 Saudi Arabia          & -0.44 & 11 & -0.57 & 11 & -0.38 & 11 \\
-Israel                & -0.64 & 12 & -0.72 & 13 & -0.64 & 13 \\
-Taiwan                & -0.75 & 13 & -0.99 & 14 & -0.49 & 12 \\
-India                 & -1.02 & 14 & -0.58 & 12 & -1.19 & 14 \\
+Israel                & -0.65 & 12 & -0.74 & 13 & -0.65 & 13 \\
+Taiwan                & -0.69 & 13 & -0.91 & 14 & -0.46 & 12 \\
+India                 & -1.03 & 14 & -0.59 & 12 & -1.19 & 14 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -432,7 +472,7 @@ India                 & -1.02 & 14 & -0.58 & 12 & -1.19 & 14 \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.97\textwidth]{figures/fig14_2_hierarchical.png}
-\caption{Hierarchical clustering at $k=3$ under Ward, complete, and average linkage. Ward, complete, and average partitions are identical to the $k$-means partition (ARI $=1.0$). Source: \texttt{outputs/hierarchical\_ari.csv}.}
+\caption{Hierarchical clustering at $k=3$ under Ward, complete, and average linkage. The complete- and average-linkage partitions are identical to the $k$-means partition (ARI $=1.0$); Ward is close (ARI $=0.727$). Source: \texttt{outputs/hierarchical\_ari.csv}.}
 \label{fig:dendro}
 \end{figure}
 
@@ -460,7 +500,7 @@ India                 & -1.02 & 14 & -0.58 & 12 & -1.19 & 14 \\
 % ============================================================
 \section{Interpretability}\label{app:interp}
 % ============================================================
-Figure~\ref{fig:shap} decomposes each country's composite into exact Shapley contributions per indicator (all $2^{14}$ coalitions; additivity verified to $10^{-6}$). Figure~\ref{fig:perm} reports permutation feature importance for the literature ranking. ITU GCI (G2) and training compute (C2) are the most rank-disruptive indicators; secure servers (I3) and ND-GAIN readiness (I5) the least. Figure~\ref{fig:shapint} reports the exact second-order Shapley interaction indices \citep{grabisch1999interaction} for every indicator pair, averaged over the fourteen countries: the within-axis pairs are the substitutive (negative) ones, while cross-axis pairs---including the much-discussed C5$\times$G1 ($+0.008$)---are weakly complementary, locating indicator redundancy firmly within rather than across axes.
+Figure~\ref{fig:shap} decomposes each country's composite into exact Shapley contributions per indicator (all $2^{14}$ coalitions; additivity verified to $10^{-6}$). Figure~\ref{fig:perm} reports permutation feature importance for the literature ranking. Training compute (C2) and ITU GCI (G2) are the most rank-disruptive indicators; secure servers (I3) and ND-GAIN readiness (I5) the least. Figure~\ref{fig:shapint} reports the exact second-order Shapley interaction indices \citep{grabisch1999interaction} for every indicator pair, averaged over the fourteen countries: the within-axis pairs are the substitutive (negative) ones, while cross-axis pairs---including the much-discussed C5$\times$G1 ($+0.009$)---are weakly complementary, locating indicator redundancy firmly within rather than across axes.
 
 \begin{figure}[t]
 \centering
@@ -486,6 +526,6 @@ Figure~\ref{fig:shap} decomposes each country's composite into exact Shapley con
 % ============================================================
 \section{Reproducibility}\label{app:repro}
 % ============================================================
-All seven stochastic steps are seeded (\texttt{SEED $=$ 20260506}): the Monte Carlo weights, Horn's parallel-analysis null, the joint rank-uncertainty Monte Carlo, $k$-means, MDS, sparse PCA, and permutation importance. With a pinned environment and the offline data snapshot (\texttt{MPAPI\_OFFLINE=1}), the twenty-eight output files (twenty-five CSV, three JSON) and all nineteen figures reproduce byte-for-byte across successive executions, verified by hashing two consecutive offline runs. The notebook additionally reconstructs one country's composite end-to-end (asserted within $10^{-3}$) and verifies Shapley additivity (within $10^{-6}$). The analysis is built on the open scientific Python stack \citep{harris2020numpy,mckinney2010pandas,virtanen2020scipy,pedregosa2011scikit,hunter2007matplotlib,waskom2021seaborn}.
+All seven stochastic steps are seeded (\texttt{SEED $=$ 20260506}): the Monte Carlo weights, Horn's parallel-analysis null, the joint rank-uncertainty Monte Carlo, $k$-means, MDS, sparse PCA, and permutation importance. The leave-one-country-out re-clustering (\S\ref{subsec:mas} companion in \S\ref{sec:methods}) reuses the same seeded $k$-means; the Borda count and minimal-action-set enumeration are exact, and the Kemeny--Young median ranking is solved exactly by \texttt{scipy.optimize.milp} (HiGHS), deterministic within the pinned environment. With a pinned environment and the offline data snapshot (\texttt{MPAPI\_OFFLINE=1}), the thirty-five output files (thirty-two CSV, three JSON) and all twenty-three figures reproduce byte-for-byte across successive executions, verified by hashing two consecutive offline runs. The notebook additionally reconstructs one country's composite end-to-end (asserted within $10^{-3}$) and verifies Shapley additivity (within $10^{-6}$). The analysis is built on the open scientific Python stack \citep{harris2020numpy,mckinney2010pandas,virtanen2020scipy,pedregosa2011scikit,hunter2007matplotlib,waskom2021seaborn}.
 
 \end{document}

@@ -1,0 +1,43 @@
+vector,iso3,name,rank_median,rank_p10,rank_p90,rank_iqr
+cyber,GBR,United Kingdom,2,1,3,2
+cyber,CAN,Canada,9,6,10,2
+cyber,FRA,France,4,3,6,2
+cyber,DEU,Germany,8,8,9,0
+cyber,JPN,Japan,5,4,6,1
+cyber,IND,India,14,10,14,2
+cyber,ISR,Israel,13,12,14,1
+cyber,SGP,Singapore,4,1,6,3
+cyber,KOR,South Korea,2,1,2,1
+cyber,SWE,Sweden,7,4,10,3
+cyber,SAU,Saudi Arabia,11,11,12,1
+cyber,ARE,United Arab Emirates,10,8,10,1
+cyber,EUU,European Union,5,2,7,4
+cyber,TWN,Taiwan,12,11,14,2
+cbrn,GBR,United Kingdom,2,1,3,2
+cbrn,CAN,Canada,9,6,10,2
+cbrn,FRA,France,4,3,6,2
+cbrn,DEU,Germany,8,8,9,0
+cbrn,JPN,Japan,5,4,6,1
+cbrn,IND,India,14,10,14,2
+cbrn,ISR,Israel,13,12,14,1
+cbrn,SGP,Singapore,4,1,6,3
+cbrn,KOR,South Korea,2,1,2,1
+cbrn,SWE,Sweden,7,4,10,3
+cbrn,SAU,Saudi Arabia,11,11,12,1
+cbrn,ARE,United Arab Emirates,10,8,10,1
+cbrn,EUU,European Union,5,2,7,4
+cbrn,TWN,Taiwan,12,11,14,2
+influence_ops,GBR,United Kingdom,2,1,3,2
+influence_ops,CAN,Canada,9,6,10,2
+influence_ops,FRA,France,4,3,6,2
+influence_ops,DEU,Germany,8,8,9,0
+influence_ops,JPN,Japan,5,4,6,1
+influence_ops,IND,India,14,10,14,2
+influence_ops,ISR,Israel,13,12,14,1
+influence_ops,SGP,Singapore,4,1,6,3
+influence_ops,KOR,South Korea,2,1,2,1
+influence_ops,SWE,Sweden,7,4,10,3
+influence_ops,SAU,Saudi Arabia,11,11,12,1
+influence_ops,ARE,United Arab Emirates,10,8,10,1
+influence_ops,EUU,European Union,5,2,7,4
+influence_ops,TWN,Taiwan,12,11,14,2
