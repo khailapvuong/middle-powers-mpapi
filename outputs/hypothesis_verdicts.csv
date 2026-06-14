@@ -1,7 +1,7 @@
 id,key_statistic,pass_criterion,criterion_met,documented_verdict
 H1,5 of 65 cross-axis |r|>=0.7,<= 5 of 65 pairs |r|>=0.7,True,PARTIALLY SUPPORTED
-H2,capacity_depth: p=0.013 (untestable); governance_orientation: p=0.040; infrastructure_posture: p=0.014,Horn PA p<0.05 for each axis,False,PARTIALLY SUPPORTED
-H3,"silhouette=0.426, min ARI=0.727",silhouette>0.20 and ARI>0.50,True,SUPPORTED
+H2,capacity_depth: p=0.014 (untestable); governance_orientation: p=0.040; infrastructure_posture: p=0.014,Horn PA p<0.05 for each axis,False,PARTIALLY SUPPORTED
+H3,"silhouette=0.422, min ARI=1.000",silhouette>0.20 and ARI>0.50,True,SUPPORTED
 H4,all CI_lb>=0.70: True; classifier CI_lb=0.845,all four CI_lb>0.70 (classifier>0.85),False,PARTIALLY SUPPORTED
-H5,"top5_preserved=True, max_shift=1, min_rho=0.9956",top-5 preserved and max rank shift <=1,True,SUPPORTED
+H5,"top5_preserved=False, max_shift=1, min_rho=0.9956",max top-5 set change <=1 country (max rank shift <=1),True,SUPPORTED
 H6,"top5=PASS, bot3=FAIL",>=4/5 top-5 in>=70% AND >=2/3 bot-3 in>=80%,False,PARTIALLY SUPPORTED

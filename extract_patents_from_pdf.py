@@ -24,7 +24,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-import pycountry
+from iso_map import to_iso3
 
 ROOT = Path(__file__).parent
 TXT = ROOT / "data" / "raw" / "stanford_aiindex_2025_ch1.txt"
@@ -55,15 +55,6 @@ ISO3_OVERRIDES: dict[str, str] = {
 ROW_RE = re.compile(r"^([A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+){0,2})\s+(\d+\.\d+)$")
 
 
-def to_iso3(name: str) -> str | None:
-    """Resolve a country name to ISO 3166-1 alpha-3 via overrides + pycountry."""
-    if name in ISO3_OVERRIDES:
-        return ISO3_OVERRIDES[name]
-    try:
-        return pycountry.countries.lookup(name).alpha_3
-    except LookupError:
-        return None
-
 
 def parse() -> pd.DataFrame:
     """Extract Stanford Fig 1.2.3 country-rate pairs from the cached PDF text."""
@@ -93,7 +84,7 @@ def parse() -> pd.DataFrame:
         if not m:
             continue
         name, rate = m.group(1), float(m.group(2))
-        iso3 = to_iso3(name)
+        iso3 = to_iso3(name, ISO3_OVERRIDES)
         if iso3 is None:
             print(f"[WARN] No ISO3 mapping for '{name}'", file=sys.stderr)
         rows.append(

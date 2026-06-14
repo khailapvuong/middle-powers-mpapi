@@ -14,30 +14,30 @@
   ],
   "exact_set_match": {
     "threshold": 0.95,
-    "top5_share": 0.4758,
+    "top5_share": 0.5124,
     "top5_verdict": "FAIL",
-    "bot3_share": 0.2303,
+    "bot3_share": 0.2257,
     "bot3_verdict": "FAIL"
   },
   "within_1_swap": {
     "threshold": 0.9,
-    "top5_share": 0.9239,
+    "top5_share": 0.9269,
     "top5_verdict": "PASS",
-    "bot3_share": 0.6646,
+    "bot3_share": 0.6572,
     "bot3_verdict": "FAIL"
   },
   "per_country_in_tier_frequency": {
     "top5_members": {
-      "EUU": 0.7673,
-      "FRA": 0.8443,
-      "GBR": 0.9829,
-      "JPN": 0.8182,
-      "KOR": 0.9815
+      "EUU": 0.7682,
+      "FRA": 0.8678,
+      "GBR": 0.9861,
+      "JPN": 0.8325,
+      "KOR": 0.9792
     },
     "bot3_members": {
-      "IND": 0.7513,
-      "ISR": 0.5037,
-      "TWN": 0.6129
+      "IND": 0.7496,
+      "ISR": 0.494,
+      "TWN": 0.6088
     }
   },
   "per_country_in_tier_mechanical_verdict": {

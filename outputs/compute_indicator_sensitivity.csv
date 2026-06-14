@@ -1,0 +1,15 @@
+iso3,name,headline_rank,with_top500_rank,top500_count,rank_delta
+GBR,United Kingdom,1,1,9,0
+KOR,South Korea,2,2,15,0
+FRA,France,3,3,23,0
+JPN,Japan,4,5,43,1
+EUU,European Union,5,4,126,-1
+SGP,Singapore,6,6,5,0
+DEU,Germany,7,7,40,0
+CAN,Canada,8,8,19,0
+SWE,Sweden,9,9,8,0
+ARE,United Arab Emirates,10,10,5,0
+SAU,Saudi Arabia,11,11,7,0
+ISR,Israel,12,12,3,0
+IND,India,13,13,6,0
+TWN,Taiwan,14,14,10,0

@@ -1,10 +1,10 @@
 {
   "capacity_depth": {
-    "C1_notable_models": 0.27754810787732737,
-    "C2_training_compute": 0.24854057148581482,
-    "C3_ai_publications": 0.1911594864152904,
-    "C4_ai_patents": 0.05992379818979781,
-    "C5_aisi_presence": 0.2228280360317696
+    "C1_notable_models": 0.28433568718190605,
+    "C2_training_compute": 0.24995590341536436,
+    "C3_ai_publications": 0.2059179661487424,
+    "C4_ai_patents": 0.021362099792524784,
+    "C5_aisi_presence": 0.23842834346146244
   },
   "governance_orientation": {
     "G1_ai_strategy": 0.24720815542474903,

@@ -1,0 +1,7 @@
+{
+  "url": "https://www.top500.org/lists/top500/2025/11/",
+  "source": "TOP500 project, 66th list (November 2025)",
+  "retrieved_date": "2026-06-13",
+  "size": 948,
+  "notes": "Derived CSV: per-country installed-system counts aggregated from the bundled TOP500 Nov 2025 workbook via extract_top500.py. Columns: economy_name, iso3, top500_count, year. Feeds I4 (TOP500 compute, infrastructure axis); hosting-attributed, distinct from C2. EU row built in notebook \u00a75.2 as the sum of EU member states (= 126)."
+}

@@ -1,20 +1,20 @@
 iso3,scheme_code,scheme_label,axis_code,axis_label,score,is_composite,rank
-KOR,equal,Equal,capacity_depth,Capacity Depth,1.0741546266829458,0,
-GBR,equal,Equal,capacity_depth,Capacity Depth,0.4668198795841211,0,
-FRA,equal,Equal,capacity_depth,Capacity Depth,0.3965918461784743,0,
-JPN,equal,Equal,capacity_depth,Capacity Depth,0.38431289167617394,0,
-EUU,equal,Equal,capacity_depth,Capacity Depth,1.142951830817489,0,
-SGP,equal,Equal,capacity_depth,Capacity Depth,0.033027379655600736,0,
-DEU,equal,Equal,capacity_depth,Capacity Depth,0.07137574137238162,0,
-CAN,equal,Equal,capacity_depth,Capacity Depth,0.42765703214573403,0,
-SWE,equal,Equal,capacity_depth,Capacity Depth,-0.9030150975246112,0,
-ARE,equal,Equal,capacity_depth,Capacity Depth,-0.5858808427225108,0,
-SAU,equal,Equal,capacity_depth,Capacity Depth,-0.5160587667829704,0,
-ISR,equal,Equal,capacity_depth,Capacity Depth,-0.7007648297107388,0,
-IND,equal,Equal,capacity_depth,Capacity Depth,-0.1366748442834363,0,
-TWN,equal,Equal,capacity_depth,Capacity Depth,-1.1544968470886536,0,
-KOR,equal,Equal,governance_orientation,Governance Orientation,0.6990535061028587,0,
+GBR,equal,Equal,capacity_depth,Capacity Depth,0.5223924919059285,0,
+KOR,equal,Equal,capacity_depth,Capacity Depth,0.924222854093308,0,
+FRA,equal,Equal,capacity_depth,Capacity Depth,0.4489945993704416,0,
+JPN,equal,Equal,capacity_depth,Capacity Depth,0.3910091665773574,0,
+EUU,equal,Equal,capacity_depth,Capacity Depth,1.1847818578614866,0,
+SGP,equal,Equal,capacity_depth,Capacity Depth,0.08983822341075498,0,
+DEU,equal,Equal,capacity_depth,Capacity Depth,0.041458082609034164,0,
+CAN,equal,Equal,capacity_depth,Capacity Depth,0.3431611579732463,0,
+SWE,equal,Equal,capacity_depth,Capacity Depth,-0.9141266023445054,0,
+ARE,equal,Equal,capacity_depth,Capacity Depth,-0.5909188874875351,0,
+SAU,equal,Equal,capacity_depth,Capacity Depth,-0.4842117119114163,0,
+ISR,equal,Equal,capacity_depth,Capacity Depth,-0.6765132821587155,0,
+IND,equal,Equal,capacity_depth,Capacity Depth,-0.12198035498758415,0,
+TWN,equal,Equal,capacity_depth,Capacity Depth,-1.1581075949118065,0,
 GBR,equal,Equal,governance_orientation,Governance Orientation,1.2870710291456644,0,
+KOR,equal,Equal,governance_orientation,Governance Orientation,0.6990535061028587,0,
 FRA,equal,Equal,governance_orientation,Governance Orientation,0.6598633317101508,0,
 JPN,equal,Equal,governance_orientation,Governance Orientation,0.4919165313508488,0,
 EUU,equal,Equal,governance_orientation,Governance Orientation,0.18501601647424154,0,
@@ -27,8 +27,8 @@ SAU,equal,Equal,governance_orientation,Governance Orientation,-0.801918715616839
 ISR,equal,Equal,governance_orientation,Governance Orientation,-0.7563064741864391,0,
 IND,equal,Equal,governance_orientation,Governance Orientation,-0.3485840477866876,0,
 TWN,equal,Equal,governance_orientation,Governance Orientation,-0.5974591905080449,0,
-KOR,equal,Equal,infrastructure_posture,Infrastructure Posture,0.47848803449655664,0,
 GBR,equal,Equal,infrastructure_posture,Infrastructure Posture,0.4354107040350479,0,
+KOR,equal,Equal,infrastructure_posture,Infrastructure Posture,0.47848803449655664,0,
 FRA,equal,Equal,infrastructure_posture,Infrastructure Posture,0.2076642293387177,0,
 JPN,equal,Equal,infrastructure_posture,Infrastructure Posture,0.23871554909280682,0,
 EUU,equal,Equal,infrastructure_posture,Infrastructure Posture,0.12930440196480425,0,
@@ -41,36 +41,36 @@ SAU,equal,Equal,infrastructure_posture,Infrastructure Posture,-0.350519546768514
 ISR,equal,Equal,infrastructure_posture,Infrastructure Posture,-0.5544686152871316,0,
 IND,equal,Equal,infrastructure_posture,Infrastructure Posture,-2.229260313998434,0,
 TWN,equal,Equal,infrastructure_posture,Infrastructure Posture,2.9890619893754217e-16,0,
-KOR,equal,Equal,composite,Composite,2.085559161369026,1,1
-GBR,equal,Equal,composite,Composite,2.0830296435369458,1,2
-FRA,equal,Equal,composite,Composite,1.768908920704536,1,3
-JPN,equal,Equal,composite,Composite,1.701111601317618,1,5
-EUU,equal,Equal,composite,Composite,1.7498399169007046,1,4
-SGP,equal,Equal,composite,Composite,1.3237674134753072,1,8
-DEU,equal,Equal,composite,Composite,1.3385428130298807,1,7
-CAN,equal,Equal,composite,Composite,1.3812755275456086,1,6
-SWE,equal,Equal,composite,Composite,0.8834293292595059,1,9
-ARE,equal,Equal,composite,Composite,0.3139377055852616,1,11
-SAU,equal,Equal,composite,Composite,0.10632420697049945,1,12
-ISR,equal,Equal,composite,Composite,0.3287192862105354,1,10
-IND,equal,Equal,composite,Composite,0.07735553559324065,1,13
+GBR,equal,Equal,composite,Composite,2.1080578906905076,1,1
+KOR,equal,Equal,composite,Composite,2.038901477204801,1,2
+FRA,equal,Equal,composite,Composite,1.7899373973901105,1,3
+JPN,equal,Equal,composite,Composite,1.7048987401297493,1,5
+EUU,equal,Equal,composite,Composite,1.761296304874374,1,4
+SGP,equal,Equal,composite,Composite,1.345830002897293,1,7
+DEU,equal,Equal,composite,Composite,1.3289064823984806,1,8
+CAN,equal,Equal,composite,Composite,1.3573394933198215,1,6
+SWE,equal,Equal,composite,Composite,0.8745928980478493,1,9
+ARE,equal,Equal,composite,Composite,0.3136752731737818,1,11
+SAU,equal,Equal,composite,Composite,0.10825423942239477,1,12
+ISR,equal,Equal,composite,Composite,0.3353004017925093,1,10
+IND,equal,Equal,composite,Composite,0.07781607222138139,1,13
 TWN,equal,Equal,composite,Composite,0.0770951892411051,1,14
-KOR,pca,PCA-derived,capacity_depth,Capacity Depth,0.9092761516122858,0,
-GBR,pca,PCA-derived,capacity_depth,Capacity Depth,0.7043225544023439,0,
-FRA,pca,PCA-derived,capacity_depth,Capacity Depth,0.6454739766219807,0,
-JPN,pca,PCA-derived,capacity_depth,Capacity Depth,0.28953736096495564,0,
-EUU,pca,PCA-derived,capacity_depth,Capacity Depth,1.2801979025135213,0,
-SGP,pca,PCA-derived,capacity_depth,Capacity Depth,0.15403568764790718,0,
-DEU,pca,PCA-derived,capacity_depth,Capacity Depth,0.15866025490168323,0,
-CAN,pca,PCA-derived,capacity_depth,Capacity Depth,0.525418730412992,0,
-SWE,pca,PCA-derived,capacity_depth,Capacity Depth,-0.9387330591978578,0,
-ARE,pca,PCA-derived,capacity_depth,Capacity Depth,-0.6513413189554094,0,
-SAU,pca,PCA-derived,capacity_depth,Capacity Depth,-0.6269633376920987,0,
-ISR,pca,PCA-derived,capacity_depth,Capacity Depth,-0.7593867489626492,0,
-IND,pca,PCA-derived,capacity_depth,Capacity Depth,-0.26892920683752236,0,
-TWN,pca,PCA-derived,capacity_depth,Capacity Depth,-1.421568947432133,0,
-KOR,pca,PCA-derived,governance_orientation,Governance Orientation,0.6948850906310904,0,
+GBR,pca,PCA-derived,capacity_depth,Capacity Depth,0.8478777877413864,0,
+KOR,pca,PCA-derived,capacity_depth,Capacity Depth,0.6475049469976318,0,
+FRA,pca,PCA-derived,capacity_depth,Capacity Depth,0.7767772182088516,0,
+JPN,pca,PCA-derived,capacity_depth,Capacity Depth,0.2858486355872383,0,
+EUU,pca,PCA-derived,capacity_depth,Capacity Depth,1.3870626349282773,0,
+SGP,pca,PCA-derived,capacity_depth,Capacity Depth,0.25426537360922835,0,
+DEU,pca,PCA-derived,capacity_depth,Capacity Depth,0.1364379688795868,0,
+CAN,pca,PCA-derived,capacity_depth,Capacity Depth,0.43332557614889244,0,
+SWE,pca,PCA-derived,capacity_depth,Capacity Depth,-0.9733582394839424,0,
+ARE,pca,PCA-derived,capacity_depth,Capacity Depth,-0.7039082895344235,0,
+SAU,pca,PCA-derived,capacity_depth,Capacity Depth,-0.6195344115931483,0,
+ISR,pca,PCA-derived,capacity_depth,Capacity Depth,-0.7730286690878816,0,
+IND,pca,PCA-derived,capacity_depth,Capacity Depth,-0.23965901333359224,0,
+TWN,pca,PCA-derived,capacity_depth,Capacity Depth,-1.4596115190681127,0,
 GBR,pca,PCA-derived,governance_orientation,Governance Orientation,1.1257847116779025,0,
+KOR,pca,PCA-derived,governance_orientation,Governance Orientation,0.6948850906310904,0,
 FRA,pca,PCA-derived,governance_orientation,Governance Orientation,0.7524860937768589,0,
 JPN,pca,PCA-derived,governance_orientation,Governance Orientation,0.6671395207749877,0,
 EUU,pca,PCA-derived,governance_orientation,Governance Orientation,0.594391080172429,0,
@@ -83,8 +83,8 @@ SAU,pca,PCA-derived,governance_orientation,Governance Orientation,-1.28057200193
 ISR,pca,PCA-derived,governance_orientation,Governance Orientation,-0.6223637251309986,0,
 IND,pca,PCA-derived,governance_orientation,Governance Orientation,-0.4607300709125722,0,
 TWN,pca,PCA-derived,governance_orientation,Governance Orientation,-0.5915998984141384,0,
-KOR,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,0.5577983577607475,0,
 GBR,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,0.45550568364296873,0,
+KOR,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,0.5577983577607475,0,
 FRA,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,0.3144743797224657,0,
 JPN,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,0.28724900198726766,0,
 EUU,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,0.08329631287037759,0,
@@ -97,73 +97,73 @@ SAU,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,-0.50950106171
 ISR,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,-0.709059845167866,0,
 IND,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,-2.311729058141141,0,
 TWN,pca,PCA-derived,infrastructure_posture,Infrastructure Posture,2.9185393796555334e-16,0,
-KOR,pca,PCA-derived,composite,Composite,2.365100477259719,1,2
-GBR,pca,PCA-derived,composite,Composite,2.4200791275709683,1,1
-FRA,pca,PCA-derived,composite,Composite,2.227437541784899,1,4
-JPN,pca,PCA-derived,composite,Composite,2.054704259619702,1,5
-EUU,pca,PCA-derived,composite,Composite,2.2988365550671066,1,3
-SGP,pca,PCA-derived,composite,Composite,1.6221800579544703,1,8
-DEU,pca,PCA-derived,composite,Composite,1.819799363257857,1,7
-CAN,pca,PCA-derived,composite,Composite,2.026590042971548,1,6
-SWE,pca,PCA-derived,composite,Composite,1.2749374574616839,1,9
-ARE,pca,PCA-derived,composite,Composite,0.3823081463458324,1,11
-SAU,pca,PCA-derived,composite,Composite,0.11278451925685525,1,13
-ISR,pca,PCA-derived,composite,Composite,0.888362261780474,1,10
-IND,pca,PCA-derived,composite,Composite,0.09819964411478445,1,14
+GBR,pca,PCA-derived,composite,Composite,2.487083748948034,1,1
+KOR,pca,PCA-derived,composite,Composite,2.2869038030336415,1,3
+FRA,pca,PCA-derived,composite,Composite,2.2866489776324332,1,4
+JPN,pca,PCA-derived,composite,Composite,2.0683560739683147,1,5
+EUU,pca,PCA-derived,composite,Composite,2.339207051535937,1,2
+SGP,pca,PCA-derived,composite,Composite,1.6682806324017132,1,8
+DEU,pca,PCA-derived,composite,Composite,1.8258482989973497,1,7
+CAN,pca,PCA-derived,composite,Composite,2.007670107986472,1,6
+SWE,pca,PCA-derived,composite,Composite,1.2779320971010695,1,9
+ARE,pca,PCA-derived,composite,Composite,0.37989293909571187,1,11
+SAU,pca,PCA-derived,composite,Composite,0.11489350664078225,1,13
+ISR,pca,PCA-derived,composite,Composite,0.899126559073734,1,10
+IND,pca,PCA-derived,composite,Composite,0.100073579597077,1,14
 TWN,pca,PCA-derived,composite,Composite,0.11685629062527252,1,12
-KOR,literature,Literature-elicited,capacity_depth,Capacity Depth,1.0400794771559343,0,
-GBR,literature,Literature-elicited,capacity_depth,Capacity Depth,0.6574523845504561,0,
-FRA,literature,Literature-elicited,capacity_depth,Capacity Depth,0.630866000064925,0,
-JPN,literature,Literature-elicited,capacity_depth,Capacity Depth,0.32313517559727906,0,
-EUU,literature,Literature-elicited,capacity_depth,Capacity Depth,1.155807247983546,0,
-SGP,literature,Literature-elicited,capacity_depth,Capacity Depth,0.23334548724549248,0,
-DEU,literature,Literature-elicited,capacity_depth,Capacity Depth,0.09687606056648762,0,
-CAN,literature,Literature-elicited,capacity_depth,Capacity Depth,0.5589617052258726,0,
-SWE,literature,Literature-elicited,capacity_depth,Capacity Depth,-0.9349532961336126,0,
-ARE,literature,Literature-elicited,capacity_depth,Capacity Depth,-0.5947308139410761,0,
-SAU,literature,Literature-elicited,capacity_depth,Capacity Depth,-0.6572988717798243,0,
-ISR,literature,Literature-elicited,capacity_depth,Capacity Depth,-0.6602586423692981,0,
-IND,literature,Literature-elicited,capacity_depth,Capacity Depth,-0.4411982177579798,0,
-TWN,literature,Literature-elicited,capacity_depth,Capacity Depth,-1.4080836964082024,0,
-KOR,literature,Literature-elicited,governance_orientation,Governance Orientation,0.7696954673936293,0,
-GBR,literature,Literature-elicited,governance_orientation,Governance Orientation,1.0752154742745572,0,
-FRA,literature,Literature-elicited,governance_orientation,Governance Orientation,0.6785677084048356,0,
-JPN,literature,Literature-elicited,governance_orientation,Governance Orientation,0.42658281562123157,0,
-EUU,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.06858843999421058,0,
-SGP,literature,Literature-elicited,governance_orientation,Governance Orientation,0.11008009901542695,0,
-DEU,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.024934049879187195,0,
-CAN,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.27240878142358516,0,
-SWE,literature,Literature-elicited,governance_orientation,Governance Orientation,0.23880847482461523,0,
-ARE,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.5538170417318643,0,
-SAU,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.5792047155032878,0,
-ISR,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.9060129032082724,0,
-IND,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.37755023967487744,0,
-TWN,literature,Literature-elicited,governance_orientation,Governance Orientation,-0.5164338681190506,0,
-KOR,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.48527365566468905,0,
-GBR,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.406248494577606,0,
-FRA,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.012375655410633471,0,
-JPN,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.22661072226487583,0,
-EUU,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.03324397485752001,0,
-SGP,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.9964970335241697,0,
-DEU,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,-0.09074609377733604,0,
-CAN,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,-0.2789050567209,0,
-SWE,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.6097345566342915,0,
-ARE,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,0.3130475418911902,0,
-SAU,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,-0.10551705218082068,0,
-ISR,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,-0.44692949386721625,0,
-IND,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,-2.1609339382786983,0,
-TWN,literature,Literature-elicited,infrastructure_posture,Infrastructure Posture,3.5954145643630075e-16,0,
-KOR,literature,Literature-elicited,composite,Composite,2.2375912134519917,1,1
-GBR,literature,Literature-elicited,composite,Composite,2.1783670786949676,1,2
-FRA,literature,Literature-elicited,composite,Composite,1.9279718826428005,1,3
-JPN,literature,Literature-elicited,composite,Composite,1.7635524229122708,1,4
-EUU,literature,Literature-elicited,composite,Composite,1.7502805288128658,1,5
-SGP,literature,Literature-elicited,composite,Composite,1.7307896046446767,1,6
-DEU,literature,Literature-elicited,composite,Composite,1.4113782367460341,1,7
-CAN,literature,Literature-elicited,composite,Composite,1.382999446097755,1,8
-SWE,literature,Literature-elicited,composite,Composite,1.049340856802219,1,9
-ARE,literature,Literature-elicited,composite,Composite,0.8847107881405708,1,10
-SAU,literature,Literature-elicited,composite,Composite,0.7926048206660739,1,11
-ISR,literature,Literature-elicited,composite,Composite,0.13183530296398188,1,12
-IND,literature,Literature-elicited,composite,Composite,0.10267865984966495,1,13
-TWN,literature,Literature-elicited,composite,Composite,0.05997432989474512,1,14
+GBR,literature,Literature-informed,capacity_depth,Capacity Depth,0.7373717786902364,0,
+KOR,literature,Literature-informed,capacity_depth,Capacity Depth,0.8341316958700499,0,
+FRA,literature,Literature-informed,capacity_depth,Capacity Depth,0.7046172186665484,0,
+JPN,literature,Literature-informed,capacity_depth,Capacity Depth,0.3309121373091679,0,
+EUU,literature,Literature-informed,capacity_depth,Capacity Depth,1.2140624639878657,0,
+SGP,literature,Literature-informed,capacity_depth,Capacity Depth,0.31419213857187167,0,
+DEU,literature,Literature-informed,capacity_depth,Capacity Depth,0.05574245142243464,0,
+CAN,literature,Literature-informed,capacity_depth,Capacity Depth,0.4381792464459193,0,
+SWE,literature,Literature-informed,capacity_depth,Capacity Depth,-0.9546577739417778,0,
+ARE,literature,Literature-informed,capacity_depth,Capacity Depth,-0.6049510721814033,0,
+SAU,literature,Literature-informed,capacity_depth,Capacity Depth,-0.6139793970725658,0,
+ISR,literature,Literature-informed,capacity_depth,Capacity Depth,-0.6262257853897092,0,
+IND,literature,Literature-informed,capacity_depth,Capacity Depth,-0.415828744250252,0,
+TWN,literature,Literature-informed,capacity_depth,Capacity Depth,-1.413566358128393,0,
+GBR,literature,Literature-informed,governance_orientation,Governance Orientation,1.0752154742745572,0,
+KOR,literature,Literature-informed,governance_orientation,Governance Orientation,0.7696954673936293,0,
+FRA,literature,Literature-informed,governance_orientation,Governance Orientation,0.6785677084048356,0,
+JPN,literature,Literature-informed,governance_orientation,Governance Orientation,0.42658281562123157,0,
+EUU,literature,Literature-informed,governance_orientation,Governance Orientation,-0.06858843999421058,0,
+SGP,literature,Literature-informed,governance_orientation,Governance Orientation,0.11008009901542695,0,
+DEU,literature,Literature-informed,governance_orientation,Governance Orientation,-0.024934049879187195,0,
+CAN,literature,Literature-informed,governance_orientation,Governance Orientation,-0.27240878142358516,0,
+SWE,literature,Literature-informed,governance_orientation,Governance Orientation,0.23880847482461523,0,
+ARE,literature,Literature-informed,governance_orientation,Governance Orientation,-0.5538170417318643,0,
+SAU,literature,Literature-informed,governance_orientation,Governance Orientation,-0.5792047155032878,0,
+ISR,literature,Literature-informed,governance_orientation,Governance Orientation,-0.9060129032082724,0,
+IND,literature,Literature-informed,governance_orientation,Governance Orientation,-0.37755023967487744,0,
+TWN,literature,Literature-informed,governance_orientation,Governance Orientation,-0.5164338681190506,0,
+GBR,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.406248494577606,0,
+KOR,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.48527365566468905,0,
+FRA,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.012375655410633471,0,
+JPN,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.22661072226487583,0,
+EUU,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.03324397485752001,0,
+SGP,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.9964970335241697,0,
+DEU,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,-0.09074609377733604,0,
+CAN,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,-0.2789050567209,0,
+SWE,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.6097345566342915,0,
+ARE,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,0.3130475418911902,0,
+SAU,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,-0.10551705218082068,0,
+ISR,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,-0.44692949386721625,0,
+IND,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,-2.1609339382786983,0,
+TWN,literature,Literature-informed,infrastructure_posture,Infrastructure Posture,3.5954145643630075e-16,0,
+GBR,literature,Literature-informed,composite,Composite,2.213939663763582,1,1
+KOR,literature,Literature-informed,composite,Composite,2.162450213267996,1,2
+FRA,literature,Literature-informed,composite,Composite,1.9575837193947727,1,3
+JPN,literature,Literature-informed,composite,Composite,1.7689398621497494,1,4
+EUU,literature,Literature-informed,composite,Composite,1.7675503992884496,1,5
+SGP,literature,Literature-informed,composite,Composite,1.7666208341730332,1,6
+DEU,literature,Literature-informed,composite,Composite,1.397917344915857,1,7
+CAN,literature,Literature-informed,composite,Composite,1.3500015824592446,1,8
+SWE,literature,Literature-informed,composite,Composite,1.036635477993804,1,9
+ARE,literature,Literature-informed,composite,Composite,0.882648418952549,1,10
+SAU,literature,Literature-informed,composite,Composite,0.8127981238750804,1,11
+ISR,literature,Literature-informed,composite,Composite,0.13457522864817573,1,12
+IND,literature,Literature-informed,composite,Composite,0.10397553521103248,1,13
+TWN,literature,Literature-informed,composite,Composite,0.05997432989474512,1,14

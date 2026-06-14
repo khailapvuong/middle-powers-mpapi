@@ -1,34 +1,34 @@
 country,iso3,action,description,indicator,target_axis,current_value,new_value,baseline_axis_score,new_axis_score,delta_axis_score,baseline_composite,new_composite,delta_composite,baseline_rank,new_rank,delta_rank,shift_artifact_flagged
-United Kingdom,GBR,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,5.0,6.0,1.075,1.162,0.087,2.178,2.207,0.028,2,2,0,False
-Canada,CAN,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.272,-0.185,0.087,1.383,1.437,0.054,8,7,-1,False
-France,FRA,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,0.679,0.766,0.087,1.928,1.959,0.031,3,3,0,False
-Germany,DEU,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,1.0,3.0,0.097,0.472,0.375,1.411,1.543,0.131,7,7,0,False
-Germany,DEU,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.025,0.42,0.444,1.411,1.595,0.184,7,7,0,False
-Germany,DEU,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.025,0.062,0.087,1.411,1.452,0.04,7,7,0,False
-Japan,JPN,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,0.427,0.514,0.087,1.764,1.797,0.034,4,4,0,False
-India,IND,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,1.0,3.0,-0.441,-0.066,0.375,0.103,0.117,0.014,13,13,0,False
-India,IND,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.378,0.067,0.444,0.103,0.123,0.021,13,13,0,False
-India,IND,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.378,-0.291,0.087,0.103,0.107,0.005,13,13,0,False
-Israel,ISR,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.66,-0.097,0.563,0.132,0.165,0.033,12,12,0,False
-Israel,ISR,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.906,-0.462,0.444,0.132,0.552,0.421,12,10,-2,False
-Israel,ISR,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.906,-0.674,0.232,0.132,0.132,0.0,12,12,0,True
-Israel,ISR,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,-0.906,-0.819,0.087,0.132,0.132,0.0,12,12,0,True
-Singapore,SGP,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,0.11,0.342,0.232,1.731,1.841,0.11,6,4,-2,False
-Singapore,SGP,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,0.11,0.197,0.087,1.731,1.774,0.043,6,4,-2,False
-South Korea,KOR,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,0.77,0.857,0.087,2.238,2.272,0.034,1,1,0,False
-Sweden,SWE,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.935,-0.372,0.563,1.049,1.435,0.386,9,7,-2,False
-Sweden,SWE,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,0.239,0.683,0.444,1.049,1.158,0.108,9,9,0,False
-Sweden,SWE,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,0.239,0.326,0.087,1.049,1.073,0.023,9,9,0,False
-Saudi Arabia,SAU,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.657,-0.094,0.563,0.793,0.991,0.199,11,10,-1,False
-Saudi Arabia,SAU,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.579,-0.135,0.444,0.793,1.025,0.232,11,10,-1,False
-Saudi Arabia,SAU,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.579,-0.347,0.232,0.793,0.931,0.138,11,10,-1,False
-Saudi Arabia,SAU,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.579,-0.492,0.087,0.793,0.851,0.058,11,11,0,False
-United Arab Emirates,ARE,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.595,-0.032,0.563,0.885,1.092,0.207,10,9,-1,False
-United Arab Emirates,ARE,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.554,-0.109,0.444,0.885,1.13,0.245,10,9,-1,False
-United Arab Emirates,ARE,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.554,-0.322,0.232,0.885,1.029,0.145,10,10,0,False
-United Arab Emirates,ARE,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.554,-0.467,0.087,0.885,0.945,0.06,10,10,0,False
-European Union,EUU,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,-0.069,0.018,0.087,1.75,1.803,0.053,5,4,-1,False
-Taiwan,TWN,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,1.0,3.0,-1.408,-1.033,0.375,0.06,0.06,0.0,14,14,0,True
+United Kingdom,GBR,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,5.0,6.0,1.075,1.162,0.087,2.214,2.243,0.029,1,1,0,False
+Canada,CAN,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.272,-0.185,0.087,1.35,1.403,0.053,8,7,-1,False
+France,FRA,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,0.679,0.766,0.087,1.958,1.989,0.032,3,3,0,False
+Germany,DEU,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,1.0,3.0,0.056,0.431,0.375,1.398,1.531,0.133,7,7,0,False
+Germany,DEU,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.025,0.42,0.444,1.398,1.58,0.182,7,7,0,False
+Germany,DEU,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.025,0.062,0.087,1.398,1.438,0.04,7,7,0,False
+Japan,JPN,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,0.427,0.514,0.087,1.769,1.803,0.034,4,4,0,False
+India,IND,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,1.0,3.0,-0.416,-0.041,0.375,0.104,0.118,0.014,13,13,0,False
+India,IND,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.378,0.067,0.444,0.104,0.125,0.021,13,13,0,False
+India,IND,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.378,-0.291,0.087,0.104,0.109,0.005,13,13,0,False
+Israel,ISR,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.626,-0.063,0.563,0.135,0.167,0.032,12,12,0,False
+Israel,ISR,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.906,-0.462,0.444,0.135,0.564,0.429,12,10,-2,False
+Israel,ISR,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.906,-0.674,0.232,0.135,0.135,0.0,12,12,0,True
+Israel,ISR,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,-0.906,-0.819,0.087,0.135,0.135,0.0,12,12,0,True
+Singapore,SGP,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,0.11,0.342,0.232,1.767,1.879,0.112,6,4,-2,False
+Singapore,SGP,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,0.11,0.197,0.087,1.767,1.811,0.044,6,4,-2,False
+South Korea,KOR,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,0.77,0.857,0.087,2.162,2.196,0.033,2,2,0,False
+Sweden,SWE,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.955,-0.392,0.563,1.037,1.427,0.391,9,7,-2,False
+Sweden,SWE,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,0.239,0.683,0.444,1.037,1.144,0.107,9,9,0,False
+Sweden,SWE,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,0.239,0.326,0.087,1.037,1.06,0.023,9,9,0,False
+Saudi Arabia,SAU,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.614,-0.051,0.563,0.813,1.006,0.193,11,10,-1,False
+Saudi Arabia,SAU,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.579,-0.135,0.444,0.813,1.051,0.238,11,9,-2,False
+Saudi Arabia,SAU,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.579,-0.347,0.232,0.813,0.954,0.141,11,10,-1,False
+Saudi Arabia,SAU,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.579,-0.492,0.087,0.813,0.872,0.059,11,11,0,False
+United Arab Emirates,ARE,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,0.0,3.0,-0.605,-0.042,0.563,0.883,1.09,0.207,10,9,-1,False
+United Arab Emirates,ARE,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.554,-0.109,0.444,0.883,1.127,0.244,10,9,-1,False
+United Arab Emirates,ARE,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.554,-0.322,0.232,0.883,1.027,0.144,10,10,0,False
+United Arab Emirates,ARE,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.554,-0.467,0.087,0.883,0.943,0.06,10,10,0,False
+European Union,EUU,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,1.0,2.0,-0.069,0.018,0.087,1.768,1.821,0.053,5,4,-1,False
+Taiwan,TWN,JOIN_AISI,Join AISI Network,C5_aisi_presence,capacity_depth,1.0,3.0,-1.414,-1.038,0.375,0.06,0.06,0.0,14,14,0,True
 Taiwan,TWN,PUBLISH_AI_STRATEGY,Publish AI strategy with safety/CBRN provisions,G1_ai_strategy,governance_orientation,2.0,3.0,-0.516,-0.072,0.444,0.06,0.075,0.015,14,14,0,False
 Taiwan,TWN,JOIN_AUSTRALIA_GROUP,Join Australia Group export-control regime,G6_australia_group,governance_orientation,0.0,1.0,-0.516,-0.285,0.232,0.06,0.069,0.009,14,14,0,False
 Taiwan,TWN,FOSTER_IGSC_FIRM,Foster one additional IGSC member firm,G5_igsc_membership,governance_orientation,0.0,1.0,-0.516,-0.429,0.087,0.06,0.064,0.004,14,14,0,False

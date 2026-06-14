@@ -1,15 +1,15 @@
 dropped_iso3,dropped_name,max_abs_rank_shift,mean_abs_rank_shift,spearman_rho_retained,ci_lo,ci_hi,typology_ari_vs_full,most_displaced_country
-IND,India,3,0.615,0.9615,0.8386,0.9913,0.6113,Singapore
-TWN,Taiwan,3,0.923,0.9451,0.7771,0.9874,1.0,Sweden
+IND,India,3,0.769,0.956,0.8176,0.99,0.6113,Singapore
+TWN,Taiwan,3,0.769,0.9505,0.7971,0.9887,0.4715,Sweden
 CAN,Canada,2,0.308,0.9835,0.9275,0.9963,1.0,Singapore
+GBR,United Kingdom,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
+DEU,Germany,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
+FRA,France,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
+ARE,United Arab Emirates,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
 ISR,Israel,1,0.154,0.9945,0.9752,0.9988,1.0,Singapore
 SAU,Saudi Arabia,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
-GBR,United Kingdom,0,0.0,1.0,1.0,1.0,1.0,Canada
+SWE,Sweden,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
+EUU,European Union,1,0.154,0.9945,0.9752,0.9988,1.0,Japan
 JPN,Japan,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
-DEU,Germany,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
-FRA,France,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
-SGP,Singapore,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
-SWE,Sweden,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
 KOR,South Korea,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
-ARE,United Arab Emirates,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
-EUU,European Union,0,0.0,1.0,1.0,1.0,1.0,United Kingdom
+SGP,Singapore,0,0.0,1.0,1.0,1.0,1.0,United Kingdom

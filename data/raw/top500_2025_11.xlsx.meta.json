@@ -1,0 +1,7 @@
+{
+  "url": "https://www.top500.org/lists/top500/2025/11/download/TOP500_202511.xlsx",
+  "source": "TOP500 project, 66th list (November 2025)",
+  "retrieved_date": "2026-06-13",
+  "size": 131533,
+  "notes": "Official TOP500 November 2025 (66th edition) full list workbook: 500 systems with installation Country and Rmax. Source for indicator I4 (TOP500 compute) via extract_top500.py."
+}

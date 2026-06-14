@@ -13,7 +13,7 @@ This folder is a **star-schema slice** of the M-PAPI notebook outputs, designed 
 | `fact_vulnerability_long.csv` | iso3 × vector | composite | melt of `exposure` (§13) |
 | `fact_shap_long.csv` | iso3 × indicator | composite | melt of `shap_df` (Appendix B.1) |
 | `fact_counterfactual.csv` | iso3 × action | composite | passthrough of `counterfactual_scenarios.csv` (§13.4) |
-| `fact_sensitivity.csv` | iso3 | `iso3` | passthrough of `rank_summary` (§12.1) |
+| `fact_sensitivity.csv` | iso3 | `iso3` | passthrough of `sensitivity_ranks.csv` (the §12.1 `rank_summary` frame) |
 
 ## Relationships (single-direction many-to-one)
 
@@ -42,6 +42,7 @@ dim_action[action_key]      ── fact_counterfactual[action_key]
 - `vector_code` ∈ {`cyber`, `cbrn`, `influence_ops`}; `vector_label` is the human-readable form.
 - `axis_code` ∈ {`capacity_depth`, `governance_orientation`, `infrastructure_posture`, `composite`}.
 - `score`, `shapley_value`, `delta_composite` are float; `rank`, `is_composite` are int.
+- `dim_country.is_aisi_network` is a binary flag that is `1` only for full AISI International Network members. It is *not* the same as the graded C5 `aisi_presence` value (0/1/3) carried in `fact_shap_long` and `fact_counterfactual`: Germany, India, and Taiwan have C5 `= 1` (a documented domestic AI-safety body short of Network membership) yet `is_aisi_network = 0`. Slice on `is_aisi_network` for Network membership; use the C5 fact value for graded presence.
 
 ## Versioning
 

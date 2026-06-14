@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-import pycountry
+from iso_map import to_iso3
 
 ROOT = Path(__file__).parent
 TXT = ROOT / "data" / "raw" / "itu_idi_2024_report.txt"
@@ -74,14 +74,6 @@ ISO3_OVERRIDES = {
 }
 
 
-def to_iso3(name: str) -> str | None:
-    if name in ISO3_OVERRIDES:
-        return ISO3_OVERRIDES[name]
-    try:
-        return pycountry.countries.lookup(name).alpha_3
-    except LookupError:
-        return None
-
 
 def parse() -> pd.DataFrame:
     if not TXT.exists():
@@ -89,7 +81,11 @@ def parse() -> pd.DataFrame:
             f"{TXT} not found. Run `pdftotext -layout data/raw/itu_idi_2024_report.pdf "
             f"data/raw/itu_idi_2024_report.txt` first."
         )
-    text = TXT.read_text(encoding="utf-8", errors="replace")
+    # The pdftotext-extracted .txt is Latin-1/CP1252-encoded (ITU economy names such as
+    # "Côte d'Ivoire" and "Türkiye" carry single-byte accented characters). Reading it as
+    # UTF-8 would turn those bytes into U+FFFD and break the ISO3_OVERRIDES lookup, leaving
+    # an empty iso3; Latin-1 decodes them losslessly.
+    text = TXT.read_text(encoding="latin-1")
     rows = []
     for line in text.splitlines():
         m = ROW_RE.match(line.strip())
@@ -104,7 +100,7 @@ def parse() -> pd.DataFrame:
             continue
         if economy.lower().startswith(("table ", "annex ", "figure ")):
             continue
-        iso3 = to_iso3(economy)
+        iso3 = to_iso3(economy, ISO3_OVERRIDES)
         rows.append(
             {
                 "economy_name": economy,

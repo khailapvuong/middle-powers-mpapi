@@ -1,15 +1,15 @@
 iso3,name,capacity_depth,governance_orientation,infrastructure_posture,cluster,archetype
-ISR,Israel,-0.660259,-0.906013,-0.446929,0,Tier-3 vulnerability (worst on Governance Orientation)
-SAU,Saudi Arabia,-0.657299,-0.579205,-0.105517,0,Tier-3 vulnerability (worst on Capacity Depth)
-SWE,Sweden,-0.934953,0.238808,0.609735,0,Asymmetric — Infrastructure Posture-leveraged
-TWN,Taiwan,-1.408084,-0.516434,0.0,0,Tier-3 vulnerability (worst on Capacity Depth)
-ARE,United Arab Emirates,-0.594731,-0.553817,0.313048,0,Asymmetric — Infrastructure Posture-leveraged
-CAN,Canada,0.558962,-0.272409,-0.278905,1,Asymmetric — Capacity Depth-leveraged
-EUU,European Union,1.155807,-0.068588,0.033244,1,Asymmetric — Capacity Depth-leveraged
-FRA,France,0.630866,0.678568,0.012376,1,Tier-1 preparedness (all axes above mean)
-DEU,Germany,0.096876,-0.024934,-0.090746,1,Asymmetric — Capacity Depth-leveraged
-JPN,Japan,0.323135,0.426583,0.226611,1,Tier-1 preparedness (all axes above mean)
-SGP,Singapore,0.233345,0.11008,0.996497,1,Tier-1 preparedness (all axes above mean)
-KOR,South Korea,1.040079,0.769695,0.485274,1,Tier-1 preparedness (all axes above mean)
-GBR,United Kingdom,0.657452,1.075215,0.406248,1,Tier-1 preparedness (all axes above mean)
-IND,India,-0.441198,-0.37755,-2.160934,2,Tier-3 vulnerability (worst on Infrastructure Posture)
+CAN,Canada,0.438179,-0.272409,-0.278905,0,Asymmetric — Capacity Depth-leveraged
+EUU,European Union,1.214062,-0.068588,0.033244,0,Asymmetric — Capacity Depth-leveraged
+FRA,France,0.704617,0.678568,0.012376,0,Tier-1 preparedness (all axes above mean)
+DEU,Germany,0.055742,-0.024934,-0.090746,0,Asymmetric — Capacity Depth-leveraged
+JPN,Japan,0.330912,0.426583,0.226611,0,Tier-1 preparedness (all axes above mean)
+SGP,Singapore,0.314192,0.11008,0.996497,0,Tier-1 preparedness (all axes above mean)
+KOR,South Korea,0.834132,0.769695,0.485274,0,Tier-1 preparedness (all axes above mean)
+GBR,United Kingdom,0.737372,1.075215,0.406248,0,Tier-1 preparedness (all axes above mean)
+ISR,Israel,-0.626226,-0.906013,-0.446929,1,Tier-3 vulnerability (worst on Governance Orientation)
+SAU,Saudi Arabia,-0.613979,-0.579205,-0.105517,1,Tier-3 vulnerability (worst on Capacity Depth)
+SWE,Sweden,-0.954658,0.238808,0.609735,1,Asymmetric — Infrastructure Posture-leveraged
+TWN,Taiwan,-1.413566,-0.516434,0.0,1,Tier-3 vulnerability (worst on Capacity Depth)
+ARE,United Arab Emirates,-0.604951,-0.553817,0.313048,1,Asymmetric — Infrastructure Posture-leveraged
+IND,India,-0.415829,-0.37755,-2.160934,2,Tier-3 vulnerability (worst on Infrastructure Posture)
