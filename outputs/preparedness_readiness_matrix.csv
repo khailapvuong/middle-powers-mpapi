@@ -1,0 +1,127 @@
+iso3,country,group,action,action_label,n_required_enablers,n_proxied_enablers,coverage,readiness,readiness_conservative
+GBR,United Kingdom,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,1.256,0.837
+GBR,United Kingdom,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.615,0.41
+GBR,United Kingdom,Detection,VERIFICATION,Build verification capacity,3,3,1.0,1.528,1.528
+GBR,United Kingdom,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.395,0.264
+GBR,United Kingdom,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,0.553,0.553
+GBR,United Kingdom,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.89,0.593
+GBR,United Kingdom,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,2.155,1.437
+GBR,United Kingdom,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,1.138,1.138
+GBR,United Kingdom,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,0.553,0.553
+CAN,Canada,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,0.317,0.211
+CAN,Canada,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-0.014,-0.01
+CAN,Canada,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.196,-0.196
+CAN,Canada,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.164,0.109
+CAN,Canada,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.025,-0.025
+CAN,Canada,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.127,0.085
+CAN,Canada,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.277,-0.185
+CAN,Canada,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.127,-0.127
+CAN,Canada,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.025,-0.025
+FRA,France,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,0.685,0.457
+FRA,France,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.369,0.246
+FRA,France,Detection,VERIFICATION,Build verification capacity,3,3,1.0,0.321,0.321
+FRA,France,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.204,0.136
+FRA,France,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,0.389,0.389
+FRA,France,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.77,0.513
+FRA,France,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,0.519,0.346
+FRA,France,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,0.161,0.161
+FRA,France,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,0.389,0.389
+DEU,Germany,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,0.125,0.083
+DEU,Germany,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.138,0.092
+DEU,Germany,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.095,-0.095
+DEU,Germany,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.226,0.151
+DEU,Germany,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.176,-0.176
+DEU,Germany,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-0.072,-0.048
+DEU,Germany,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.534,-0.356
+DEU,Germany,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.049,-0.049
+DEU,Germany,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.176,-0.176
+JPN,Japan,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,0.357,0.238
+JPN,Japan,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.148,0.099
+JPN,Japan,Detection,VERIFICATION,Build verification capacity,3,3,1.0,0.173,0.173
+JPN,Japan,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.294,0.196
+JPN,Japan,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,0.363,0.363
+JPN,Japan,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.343,0.229
+JPN,Japan,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,0.421,0.281
+JPN,Japan,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,0.26,0.26
+JPN,Japan,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,0.363,0.363
+IND,India,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-0.071,-0.047
+IND,India,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-1.093,-0.729
+IND,India,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.915,-0.915
+IND,India,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.359,0.239
+IND,India,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-1.034,-1.034
+IND,India,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-0.223,-0.148
+IND,India,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.49,-0.327
+IND,India,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.501,-0.501
+IND,India,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-1.034,-1.034
+ISR,Israel,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-0.75,-0.5
+ISR,Israel,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-0.573,-0.382
+ISR,Israel,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.307,-0.307
+ISR,Israel,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,-0.744,-0.496
+ISR,Israel,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.651,-0.651
+ISR,Israel,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-1.015,-0.677
+ISR,Israel,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.554,-0.369
+ISR,Israel,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.428,-0.428
+ISR,Israel,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.651,-0.651
+SGP,Singapore,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-0.159,-0.106
+SGP,Singapore,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.495,0.33
+SGP,Singapore,Detection,VERIFICATION,Build verification capacity,3,3,1.0,0.144,0.144
+SGP,Singapore,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,-0.331,-0.22
+SGP,Singapore,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,0.677,0.677
+SGP,Singapore,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.465,0.31
+SGP,Singapore,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,0.189,0.126
+SGP,Singapore,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.056,-0.056
+SGP,Singapore,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,0.677,0.677
+KOR,South Korea,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,0.557,0.371
+KOR,South Korea,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.477,0.318
+KOR,South Korea,Detection,VERIFICATION,Build verification capacity,3,3,1.0,0.393,0.393
+KOR,South Korea,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,0.824,0.549
+KOR,South Korea,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,0.875,0.875
+KOR,South Korea,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.713,0.475
+KOR,South Korea,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,0.59,0.393
+KOR,South Korea,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,0.589,0.589
+KOR,South Korea,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,0.875,0.875
+SWE,Sweden,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-0.621,-0.414
+SWE,Sweden,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-0.133,-0.089
+SWE,Sweden,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.275,-0.275
+SWE,Sweden,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,-0.845,-0.563
+SWE,Sweden,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.239,-0.239
+SWE,Sweden,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-0.716,-0.477
+SWE,Sweden,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.558,-0.372
+SWE,Sweden,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.41,-0.41
+SWE,Sweden,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.239,-0.239
+SAU,Saudi Arabia,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-0.72,-0.48
+SAU,Saudi Arabia,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-0.242,-0.161
+SAU,Saudi Arabia,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.348,-0.348
+SAU,Saudi Arabia,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,-0.287,-0.192
+SAU,Saudi Arabia,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.271,-0.271
+SAU,Saudi Arabia,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-0.419,-0.279
+SAU,Saudi Arabia,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.51,-0.34
+SAU,Saudi Arabia,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.31,-0.31
+SAU,Saudi Arabia,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.271,-0.271
+ARE,United Arab Emirates,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-0.809,-0.539
+ARE,United Arab Emirates,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-0.121,-0.081
+ARE,United Arab Emirates,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.267,-0.267
+ARE,United Arab Emirates,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,-0.583,-0.389
+ARE,United Arab Emirates,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.099,-0.099
+ARE,United Arab Emirates,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-0.508,-0.339
+ARE,United Arab Emirates,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.51,-0.34
+ARE,United Arab Emirates,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.353,-0.353
+ARE,United Arab Emirates,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.099,-0.099
+EUU,European Union,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,1.116,0.744
+EUU,European Union,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,0.81,0.54
+EUU,European Union,Detection,VERIFICATION,Build verification capacity,3,3,1.0,0.615,0.615
+EUU,European Union,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,1.376,0.917
+EUU,European Union,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,0.377,0.377
+EUU,European Union,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,0.871,0.581
+EUU,European Union,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,0.19,0.126
+EUU,European Union,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,0.752,0.752
+EUU,European Union,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,0.377,0.377
+TWN,Taiwan,Detection,FORESIGHT,Institutionalise a foresight function,3,2,0.667,-1.282,-0.855
+TWN,Taiwan,Detection,MONITORING,Continuous threat-environment monitoring,3,2,0.667,-0.876,-0.584
+TWN,Taiwan,Detection,VERIFICATION,Build verification capacity,3,3,1.0,-0.77,-0.77
+TWN,Taiwan,Escalation,SEVERITY_SCHEMA,Publish AI incident severity schema,3,2,0.667,-1.053,-0.702
+TWN,Taiwan,Escalation,MANDATORY_REPORTING,Legislate mandatory incident reporting,3,3,1.0,-0.74,-0.74
+TWN,Taiwan,Escalation,CROSS_SECTORAL_PATHWAYS,Pre-specify cross-sectoral pathways,3,2,0.667,-1.227,-0.818
+TWN,Taiwan,Mitigation & Containment,EMERGENCY_CHANNELS,Build emergency response channels,3,2,0.667,-0.631,-0.421
+TWN,Taiwan,Mitigation & Containment,DEFENSIVE_CAPABILITIES,Invest in defensive capabilities,4,4,1.0,-0.666,-0.666
+TWN,Taiwan,Mitigation & Containment,CONTINGENCY_KILLSWITCH,Contingency / kill-switch protocols,3,3,1.0,-0.74,-0.74

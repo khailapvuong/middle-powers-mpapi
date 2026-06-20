@@ -4,7 +4,7 @@
 
 The notebook empirically operationalises the working paper's three-axes framework — **Capacity Depth**, **Governance Orientation**, **Infrastructure Posture** — across the 14 middle powers named in the paper, and reports per-country preparedness rankings against the three attack vectors discussed in §2 (cyber, CBRN, influence operations).
 
-> **Scope.** M-PAPI quantifies the paper's §1 (axes / country set) and §2 (attack vectors) only. The paper's §3 (trigger-event ladder) and §4 (Detection / Escalation / Mitigation & Containment checklist) are **not** operationalised here — a country-year AI-attributed incident dataset would be required for §3, and §4's checklist actions are surfaced in this notebook only as the §13.4 counterfactual policy-action scenarios, not as country-year preparedness outcomes (see [What the index does and does not claim](#what-the-index-does-and-does-not-claim) for the full scope statement).
+> **Scope.** M-PAPI quantifies the paper's §1 (axes / country set) and §2 (attack vectors) directly, and the §4 *tractability* claim structurally. The paper's §3 (trigger-event ladder) is **not** operationalised — a country-year, AI-attributed incident dataset would be required, and none exists for these 14 jurisdictions across the three vectors without heuristic estimation (§17.7). The §4 (Detection / Escalation / Mitigation & Containment) checklist is operationalised **partially**: its nine actions are scored for per-country *structural readiness* by the enabler-readiness matrix (§13.9), and four of them also appear as the §13.4 counterfactual policy-action scenarios — neither layer claims country-year preparedness outcomes (see [What the index does and does not claim](#what-the-index-does-and-does-not-claim) for the full scope statement).
 
 ## Table of contents
 
@@ -38,7 +38,7 @@ python -c "import nbformat; from nbclient import NotebookClient; nb = nbformat.r
 
 `nbformat` and `nbclient` ship as `nbconvert` dependencies, so no extra install is required; prefix with `MPAPI_OFFLINE=1` for byte-stable offline reproduction. (On Windows, prefer this `nbclient` form or the GUI over `jupyter execute`, which can mis-read the UTF-8 notebook under a non-UTF-8 system locale.)
 
-**Optional system dependency:** the C4 (Stanford AI patents) and I1 (ITU IDI) indicators source from public PDFs that are pre-extracted to `.txt` and bundled in `data/raw/`. If you re-fetch the underlying PDFs, regenerating the `.txt` requires `pdftotext -layout` from [Poppler](https://poppler.freedesktop.org/) on PATH. macOS: `brew install poppler`; Debian/Ubuntu: `apt install poppler-utils`; Windows: install via Poppler-Windows or MiKTeX. With the bundled `.txt` cache present, this dependency is not exercised.
+**Optional system dependency (re-extraction only):** the C4 (Stanford AI patents) and I1 (ITU IDI) indicators derive from public reports. The **derived factual CSVs** (`data/raw/itu_idi_2024.csv`, `data/raw/stanford_ai_patents_2025.csv`) are bundled and are what the offline reproduction reads, so this dependency is **not exercised** in a normal run. The source report PDFs are not redistributed (see [Data sources](#data-sources)); to regenerate a CSV from scratch, download the report from the URL in its derived CSV's `.meta.json`, extract text with `pdftotext -layout` from [Poppler](https://poppler.freedesktop.org/) on PATH, then run the matching `extract_*_from_pdf.py`. macOS: `brew install poppler`; Debian/Ubuntu: `apt install poppler-utils`; Windows: Poppler-Windows or MiKTeX.
 
 **Clone-folder name:** the GitHub repo is named `middle-powers-mpapi`; `git clone` will land in that folder regardless of any other local name. The notebook resolves paths from `Path.cwd()` at runtime, so the folder name is not load-bearing — run `jupyter nbconvert ... M-PAPI.ipynb` from the repo root.
 
@@ -195,6 +195,10 @@ Per-country coding protocols and evidence citations for both are recorded in **�
 
 A 15th candidate indicator — **G4, bilateral frontier-lab MoU count** — was **excluded from the scored composite** because, unlike every retained indicator, it has **no reproducible authoritative source**: there is no public registry of government–frontier-lab MoUs, the landscape is fast-moving and definitionally blurred (MoU vs. partnership vs. "OpenAI/Anthropic for Countries" vs. commercial deal), and the documented cases that *do* exist often involve a national AI Safety Institute (e.g. the Anthropic–Japan AISI Memorandum of Cooperation), which would double-count the C5 (AISI presence) signal. Rather than score an indicator that cannot be cited and traced per value, it is excluded; the **bilateral-lab-MoU concept is retained qualitatively** in the discussion, citing the cleanly-documented UK (Anthropic / OpenAI / Google DeepMind) and Australia–Anthropic MoUs as illustration. The §12.2 leave-one-indicator-out test already showed the top-5 set is robust to dropping G4; excluding it permanently leaves the UK 1st under literature (2.214) and South Korea a close 2nd (2.162). G4 = 3 had been the UK's single highest indicator value, but its #1 placement does not depend on it.
 
+### Bundled data & redistribution
+
+The `data/raw/` snapshot ships the cached inputs the offline reproduction reads, each with a `*.meta.json` sidecar recording its source URL, retrieval date, SHA-256, and licence. Sources released under permissive terms (Epoch AI, OpenAlex, World Bank, V-Dem, ND-GAIN, TOP500, IGSC roster — CC-BY / CC-0 / public) are bundled in full. The **ITU IDI report** ("citable academic use") and the **Stanford AI Index chapter** (CC-BY-ND, whose `pdftotext` extracts would be derivatives) are **not redistributed**: the repository ships the **derived, factual CSVs** instead (`itu_idi_2024.csv`, `stanford_ai_patents_2025.csv` — index values are not themselves copyrightable), together with the `extract_*_from_pdf.py` scripts and the source URLs in the sidecars. To regenerate those CSVs from the originals, download the report from the cited URL and run the matching extractor (see [Quick start](#quick-start) re: Poppler). The offline reproduction does not require the source documents.
+
 ## Hypothesis-testing results
 
 Six hypotheses are pre-registered with numeric pass criteria in §1.4 and resolved against those criteria in §16.11:
@@ -249,7 +253,7 @@ The 190-cell notebook follows the OECD/JRC 10-step composite-indicator process a
 | **§8** | Multivariate diagnostics — per-axis PCA + Horn's parallel analysis (§8.1) |
 | **§9–§11** | Normalisation, weighting, composite computation |
 | **§12** | Sensitivity & robustness — Monte Carlo · LOO · alternative normalisation · classifier · geometric-shift ε grid (§12.6) · C5×G1 axis-reassignment (§12.7) · analyst-coded judgment-collapse (§12.8) · leave-one-country-out jackknife (§12.10) · weighting-free consensus ranking (§12.11) · TOP500 compute-indicator robustness (§12.12) · geometric-vs-arithmetic aggregation sensitivity (§12.13) |
-| **§13** | Vulnerability overlay — per-vector preparedness rankings; counterfactual policy scenarios (§13.4); V-Dem polarity (§13.5) and overlay-weight Monte Carlo (§13.6) sensitivities; minimal-action-set optimisation (§13.7); causal-interpretation boundary (§13.8) |
+| **§13** | Vulnerability overlay — per-vector preparedness rankings; counterfactual policy scenarios (§13.4); V-Dem polarity (§13.5) and overlay-weight Monte Carlo (§13.6) sensitivities; minimal-action-set optimisation (§13.7); causal-interpretation boundary (§13.8); §4 enabler-readiness matrix (§13.9–§13.11) |
 | **§14** | Typology — k-means + silhouette · hierarchical clustering · MDS embedding |
 | **§15** | Visualisation — six subsections §15.1–§15.6; five render paper-facing figures (§15.5 is a numerical EU vs member-state cross-validation, not a figure) |
 | **§16** | Discussion — paper-§-by-paper-§ mapping (§16.1–§16.7); sparse-PCA governance sub-axes (§16.10); hypothesis verdicts (§16.11); external concurrent-validity benchmark vs Oxford GAIRI 2024 (§16.12) |
@@ -274,7 +278,7 @@ The 190-cell notebook follows the OECD/JRC 10-step composite-indicator process a
   - `SparsePCA(random_state=SEED)` for the §16.10 governance sub-axes
   - `np.random.default_rng(SEED)` for the §B.2 permutation feature importance
 - **Pinned `RUN_DATE`** — `RUN_DATE = "2026-05-06"` (defined in §3.1, same constant as the seed date) so the build stamp is identical across re-runs. Override with the `MPAPI_RUN_DATE` environment variable if you want a live `date.today()`.
-- **Byte-identical regeneration** — within a fixed Python environment (Python 3.14.x, the pinned versions in `requirements.txt`, and the same matplotlib backend), all 38 output files (35 CSV + 3 JSON) and all 24 figures reproduce byte-for-byte across successive notebook re-runs (run with `MPAPI_OFFLINE=1` so live re-fetches cannot perturb the inputs). Cross-environment byte-identity is not asserted; matplotlib version bumps in particular can shift figure bytes even when pixels are visually identical.
+- **Byte-identical regeneration** — within a fixed Python environment (Python 3.14.x, the pinned versions in `requirements.txt`, and the same matplotlib backend), all 40 output files (37 CSV + 3 JSON) and all 25 figures reproduce byte-for-byte across successive notebook re-runs (run with `MPAPI_OFFLINE=1` so live re-fetches cannot perturb the inputs). Cross-environment byte-identity is not asserted; matplotlib version bumps in particular can shift figure bytes even when pixels are visually identical.
 - **Cached snapshot** — the current `data/raw/` snapshot is bundled with the repo. By default `fetch_to_cache` is **live-first, not cache-first**: every run attempts a live re-fetch and overwrites the cache on success, using the cache only as a network-failure fallback. Set `MPAPI_OFFLINE=1` to force cache-only reads with no network access — the recommended mode for byte-stable reproduction of the shipped snapshot (§4.x cells share the `fetch_to_cache` helper).
 - **Retrieval-date sidecars** — every cached source under `data/raw/` (programmatic fetches, source PDFs, derived CSVs from the `extract_*.py` scripts) has a `*.meta.json` sidecar recording its URL, retrieval date, byte size, and a short provenance note.
 - **Upstream-versioning caveat** — the OpenAlex C3 concept counts (and the §16.7.1 ML-narrow variant) and the V-Dem v16 LDI are upstream-versioned: OpenAlex periodically re-runs concept classification and V-Dem ships annual revisions, so a re-fetch in a future year will not necessarily reproduce the bundled snapshot. The methodology is stable; the bundled values are a fixed retrieval snapshot — programmatic API sources retrieved 2026-05-06, the PDF/HTML-derived sources (Stanford patents, ITU IDI, IGSC roster) retrieved 2026-05-18, per the `*.meta.json` sidecars (§17.10).
@@ -287,7 +291,9 @@ The 190-cell notebook follows the OECD/JRC 10-step composite-indicator process a
 M-PAPI.ipynb                  — the notebook (190 cells: config · data · analysis · bibliography · PBI export)
 README.md                     — this file
 LICENSE                       — MIT for code; per-source attribution for upstream data
-requirements.txt              — Python dependency floor
+requirements.txt              — Python dependency floors (supported install path)
+requirements.lock             — exact pinned versions (tested env) for byte-identical reproduction
+.github/workflows/reproduce.yml — CI: executes the notebook offline on every push (fails on any cell error)
 .ruff.toml                    — lint config (target-version py311; E402 exempt for .ipynb)
 .gitignore                    — standard Python / Jupyter / IDE ignores + *.pbip
 extract_idi_from_pdf.py       — ITU IDI 2024 PDF Table 1 → CSV (called by §4.7)
@@ -295,9 +301,9 @@ extract_igsc_from_html.py     — IGSC member roster HTML → CSV (called by §4
 extract_patents_from_pdf.py   — Stanford AI Index Fig 1.2.3 PDF → CSV (called by §4.8)
 extract_top500.py             — TOP500 supercomputer list → CSV (compute robustness, §12.12)
 iso_map.py                    — shared country-name → ISO3 resolver used by the extract_*.py scripts
-data/raw/                     — cached source files + .meta.json retrieval sidecars (bundled snapshot)
-figures/                      — 24 PNG figures exported by the notebook
-outputs/                      — 38 outputs (35 CSV + 3 JSON) of index, sensitivity, and verdict tables
+data/raw/                     — programmatic sources + derived CSVs + .meta.json provenance sidecars (offline snapshot; restrictive ITU/Stanford source reports not redistributed — see Data sources)
+figures/                      — 25 PNG figures exported by the notebook
+outputs/                      — 40 outputs (37 CSV + 3 JSON) of index, sensitivity, and verdict tables
 outputs/pbi/                  — 8 star-schema CSVs (3 dim + 5 fact) + README for Power BI ingestion (§20)
 M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview + Country drill-through)
 ```
@@ -309,6 +315,7 @@ M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview 
 - Each of the 14 middle powers can be ranked on each of the three axes using publicly available authoritative data.
 - The top-5 set and the bottom-3 set are stable to reasonable variation in weighting and normalisation; within-tier ordering and the marginal slot (5th, 12th) is weight-sensitive.
 - A k-means typology of axis-position archetypes is reported alongside its cluster-validity diagnostics (silhouette score, hierarchical-clustering ARI).
+- Each of the paper's nine §4 checklist actions can be scored for per-country *structural readiness* against the indicators that proxy its required enablers (§13.9), with enablers that have no faithful indicator proxy reported as un-proxied rather than imputed.
 
 ### Does not claim
 
@@ -318,6 +325,7 @@ M-PAPI-Dashboard.pbix         — assembled 2-page Power BI dashboard (Overview 
 - That the per-country composite values are portable outside the 14-country reference frame (see §11 portability caveat).
 - That the bottom-tier composite *values* are precise: they are sensitive to the geometric-shift constant ε (see §12.6 ε-sensitivity grid); only the *ranks* are interpretable at the bottom of the table.
 - That the working paper's §3 trigger-event framework is operationalised here — it is not, pending country-year AI-attributed incident data (see §17.7).
+- That the §4 enabler-readiness matrix (§13.9) is a causal or predictive claim — it is a *structural* illustration of where each country sits on the indicators proxying each checklist action's required enablers; enablers with no indicator proxy (inter-disciplinary expertise; intra-governmental coordination) are reported as un-proxied, and the §13.8 causal boundary applies in full.
 
 ## How to cite
 

@@ -40,6 +40,20 @@ desktop.ini
 prompts.docx
 ~$*
 
+# Source report documents are NOT redistributed: the ITU IDI report is "citable
+# academic use" and the pdftotext extracts are CC-BY-ND derivatives. The derived
+# factual CSVs (itu_idi_2024.csv, stanford_ai_patents_2025.csv), the extraction
+# scripts, and the source URLs (in each derived CSV's *.meta.json) are shipped
+# instead — re-download from the cited URL to regenerate. See README "Data sources".
+data/raw/itu_idi_2024_report.pdf
+data/raw/itu_idi_2024_report.pdf.meta.json
+data/raw/itu_idi_2024_report.txt
+data/raw/itu_idi_2024_report.txt.meta.json
+data/raw/stanford_aiindex_2025_ch1.pdf
+data/raw/stanford_aiindex_2025_ch1.pdf.meta.json
+data/raw/stanford_aiindex_2025_ch1.txt
+data/raw/stanford_aiindex_2025_ch1.txt.meta.json
+
 # Power BI — the .pbip project-folder format is excluded (noisy diffs); the
 # assembled .pbix lives in the repo root alongside the data layer + spec + tutorial.
 *.pbip

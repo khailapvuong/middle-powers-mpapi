@@ -1,0 +1,45 @@
+name: reproduce
+
+# Reproducibility smoke-test: on every push/PR, install the pinned dependencies,
+# execute the notebook end-to-end against the bundled offline data snapshot, and
+# fail the build on any cell error -- including the §21 cross-check, which asserts
+# the H1-H6 criterion outcomes still match the documented §16.11 verdicts.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Register Jupyter kernel
+        run: python -m ipykernel install --user --name python3
+
+      - name: Execute notebook offline (fails on any cell error)
+        env:
+          MPAPI_OFFLINE: "1"
+        run: |
+          python - <<'PY'
+          import nbformat
+          from nbclient import NotebookClient
+
+          nb = nbformat.read("M-PAPI.ipynb", as_version=4)
+          NotebookClient(nb, timeout=1800, kernel_name="python3").execute()
+          print("Notebook executed end-to-end with no errors; "
+                "the §21 hypothesis-verdict assertion passed.")
+          PY
