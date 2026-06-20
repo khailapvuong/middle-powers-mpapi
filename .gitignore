@@ -36,6 +36,10 @@ ENV/
 Thumbs.db
 desktop.ini
 
+# Working / personal files — never publish (e.g. local prompt notes, Office lock files)
+prompts.docx
+~$*
+
 # Power BI — the .pbip project-folder format is excluded (noisy diffs); the
 # assembled .pbix lives in the repo root alongside the data layer + spec + tutorial.
 *.pbip

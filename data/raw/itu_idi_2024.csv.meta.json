@@ -1,6 +1,9 @@
 {
   "url": "https://www.itu.int/dms_pub/itu-d/opb/ind/d-ind-ict_mdd-2024-3-pdf-e.pdf",
+  "source": "ITU ICT Development Index 2024, Table 1",
   "retrieved_date": "2026-05-18",
   "size": 6465,
+  "sha256": "4298b23de369568fb5c6a084b0b6952976564bdbc97ecbd16a9934fa6bc79ab0",
+  "license": "ITU - citable academic use",
   "notes": "Derived CSV: ITU IDI 2024 Table 1 country scores extracted from the public report PDF via extract_idi_from_pdf.py (source .txt is Latin-1/CP1252-encoded). Columns: economy_name, iso3, idi_score, idi_2023, year, region, income_group."
 }

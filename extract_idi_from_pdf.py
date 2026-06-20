@@ -31,7 +31,16 @@ OUT = ROOT / "data" / "raw" / "itu_idi_2024.csv"
 
 # Table 1 row pattern. Region code is one of {AFR, AMS, ARB, ASP, CIS, EUR}.
 # Income code is one of {HI, UMI, LMI, LI, n.a.}.
-# Scores: float "NN.N" or literal "n.a.". A dash or +/-N% trails.
+# Layout: "<economy> <region> <income> <idi_2023> <idi_2024> [<change%>] [<sub1> <sub2>]".
+# The two IDI scores are the FIRST two floats after the income code; idi_2024 is the
+# second. A year-over-year change column (signed integer percent, e.g. "+1%"/"-3%")
+# usually follows, and on many rows two further sub-pillar floats trail it from the
+# report's two-panel column layout — so the row CANNOT be end-anchored (doing so drops
+# ~half the economies). The pattern therefore deliberately grabs only the first 2023/
+# 2024 pair and ignores the trailing columns. Protection against an upstream layout
+# change (e.g. an inserted column shifting which float is idi_2024) is structural rather
+# than regex-based: the _IDI_MIN_ROWS floor and the explicit middle-power coverage check
+# in main() refuse to overwrite the CSV on a partial or shifted extract.
 ROW_RE = re.compile(
     r"^(?P<economy>.+?)\s+"
     r"(?P<region>AFR|AMS|ARB|ASP|CIS|EUR)\s+"

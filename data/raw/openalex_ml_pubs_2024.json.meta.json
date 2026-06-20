@@ -1,5 +1,8 @@
 {
   "url": "https://api.openalex.org/works?filter=concepts.id:C119857082,from_publication_date:2024-01-01,to_publication_date:2024-12-31&group_by=authorships.countries&per-page=200",
+  "source": "OpenAlex Works API - ML concept C119857082, 2024",
   "retrieved_date": "2026-05-06",
-  "size": 18861
+  "size": 18861,
+  "sha256": "3bced9fb471cde35689f2d58ac38a7e9b083f00737972efbf364d2f360919d56",
+  "license": "CC0 1.0"
 }

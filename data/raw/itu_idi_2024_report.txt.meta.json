@@ -1,6 +1,9 @@
 {
   "url": "https://www.itu.int/dms_pub/itu-d/opb/ind/d-ind-ict_mdd-2024-3-pdf-e.pdf",
+  "source": "ITU ICT Development Index 2024 - report text (pdftotext -layout)",
   "retrieved_date": "2026-05-18",
   "size": 209680,
+  "sha256": "bc6695fe201fc9b584c3dae0287851f1c5f4e084f1597dc2652b8e08d7e8aba4",
+  "license": "ITU - citable academic use",
   "notes": "pdftotext -layout output of itu_idi_2024_report.pdf. Regenerable from the cached PDF; consumed by extract_idi_from_pdf.py to derive itu_idi_2024.csv."
 }

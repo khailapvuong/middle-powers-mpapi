@@ -1,6 +1,9 @@
 {
   "url": "https://genesynthesisconsortium.org/",
+  "source": "International Gene Synthesis Consortium (IGSC) - member roster",
   "retrieved_date": "2026-05-18",
   "size": 3278,
+  "sha256": "48ebc925e5fbeb41af1d0d0a9b04adaa0beb334ddff49d30e8e3a29e1f8db811",
+  "license": "Public roster (free use with attribution)",
   "notes": "Derived CSV: IGSC member firm roster extracted from the cached igsc_homepage.html via extract_igsc_from_html.py, then joined to a curated HQ-country lookup. Columns: firm_name, firm_url, hq_iso3, hq_source_note. Each row's hq_source_note cites the firm's own corporate page used to determine HQ."
 }

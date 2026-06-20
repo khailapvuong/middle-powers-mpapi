@@ -3,5 +3,7 @@
   "source": "TOP500 project, 66th list (November 2025)",
   "retrieved_date": "2026-06-13",
   "size": 131533,
+  "sha256": "cb7559b36f31564c17b4c42f12807f47c6dd092de86b8f3617f820b6a5ca143b",
+  "license": "Publicly available list (top500.org)",
   "notes": "Official TOP500 November 2025 (66th edition) full list workbook: 500 systems with installation Country and Rmax. Source for indicator I4 (TOP500 compute) via extract_top500.py."
 }

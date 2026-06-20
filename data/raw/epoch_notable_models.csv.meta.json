@@ -1,5 +1,8 @@
 {
   "url": "https://epoch.ai/data/all_ai_models.csv",
+  "source": "Epoch AI - Notable AI Models",
   "retrieved_date": "2026-05-06",
-  "size": 6672605
+  "size": 6696432,
+  "sha256": "43d2eacab2908f2494e4093081ebd7e46d8b2f37bce5f59e256f8a6682265711",
+  "license": "CC-BY 4.0"
 }

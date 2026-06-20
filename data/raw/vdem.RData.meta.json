@@ -1,5 +1,8 @@
 {
   "url": "https://raw.githubusercontent.com/vdeminstitute/vdemdata/master/data/vdem.RData",
+  "source": "V-Dem v16 (vdeminstitute/vdemdata)",
   "retrieved_date": "2026-05-06",
-  "size": 33878255
+  "size": 33878255,
+  "sha256": "39b412d39a061c18f20c98e4ad4d6355b05a0441df31be4ee9aec420dc3d95ea",
+  "license": "CC-BY"
 }

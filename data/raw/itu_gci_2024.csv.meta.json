@@ -1,5 +1,8 @@
 {
   "url": "https://data360api.worldbank.org/data360/data?DATABASE_ID=ITU_GCI&INDICATOR=ITU_GCI_GCI_OVRL_SCRE&format=csv&top=2000",
+  "source": "ITU Global Cybersecurity Index 2024 (via World Bank Data360)",
   "retrieved_date": "2026-05-06",
-  "size": 40310
+  "size": 40310,
+  "sha256": "b10a6cbd41c72cb133e5991c5277f8aef46608129be196bca6d79a379a6c8a1c",
+  "license": "ITU - citable academic use"
 }

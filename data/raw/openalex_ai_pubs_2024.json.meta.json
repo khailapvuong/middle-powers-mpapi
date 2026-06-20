@@ -1,5 +1,8 @@
 {
   "url": "https://api.openalex.org/works?filter=concepts.id:C154945302,from_publication_date:2024-01-01,to_publication_date:2024-12-31&group_by=authorships.countries&per-page=200",
+  "source": "OpenAlex Works API - AI concept C154945302, 2024",
   "retrieved_date": "2026-05-06",
-  "size": 18977
+  "size": 18977,
+  "sha256": "ad810ada1f06c14de323d8f2006b72de47223aac7979b88d25a5d97d56915a14",
+  "license": "CC0 1.0"
 }

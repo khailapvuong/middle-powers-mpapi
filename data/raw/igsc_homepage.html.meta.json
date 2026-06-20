@@ -1,5 +1,8 @@
 {
   "url": "https://genesynthesisconsortium.org/",
+  "source": "International Gene Synthesis Consortium (IGSC) - member roster (homepage)",
   "retrieved_date": "2026-05-06",
-  "size": 59078
+  "size": 60084,
+  "sha256": "5d7034089921b99d29dbff87d7b023b4bfa7ffd883b4cbcf9b13bfb1d86c3ef7",
+  "license": "Public roster (free use with attribution)"
 }
